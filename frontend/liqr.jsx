@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import createStore from './store/store';
 import Root from './components/root';
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
-  const root = document.getElementById('root');
   let preloadedState = undefined;
   if (window.currentUser) {
     preloadedState = {
@@ -14,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   }
   const store = createStore(preloadedState);
-  // const store = createStore();
+  let rootEl = document.getElementById('root');
 
-  ReactDOM.render(<Root store={store} />, root);
+  window.store = store;
+  ReactDOM.render(<Root store={store} />, rootEl);
 });
