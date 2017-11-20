@@ -8,10 +8,12 @@ import loginContainer from './session/login_container';
 
 const App = () => (
   <div>
+    <Route path="/" component={navBarContainer}/>
     <Route exact path="/" component={Home} />
-    <Route path="/" component={} />
-    <Route path="/signup" component={signUpContainer} />
+
     <Route path="/login" component={loginContainer} />
+    <Route path="/signup" component={signUpContainer} />
+
   </div>
 );
 

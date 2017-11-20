@@ -38,14 +38,6 @@ class logIn extends React.Component {
           />
           </label>
 
-          <label>Email:
-          <input
-            type="text"
-            value={this.state.email}
-            onChange={this.handleInput('email')}
-          />
-          </label>
-
           <label>Password:
           <input
             type="password"

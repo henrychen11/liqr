@@ -15,7 +15,7 @@ const display = currentUser ? (
   );
   return (
     <header className="nav-bar">
-      <h1 className="logo">BLUEBIRD</h1>
+      <h1 className="logo">liqr</h1>
       <div>
         {display}
       </div>
