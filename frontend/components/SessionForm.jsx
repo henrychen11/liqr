@@ -65,7 +65,7 @@ class SessionForm extends React.Component {
       <div>
         <h3>Signup</h3>
         <Link to="signup"></Link>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>Username:
             <input type="text"
               value={this.state.username}
