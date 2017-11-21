@@ -16,3 +16,4 @@ user2 = User.create(username: Faker::Name.name, email: Faker::Internet.email, pa
 user3 = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
 user4 = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
 user5 = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
+user6 = User.create(username: 'henry', email: Faker::Internet.email, password: 'password')
