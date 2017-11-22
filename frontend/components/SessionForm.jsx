@@ -42,11 +42,9 @@ class SessionForm extends React.Component {
   }
 
   render(){
-    const display = (this.props.formType === 'login') ? (
-      <div>
-        <h3>Login</h3>
-        <Link to="login"></Link>
-        <form onSubmit={this.handleSubmit}>
+    return ( (this.props.formType === 'login') ? (
+      <div className="session-box">
+        <form className="session-form" onSubmit={this.handleSubmit}>
           <label>Username:
             <input type="text"
               value={this.state.username}
@@ -54,38 +52,44 @@ class SessionForm extends React.Component {
           </label>
 
           <label>Password:
-            <input type="text"
+            <input type="password"
               value={this.state.password}
               onChange={this.update('password')} />
           </label>
-            <input type="submit" value="Submit" />
-        </form>
+            <input className="normal" type="submit" value="Login" />
+            <p className="message">Need an Account?</p>
+            <a href="#/signup">Sign Up</a>
+      </form>
       </div>
     ) : (
-      <div>
-        <h3>Signup</h3>
-        <Link to="signup"></Link>
-        <form onSubmit={this.handleSubmit}>
+      <div className="session-box">
+        <form className="session-form" onSubmit={this.handleSubmit}>
           <label>Username:
             <input type="text"
               value={this.state.username}
               onChange={this.update('username')} />
           </label>
-
-          <label>Password:
+          <br />
+          <label>Email:
             <input type="text"
+              value={this.state.email}
+              onChange={this.update('email')} />
+          </label>
+          <br />
+          <label>Password:
+            <input type="password"
               value={this.state.password}
               onChange={this.update('password')} />
           </label>
-          <input type="submit" value="Submit" />
+          <br />
+            <input className="normal" type="submit" value="Sign Up!" />
+           <p className="message">Already registered?</p>
+           <a href="#/login">Login</a>
         </form>
       </div>
-    );
-    return (
-      <div>
-        {display}
-      </div>
-    );
+    )
+  );
+
   }
 }
 

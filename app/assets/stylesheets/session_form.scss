@@ -1,0 +1,41 @@
+
+.session-box {
+  width: 320px;
+  padding: 10% 0 0;
+  margin: auto;
+}
+.session-form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 60px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.session-form input {
+  font-family: 'Quicksand', sans-serif;
+  background: #F5F5F5;
+  width: 100%;
+  border: 0;
+  margin: 0 0 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.session-form .message {
+  margin: 20px;
+  font-size: 15px;
+  color: #D3D3D3;
+  text-decoration: none;
+}
+
+.normal:default{
+  width: 60%;
+}
+
+.normal:hover {
+  background-color: gray;
+}

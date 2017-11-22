@@ -1,5 +1,5 @@
 import React from 'react';
-import WelcomeContainer from './WelcomeContainer';
+import WelcomeContainer from './Welcome/WelcomeContainer';
 import { Route } from 'react-router-dom';
 import SessionFormContainer from './SessionFormContainer';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
