@@ -17,7 +17,7 @@ export default ({ currentUser, logout }) => {
 
   return (
     <div>
-      {display}
+  
     </div>
   );
 };
