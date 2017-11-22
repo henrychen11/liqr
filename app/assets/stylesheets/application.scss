@@ -13,8 +13,11 @@
  *= require_self
  */
   $quicksand: 'Quicksand', sans-serif;
-
-  @import "reset";
   @import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+  @import "font-awesome-sprockets";
+  @import "font-awesome";
+  @import "reset";
   @import "session_form";
   @import "nav_bar";
+  @import "splash";
