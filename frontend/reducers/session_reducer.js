@@ -13,7 +13,6 @@ const sessionReducer = (state = initialState, action) => {
       newState = merge({}, state);
       newState.currentUser = action.currentUser;
       return newState;
-
     default:
       return state;
   }
