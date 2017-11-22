@@ -98,7 +98,7 @@ class SessionForm extends React.Component {
           <br />
             <input className="normal" type="submit" value="Sign Up!" />
            <p className="message">Already registered?</p>
-           <a href="#/login">Login</a>
+           <a href="#/login" onClick={this.props.clearErrors.bind(this)}>Login</a>
         </form>
       </div>
     )
