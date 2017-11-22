@@ -6,11 +6,12 @@
   margin: auto;
   z-index: 1;
   color: black;
+  opacity: 0.8W;
 }
 .session-form {
   position: relative;
   background: #FFFFFF;
-  margin: 0 auto 100px;
+  margin: 0 auto;
   padding: 60px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -38,4 +39,9 @@
 
 .normal:hover {
   background-color: gray;
+}
+
+.top_message {
+  margin: 15px;
+  font-size: 18px;
 }

@@ -12,8 +12,10 @@
 
 body  {
     color: white;
+    opacity: 0.6;
+    // filter: blur(10px);
     text-align:center;
-    background-image: image-url("splash.jpeg");
+    // background-image: image-url("splash.jpeg");
     background-repeat: repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -22,4 +24,18 @@ body  {
     -webkit-animation-fill-mode: forwards;
     animation: backgroundScroll 35s linear 10;
     animation-fill-mode: forwards;
+}
+
+//Welcome text CSS
+
+header {
+  color: blue;
+  font-size: 80px;
+  font-weight: 600;
+}
+
+.slogan {
+  color: blue;
+  font-size: 60px;
+  font-weight: 600;
 }

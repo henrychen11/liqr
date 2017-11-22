@@ -26,8 +26,12 @@ class SessionForm extends React.Component {
     }
   }
 
+  componentWillMount(){
+    document.title = 'liqr - login';
+  }
+
   renderErrors() {
-    // console.log(this.props.errors);
+    console.log(this.props.errors);
     return (
       <ul>
         {
@@ -42,13 +46,16 @@ class SessionForm extends React.Component {
   handleSubmit(event){
     event.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.action(user);
+    // this.props.clearErrors();
   }
 
   render(){
     return ( (this.props.formType === 'login') ? (
       <div className="session-box">
         <form className="session-form" onSubmit={this.handleSubmit}>
+          <p className="top_message">Welcome Back!</p>
+          {this.renderErrors()}
           <label>Username:
             <input type="text"
               value={this.state.username}
@@ -62,12 +69,15 @@ class SessionForm extends React.Component {
           </label>
             <input className="normal" type="submit" value="Login" />
             <p className="message">Need an Account?</p>
-            <a href="#/signup">Sign Up</a>
+            <a href="#/signup" onClick={this.props.clearErrors.bind(this)}>Sign Up</a>
       </form>
       </div>
     ) : (
       <div className="session-box">
         <form className="session-form" onSubmit={this.handleSubmit}>
+          <p className="top_message">Hello!</p>
+          {this.renderErrors()}
+          <br/>
           <label>Username:
             <input type="text"
               value={this.state.username}
