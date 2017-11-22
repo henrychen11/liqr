@@ -6,8 +6,11 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: "",
+      email: "",
       password: ""
     };
+    // this.renderErrors();
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -19,11 +22,12 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps(nextProps){
     if (nextProps.loggedIn){
-      this.props.history.push("/");
+      this.props.history.push("/home");
     }
   }
 
   renderErrors() {
+    // console.log(this.props.errors);
     return (
       <ul>
         {

@@ -1,15 +1,15 @@
 
 .session-box {
-  width: 320px;
-  height: 100%;
+  width: 300px;
+  height: auto;
   padding: 10% 0 0;
   margin: auto;
+  z-index: 1;
+  color: black;
 }
 .session-form {
   position: relative;
-  z-index: 1;
   background: #FFFFFF;
-  max-width: 360px;
   margin: 0 auto 100px;
   padding: 60px;
   text-align: center;
@@ -29,7 +29,6 @@
 .session-form .message {
   margin: 20px;
   font-size: 15px;
-  color: #D3D3D3;
   text-decoration: none;
 }
 

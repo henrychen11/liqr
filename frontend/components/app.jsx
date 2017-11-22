@@ -1,5 +1,5 @@
 import React from 'react';
-import WelcomeContainer from './Welcome/WelcomeContainer';
+import Welcome from './Welcome/Welcome';
 import NavBarContainer from './navbar/NavBarContainer';
 import { Route } from 'react-router-dom';
 import SessionFormContainer from './SessionFormContainer';
@@ -10,7 +10,8 @@ const App = () => (
   <div>
     <main>
       <NavBarContainer />
-      <AuthRoute exact path="/" component={WelcomeContainer} />
+
+      <Route exact path="/" component={Welcome} />
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
     </main>

@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-export default ({ currentUser, logout }) => {
-
+const Welcome = () => {
   return (
-    <main>
-      
-    </main>
+    <div>
+    </div>
   );
 };
+
+export default Welcome;

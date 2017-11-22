@@ -10,7 +10,7 @@
     to {background-position: -180px 0px;}
 }
 
-h1  {
+body  {
     color: white;
     text-align:center;
     background-image: image-url("splash.jpeg");
@@ -18,8 +18,8 @@ h1  {
     background-attachment: fixed;
     background-size: cover;
     font-size: 12px;
-    -webkit-animation: backgroundScroll 15s linear 1;
+    -webkit-animation: backgroundScroll 35s linear 10;
     -webkit-animation-fill-mode: forwards;
-    animation: backgroundScroll 15s linear 1;
+    animation: backgroundScroll 35s linear 10;
     animation-fill-mode: forwards;
 }
