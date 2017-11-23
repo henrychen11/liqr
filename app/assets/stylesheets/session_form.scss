@@ -1,21 +1,34 @@
+main {
+  background-image: image-url("splash.jpeg");
+  height: 100vh;
+  background-size: cover;
+}
 
 .session-box {
   width: 300px;
   height: auto;
-  padding: 10% 0 0;
+  padding: 6% 0 0;
   margin: auto;
   z-index: 1;
   color: black;
-  opacity: 0.8W;
 }
+
+.logo-box {
+  font-family: 'Lobster', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: black;
+}
+
 .session-form {
   position: relative;
   background: #FFFFFF;
   margin: 0 auto;
-  padding: 60px;
+  padding: 30px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+
 .session-form input {
   font-family: 'Quicksand', sans-serif;
   background: #F5F5F5;
@@ -42,6 +55,6 @@
 }
 
 .top_message {
-  margin: 15px;
+  margin-top: 10px;
   font-size: 18px;
 }

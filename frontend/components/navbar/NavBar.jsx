@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Image, Transformation } from 'cloudinary-react';
 
 export default ({ currentUser, logout }) => {
 
   const display = currentUser ? (
     <nav>
       <ul className="navbar">
-        <li><a href="#/home">liqr</a></li>
+        <li className="logo" href="#/home">liqr</li>
         <li><a href="#/home">My Pictures</a></li>
         <li><a href="#/albums">My Albums</a></li>
         <li><a href="#/explore">Explore</a></li>
@@ -18,12 +19,13 @@ export default ({ currentUser, logout }) => {
   ) : (
     <nav>
       <ul className="navbar">
-        <li><a href="#/">liqr</a></li>
+        <li className="logo" href="#/welcome">liqr</li>
         <li className="right"><Link to="/signup">Signup</Link></li>
         <li className="right"><Link to="/login">Login</Link></li>
         <li className="right"><a>Demo</a></li>
       </ul>
     </nav>
+
   );
 
   return (

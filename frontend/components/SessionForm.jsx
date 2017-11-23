@@ -47,8 +47,10 @@ class SessionForm extends React.Component {
     return ( (this.props.formType === 'login') ? (
       <div className="session-box">
         <form className="session-form" onSubmit={this.handleSubmit}>
+          <p className="logo-box" href="#/home">liqr</p>
           <p className="top_message">Welcome Back!</p>
           {this.renderErrors()}
+        <br />
           <label>Username:
             <input type="text"
               value={this.state.username}
@@ -68,6 +70,7 @@ class SessionForm extends React.Component {
     ) : (
       <div className="session-box">
         <form className="session-form" onSubmit={this.handleSubmit}>
+          <p className="logo-box" href="#/home">liqr</p>
           <p className="top_message">Hello!</p>
           {this.renderErrors()}
           <br/>

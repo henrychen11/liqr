@@ -10,16 +10,14 @@
     to {background-position: -180px 0px;}
 }
 
-body  {
-    color: white;
-    opacity: 0.6;
+.splash  {
     // filter: blur(10px);
-    text-align:center;
-    // background-image: image-url("splash.jpeg");
+    // text-align:center;
+    background-image: image-url("splash.jpeg");
+    height: 100vh;
     background-repeat: repeat;
     background-attachment: fixed;
     background-size: cover;
-    font-size: 12px;
     -webkit-animation: backgroundScroll 35s linear 10;
     -webkit-animation-fill-mode: forwards;
     animation: backgroundScroll 35s linear 10;
