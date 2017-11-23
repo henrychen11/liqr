@@ -19,10 +19,9 @@ export default ({ currentUser, logout }) => {
     <nav>
       <ul className="navbar">
         <li><a href="#/">liqr</a></li>
-        <a></a>
-        <li className="right">Demo</li>
         <li className="right"><Link to="/signup">Signup</Link></li>
         <li className="right"><Link to="/login">Login</Link></li>
+        <li className="right"><a>Demo</a></li>
       </ul>
     </nav>
   );
