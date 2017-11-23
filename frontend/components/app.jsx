@@ -1,5 +1,5 @@
 import React from 'react';
-import Welcome from './Welcome/Welcome';
+import Welcome from './welcome/welcome';
 import NavBarContainer from './navbar/NavBarContainer';
 import { Route, Switch } from 'react-router-dom';
 import SessionFormContainer from './SessionFormContainer';
