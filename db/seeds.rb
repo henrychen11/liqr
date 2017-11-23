@@ -46,5 +46,3 @@ photo27 = Photo.create(img_url: "", title: "", author_id: user3.id)
 photo28 = Photo.create(img_url: "", title: "", author_id: user3.id)
 photo29 = Photo.create(img_url: "", title: "", author_id: user3.id)
 photo30 = Photo.create(img_url: "", title: "", author_id: user3.id)
-
-album1
