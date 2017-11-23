@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   has_many :albums,
          primary_key: :id,
-         foreign_key: :owner_id,
+         foreign_key: :author_id,
          class_name: :Album,
          dependent: :destroy
 

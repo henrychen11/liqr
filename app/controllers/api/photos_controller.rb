@@ -1,7 +1,7 @@
 class Api::PhotosController < ApplicationController
   def index
     @photos = if params[:user_id]
-                Photo.where(owner_id: params[:user_id]).includes(:author)
+                Photo.where(author_id: params[:user_id]).includes(:author)
               else
                 Photo.all.includes(:author)
               end

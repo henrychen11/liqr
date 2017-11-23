@@ -20,18 +20,11 @@ class SessionForm extends React.Component {
     });
   }
 
-  componentWillReceiveProps(nextProps){
-    if (nextProps.loggedIn){
-      this.props.history.push("/home");
-    }
-  }
-
   componentWillMount(){
     document.title = 'liqr - login';
   }
 
   renderErrors() {
-    console.log(this.props.errors);
     return (
       <ul>
         {
@@ -46,8 +39,8 @@ class SessionForm extends React.Component {
   handleSubmit(event){
     event.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.action(user);
-    // this.props.clearErrors();
+    this.props.action(user)
+      .then( () => this.props.history.push('/home'));
   }
 
   render(){
