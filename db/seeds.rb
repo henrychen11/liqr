@@ -15,3 +15,5 @@ user1 = User.create(username: Faker::Name.name, email: Faker::Internet.email, pa
 user2 = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
 user3 = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
 user4 = User.create(username: 'henry', email: Faker::Internet.email, password: 'password')
+
+photo1 = Photo.create(img_url: "liquidpineapple/v1511395451.jpg", title: "Island Boat Dock", author_id: user1.id)

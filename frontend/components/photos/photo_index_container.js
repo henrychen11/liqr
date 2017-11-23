@@ -4,9 +4,12 @@ import { requestAllPhotos } from '../../actions/photo_actions';
 import { connect } from 'react-redux';
 import PhotoIndex from './photo_index';
 
-const mapStateToProps = (state) => ({
-  photos: selectAllPhotos(state)
-});
+const mapStateToProps = (state) => {
+  debugger;
+  return {
+    photos: selectAllPhotos(state)
+  };
+};
 
 const mapDispatchToProps = (dispatch) => ({
   requestAllPhotos: () => dispatch(requestAllPhotos())
