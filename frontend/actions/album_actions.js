@@ -21,22 +21,22 @@ export const removeAlbum = (album) => ({
 });
 
 export const requestAlbums = (userId) => (dispatch) => (
-  AlbumAPIUtil.getUserAlbums(userId)
+  AlbumAPIUtil.fetchAlbums(userId)
   .then(albums => dispatch(receiveAlbums(albums)))
 );
 
 export const requestAlbum = (albumId) => (dispatch) => (
-  AlbumAPIUtil.getAlbum(albumId)
+  AlbumAPIUtil.fetchAlbum(albumId)
   .then(album => dispatch(receiveAlbum(album)))
 );
 
 export const createAlbum = (album) => (dispatch) => (
-  AlbumAPIUtil.postAlbum(album)
+  AlbumAPIUtil.createAlbum(album)
   .then(response => dispatch(receiveAlbum(response)))
 );
 
-export const editAlbum = (album) => (dispatch) => (
-  AlbumAPIUtil.patchAlbum(album)
+export const updateAlbum = (album) => (dispatch) => (
+  AlbumAPIUtil.updateAlbum(album)
   .then(response => dispatch(receiveAlbum(response)))
 );
 

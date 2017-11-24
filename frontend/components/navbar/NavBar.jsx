@@ -22,7 +22,6 @@ export default ({ currentUser, logout }) => {
         <li className="logo" href="#/welcome">liqr</li>
         <li className="right"><Link to="/signup">Signup</Link></li>
         <li className="right"><Link to="/login">Login</Link></li>
-        <li className="right"><a>Demo</a></li>
       </ul>
     </nav>
 

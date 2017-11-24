@@ -3,9 +3,9 @@ import { merge } from 'lodash';
 
 import { RECEIVE_PHOTO } from '../actions/photo_actions';
 
-const AlbumReducer = (state, action) => {
+const AlbumReducer = (state={}, action) => {
   Object.freeze(state);
-
+  // debugger
   switch (action.type) {
     case RECEIVE_ALBUMS:
       return merge({}, state, action.albums);

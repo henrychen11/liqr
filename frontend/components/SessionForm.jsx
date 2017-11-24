@@ -36,6 +36,21 @@ class SessionForm extends React.Component {
     );
   }
 
+  demoStart() {
+    const Username = 'demo'.split('');
+    const Password= 'password'.split('');
+
+    setTimeout(100);
+
+    if (Username.length > 0) {
+      this.setState({ username: this.state.username + Username.shift() }).bind(this);
+    } else if (Password.length > 0) {
+      this.setState({ password: this.state.password + Password.shift() }).bind(this);
+    } else {
+      this.handleSubmit();
+    }
+  }
+
   handleSubmit(event){
     event.preventDefault();
     const user = Object.assign({}, this.state);
@@ -64,6 +79,7 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')} />
             </label>
             <input className="normal" type="submit" value="Login" />
+            <input onClick={this.demoStart} className="normal" type="submit" value="Demo" />
             <p className="message">Need an Account?</p>
             <a href="#/signup" onClick={this.props.clearErrors.bind(this)}>Sign Up</a>
           </form>
