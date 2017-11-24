@@ -7,7 +7,7 @@ import PhotoIndexContainer from './photos/photo_index_container';
 import AlbumIndexContainer from './albums/album_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Upload from './photos/upload';
-// import Footer from './footer';
+import Footer from './footer';
 
 const App = () => (
   <main>
@@ -20,7 +20,9 @@ const App = () => (
         <ProtectedRoute path="/home" component={PhotoIndexContainer} />
         <ProtectedRoute path="/albums/" component={AlbumIndexContainer} />
       </Switch>
-
+      <footer>
+        <Footer />
+      </footer>
     </main>
 );
 
