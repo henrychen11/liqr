@@ -1,4 +1,4 @@
-// import * as AlbumAPIUtil from '../util/photo_api_util';
+import * as AlbumAPIUtil from '../util/album_api_util';
 
 export const RECEIVE_ALBUMS = "RECEIVE_ALBUMS";
 export const RECEIVE_ALBUM = "RECEIVE_ALBUM";
@@ -9,9 +9,10 @@ export const receiveAlbums = albums => ({
   albums
 });
 
-export const receiveAlbum = album => ({
+//rename to payload cuz album.album is very confusing
+export const receiveAlbum = payload => ({
   type: RECEIVE_ALBUM,
-  album
+  payload
 });
 
 export const removeAlbum = (album) => ({
