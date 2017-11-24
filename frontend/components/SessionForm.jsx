@@ -9,9 +9,8 @@ class SessionForm extends React.Component {
       email: "",
       password: ""
     };
-    // this.renderErrors();
-
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   update(field){
@@ -36,19 +35,20 @@ class SessionForm extends React.Component {
     );
   }
 
-  demoStart() {
+  handleDemo(event) {
     const Username = 'demo'.split('');
-    const Password= 'password'.split('');
+    const Password = 'password'.split('');
+    const demoUser = {username: 'demo', password: 'password'};
+    this.props.action(demoUser)
+      .then( () => this.props.history.push('/home'));
 
-    setTimeout(100);
-
-    if (Username.length > 0) {
-      this.setState({ username: this.state.username + Username.shift() }).bind(this);
-    } else if (Password.length > 0) {
-      this.setState({ password: this.state.password + Password.shift() }).bind(this);
-    } else {
-      this.handleSubmit();
-    }
+    // if (Username.length > 0) {
+    //   this.setState({ username: this.state.username + Username.shift() }).bind(this);
+    // } else if (Password.length > 0) {
+    //   this.setState({ password: this.state.password + Password.shift() }).bind(this);
+    // } else {
+    //   this.handleSubmit();
+    // }
   }
 
   handleSubmit(event){
@@ -79,7 +79,7 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')} />
             </label>
             <input className="normal" type="submit" value="Login" />
-            <input onClick={this.demoStart} className="normal" type="submit" value="Demo" />
+            <input onClick={this.handleDemo} className="normal" type="submit" value="Demo" />
             <p className="message">Need an Account?</p>
             <a href="#/signup" onClick={this.props.clearErrors.bind(this)}>Sign Up</a>
           </form>

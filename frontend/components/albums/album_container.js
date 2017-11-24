@@ -5,18 +5,15 @@ import { receiveCurrentUser } from '../../actions/session_actions';
 import AlbumIndex from './album_index';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
+  console.log(state);
   return {
-
-    albums: selectAllAlbums(state, ownProps.match.params.userId),
-    user: state.entities.users[ownProps.match.params.userId],
+    albums: selectAllAlbums(state, state.session.currentUser.id),
     currentUser: state.session.currentUser
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  receiveCurrentUserAlbums: (userId) => dispatch(requestAlbums(userId)),
-  receiveCurrentUser: (userId) => dispatch(receiveCurrentUser(userId))
+  requestAlbums: (userId) => dispatch(requestAlbums(userId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlbumIndex);

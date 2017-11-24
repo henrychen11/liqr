@@ -11,11 +11,10 @@
 }
 
 .splash  {
-    // filter: blur(10px);
-    // text-align:center;
+    filter: blur(3px);
+    opacity: 0.5;
     background-image: image-url("splash.jpeg");
     height: 100vh;
-    filter: blur(5px);
     background-repeat: repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -27,14 +26,27 @@
 
 //Welcome text CSS
 
-header {
-  color: blue;
-  font-size: 80px;
+.title {
+  font-family: 'Lobster', sans-serif;
+  color: #5276af;
+  font-size: 60px;
   font-weight: 600;
+  z-index: 1;
+  left: 0;
+  position:absolute;
+  text-align:center;
+  top: 250px;
+  width: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
 }
 
-.slogan {
-  color: blue;
-  font-size: 60px;
+
+.logo-name {
+  z-index: 1;
+  position: absolute;
+  top: 150px;
+  font-size: 80px;
   font-weight: 600;
 }

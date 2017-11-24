@@ -19,7 +19,7 @@ export default ({ currentUser, logout }) => {
   ) : (
     <nav>
       <ul className="navbar">
-        <li className="logo" href="#/welcome">liqr</li>
+        <li className="logo">liqr</li>
         <li className="right"><Link to="/signup">Signup</Link></li>
         <li className="right"><Link to="/login">Login</Link></li>
       </ul>

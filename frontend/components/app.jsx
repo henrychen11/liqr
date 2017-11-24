@@ -18,7 +18,7 @@ const App = () => (
         <AuthRoute path="/signup" component={SessionFormContainer} />
         <AuthRoute path="/upload" component={Upload} />
         <ProtectedRoute path="/home" component={PhotoIndexContainer} />
-        <ProtectedRoute path="/albums" component={AlbumIndexContainer} />
+        <ProtectedRoute path="/albums/" component={AlbumIndexContainer} />
       </Switch>
       <footer>
         <Footer />

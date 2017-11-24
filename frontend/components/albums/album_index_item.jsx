@@ -2,6 +2,8 @@ import React from 'react';
 
 export default ( {album} ) => {
   return (
-    album.photos.map( (photo) => "Print this 10 times")
+    <h1>
+      Print this 3 times
+    </h1>
   );
 };

@@ -2,10 +2,11 @@ import React from 'react';
 
 const Welcome = () => {
   return (
-    <div className="splash">
-      <h1>
-        test
-      </h1>
+    <div>
+      <h1 className="title logo-name">liqr</h1>
+      <h2 className="title">Share without boundaries</h2>
+
+      <div className="splash"></div>
     </div>
   );
 };
