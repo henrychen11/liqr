@@ -7,6 +7,7 @@ export const selectAllPhotos = (state) => {
 export const selectAllAlbums = (state, userId) => {
   let albums = values(state.entities.albums);
   // Only select albums if matches current user
-  let userAlbums = albums.filter(album => album.owner_id === parseInt(userId));
+  let userAlbums = albums.filter(album => album.author_id === parseInt(userId));
   return userAlbums;
+  // return albums;
 };

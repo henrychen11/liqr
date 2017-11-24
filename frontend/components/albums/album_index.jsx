@@ -20,6 +20,7 @@ class AlbumIndex extends React.Component {
     // } else {
       return (
         <div>
+          {console.log(this.props.albums)}
           {<AlbumIndexItem /> }
         </div>
       );
