@@ -12,13 +12,13 @@ class PhotoIndex extends React.Component {
     let temp = chunk(this.props.photos, 4);
     return (
       <div>
-        <h2 className="photo-text">All Photots</h2>
+        <h2 className="photo-text">My Photos</h2>
         <div className="row">
           {temp.map( (photo, idx) =>
             <PhotoIndexItem key={idx} photo={photo} />
           )}
         </div>
-        
+
       </div>
     );
   }
