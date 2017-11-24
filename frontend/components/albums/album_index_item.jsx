@@ -2,8 +2,9 @@ import React from 'react';
 
 export default ( {album} ) => {
   return (
-    <h1>
-      Print this 3 times
-    </h1>
+    <div>
+      <h1>{album.title}</h1>
+      <h1>{album.description}</h1>
+    </div>
   );
 };

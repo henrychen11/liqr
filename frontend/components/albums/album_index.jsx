@@ -20,8 +20,9 @@ class AlbumIndex extends React.Component {
     // } else {
       return (
         <div>
-          {console.log(this.props.albums)}
-          {<AlbumIndexItem /> }
+          { this.props.albums.map( (album) =>
+          <AlbumIndexItem key={album.id} album={album}/>
+          )}
         </div>
       );
     }
