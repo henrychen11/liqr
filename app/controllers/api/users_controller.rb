@@ -7,12 +7,13 @@ class Api::UsersController < ApplicationController
       login!(@user)
       render :show
     else
-      render json: @user.errors.full_messages, status: :unprocessable_entity
+      render json: @user.errors.full_messages, status: 422
     end
   end
 
 
   def show
+    @user = User.find_by(id: params[:id])
   end
 
   private

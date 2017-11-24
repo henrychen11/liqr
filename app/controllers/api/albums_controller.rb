@@ -1,11 +1,10 @@
 class Api::AlbumsController < ApplicationController
   def index
-    @albums = Album.where(author_id: params[:user_id]).includes(:author)
+    @albums = Album.all
   end
 
-
   def create
-    
+
     @album = current_user.albums.new(album_params)
 
     if @album.save
@@ -26,7 +25,7 @@ class Api::AlbumsController < ApplicationController
   end
 
   def show
-    @album = Album.includes(:author, :photos).where(id: params[:id]).first
+    @album = Album.includes(:author, :photos).where(id: params[:id])
   end
 
   def destroy

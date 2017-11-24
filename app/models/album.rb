@@ -13,6 +13,16 @@ class Album < ApplicationRecord
            dependent: :destroy
 
   has_many :photos,
-            through: :album_photos,
+            through: :photo_albums,
               source: :photo
+
+  def album_cover_url
+    picture = self.photos.first
+    if picture.nil?
+      return nil
+    else
+      return Photo.find_by(id: picture.id).img_url
+    end
+  end
+
 end
