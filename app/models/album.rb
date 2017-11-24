@@ -11,4 +11,8 @@ class Album < ApplicationRecord
            foreign_key: :album_id,
            class_name: :PhotoAlbum,
            dependent: :destroy
+
+  has_many :photos,
+            through: :album_photos,
+              source: :photo
 end
