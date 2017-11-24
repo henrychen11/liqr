@@ -17,6 +17,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     action: (user) => dispatch(action(user)),
     clearErrors: () => dispatch(clearErrors()),
+    login: (user) => dispatch(login(user)),
     formType
   };
 };

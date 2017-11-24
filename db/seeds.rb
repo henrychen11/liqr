@@ -12,7 +12,7 @@ Photo.destroy_all
 Album.destroy_all
 PhotoAlbum.destroy_all
 
-user1 = User.create(username: "demo", email: Faker::Internet.email, password: 'password')
+user1 = User.create(username: "demo", email: 'hello@world.com', password: 'password')
 user2 = User.create(username: "Hello Guest", email: Faker::Internet.email, password: 'password')
 user3 = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
 user4 = User.create(username: 'henry', email: Faker::Internet.email, password: 'password')

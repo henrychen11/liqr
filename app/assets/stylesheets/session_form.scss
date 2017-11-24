@@ -30,7 +30,7 @@ main {
   position: relative;
   background: #FFFFFF;
   margin: 0 auto;
-  padding: 30px;
+  padding: 25px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -40,20 +40,28 @@ main {
   background: #F5F5F5;
   width: 100%;
   border: 0;
-  margin: 0 0 10px;
+  margin: 0 0 5px;
   padding: 10px;
   box-sizing: border-box;
   font-size: 14px;
 }
 
 .session-form .message {
-  margin: 20px;
+  margin: 10px;
   font-size: 15px;
   text-decoration: none;
 }
 
-.normal:default{
-  width: 60%;
+button {
+  font-family: 'Quicksand', sans-serif;
+  background: #b8bec4;
+  color: black;
+  width: 40%;
+  border: 0;
+  margin: 10px;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
 .normal:hover {

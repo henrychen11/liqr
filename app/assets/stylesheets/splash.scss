@@ -12,7 +12,7 @@
 
 .splash  {
     filter: blur(3px);
-    opacity: 0.5;
+    opacity: 0.2;
     background-image: image-url("splash.jpeg");
     height: 100vh;
     background-repeat: repeat;
@@ -35,7 +35,7 @@
   left: 0;
   position:absolute;
   text-align:center;
-  top: 250px;
+  top: 300px;
   width: 100%;
 //   display: flex;
 //   align-items: center;
@@ -47,6 +47,7 @@
   z-index: 1;
   position: absolute;
   top: 150px;
-  font-size: 80px;
+  color: #327bef;
+  font-size: 100px;
   font-weight: 600;
 }

@@ -36,19 +36,30 @@ class SessionForm extends React.Component {
   }
 
   handleDemo(event) {
-    const Username = 'demo'.split('');
-    const Password = 'password'.split('');
+    event.preventDefault();
     const demoUser = {username: 'demo', password: 'password'};
-    this.props.action(demoUser)
-      .then( () => this.props.history.push('/home'));
+    this.props.login(demoUser)
+    .then( () => this.props.history.push('/home'));
 
-    // if (Username.length > 0) {
-    //   this.setState({ username: this.state.username + Username.shift() }).bind(this);
-    // } else if (Password.length > 0) {
-    //   this.setState({ password: this.state.password + Password.shift() }).bind(this);
-    // } else {
-    //   this.handleSubmit();
-    // }
+    // const Username = 'demo'.split('');
+    // const Email = 'hello@world.com'.split('');
+    // const Password = 'password'.split('');
+
+    // setInterval( () => {
+    //   if (Username.length > 0) {
+    //     this.setState({ username: this.state.username + Username.shift() });
+    //   } else if (Email.length > 0){
+    //     this.setState({ email: this.state.email + Email.shift() });
+    //   } else if (Password.length > 0) {
+    //     this.setState({ password: this.state.password + Password.shift() });
+    //   } else {
+    //     clearInterval();
+    //     this.props.login(this.state)
+    //     .then( () => this.props.history.push('/home'));
+    //   }
+    //   }
+    //   , 50 );
+
   }
 
   handleSubmit(event){
@@ -63,7 +74,7 @@ class SessionForm extends React.Component {
       <div className="background">
         <div className="session-box">
           <form className="session-form" onSubmit={this.handleSubmit}>
-            <p className="logo-box" href="#/home">liqr</p>
+            <Link to="/" className="logo-box">liqr</Link>
             <p className="top_message">Welcome Back!</p>
             {this.renderErrors()}
             <br />
@@ -78,8 +89,8 @@ class SessionForm extends React.Component {
                 value={this.state.password}
                 onChange={this.update('password')} />
             </label>
-            <input className="normal" type="submit" value="Login" />
-            <input onClick={this.handleDemo} className="normal" type="submit" value="Demo" />
+            <button className="normal" type="submit">Login</button>
+            <button onClick={this.handleDemo}>Demo</button>
             <p className="message">Need an Account?</p>
             <a href="#/signup" onClick={this.props.clearErrors.bind(this)}>Sign Up</a>
           </form>
@@ -89,7 +100,7 @@ class SessionForm extends React.Component {
       <div className="background">
         <div className="session-box">
           <form className="session-form" onSubmit={this.handleSubmit}>
-            <p className="logo-box" href="#/home">liqr</p>
+            <Link to="/" className="logo-box">liqr</Link>
             <p className="top_message">Hello!</p>
             {this.renderErrors()}
             <br/>
@@ -111,7 +122,8 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')} />
             </label>
             <br />
-            <input className="normal" type="submit" value="Sign Up!" />
+              <button className="normal" type="submit">Sign Up</button>
+              <button onClick={this.handleDemo}>Demo</button>
             <p className="message">Already registered?</p>
             <a href="#/login" onClick={this.props.clearErrors.bind(this)}>Login</a>
           </form>
