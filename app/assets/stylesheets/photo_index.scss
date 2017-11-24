@@ -1,6 +1,12 @@
-// * {
-//     box-sizing: border-box;
-// }
+.photo-text {
+  font-family: 'Lobster', sans-serif;
+  padding-left: 20px;
+  text-align: center;
+  padding-right: 20px;
+  font-size: 80px;
+  font-weight: 600;
+  color: black;
+}
 .row {
 
 }
@@ -24,14 +30,14 @@
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
-@media (max-width: 600px) {
-    .column {
-        width: 50%;
-    }
-}
+// @media (max-width: 800px) {
+//     .column {
+//         width: 50%;
+//     }
+// }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     .column {
         width: 100%;
     }

@@ -13,7 +13,7 @@ export default ({ currentUser, logout }) => {
         <li><a href="#/explore">Explore</a></li>
         <li className="right"><a><button onClick={logout}>Logout</button></a></li>
         <li className="right"><a>Welcome: {currentUser.username}</a></li>
-        <li className="right"><a><i className="fa fa-upload" aria-hidden="true"></i></a></li>
+        <li href="#/upload" className="right"><a><i className="fa fa-upload" aria-hidden="true"></i></a></li>
       </ul>
     </nav>
   ) : (
