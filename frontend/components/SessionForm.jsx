@@ -45,57 +45,61 @@ class SessionForm extends React.Component {
 
   render(){
     return ( (this.props.formType === 'login') ? (
-      <div className="session-box">
-        <form className="session-form" onSubmit={this.handleSubmit}>
-          <p className="logo-box" href="#/home">liqr</p>
-          <p className="top_message">Welcome Back!</p>
-          {this.renderErrors()}
-        <br />
-          <label>Username:
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')} />
-          </label>
+      <div className="background">
+        <div className="session-box">
+          <form className="session-form" onSubmit={this.handleSubmit}>
+            <p className="logo-box" href="#/home">liqr</p>
+            <p className="top_message">Welcome Back!</p>
+            {this.renderErrors()}
+            <br />
+            <label>Username:
+              <input type="text"
+                value={this.state.username}
+                onChange={this.update('username')} />
+            </label>
 
-          <label>Password:
-            <input type="password"
-              value={this.state.password}
-              onChange={this.update('password')} />
-          </label>
+            <label>Password:
+              <input type="password"
+                value={this.state.password}
+                onChange={this.update('password')} />
+            </label>
             <input className="normal" type="submit" value="Login" />
             <p className="message">Need an Account?</p>
             <a href="#/signup" onClick={this.props.clearErrors.bind(this)}>Sign Up</a>
-      </form>
+          </form>
+        </div>
       </div>
     ) : (
-      <div className="session-box">
-        <form className="session-form" onSubmit={this.handleSubmit}>
-          <p className="logo-box" href="#/home">liqr</p>
-          <p className="top_message">Hello!</p>
-          {this.renderErrors()}
-          <br/>
-          <label>Username:
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')} />
-          </label>
-          <br />
-          <label>Email:
-            <input type="text"
-              value={this.state.email}
-              onChange={this.update('email')} />
-          </label>
-          <br />
-          <label>Password:
-            <input type="password"
-              value={this.state.password}
-              onChange={this.update('password')} />
-          </label>
-          <br />
+      <div className="background">
+        <div className="session-box">
+          <form className="session-form" onSubmit={this.handleSubmit}>
+            <p className="logo-box" href="#/home">liqr</p>
+            <p className="top_message">Hello!</p>
+            {this.renderErrors()}
+            <br/>
+            <label>Username:
+              <input type="text"
+                value={this.state.username}
+                onChange={this.update('username')} />
+            </label>
+            <br />
+            <label>Email:
+              <input type="text"
+                value={this.state.email}
+                onChange={this.update('email')} />
+            </label>
+            <br />
+            <label>Password:
+              <input type="password"
+                value={this.state.password}
+                onChange={this.update('password')} />
+            </label>
+            <br />
             <input className="normal" type="submit" value="Sign Up!" />
-           <p className="message">Already registered?</p>
-           <a href="#/login" onClick={this.props.clearErrors.bind(this)}>Login</a>
-        </form>
+            <p className="message">Already registered?</p>
+            <a href="#/login" onClick={this.props.clearErrors.bind(this)}>Login</a>
+          </form>
+        </div>
       </div>
     )
   );

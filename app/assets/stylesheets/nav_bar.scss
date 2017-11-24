@@ -31,7 +31,7 @@
 
 .navbar li.right {float: right;}
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 400px){
     .navbar li.right,
     .navbar li {float: none;}
 }
@@ -57,7 +57,7 @@ footer a {
   padding: 0 10px;
 }
 
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width : 400px) {
   .footer-links {
     width: 50%;
   }
