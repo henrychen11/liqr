@@ -35,9 +35,11 @@ photo15 = Photo.create(img_url: "guest_cover_oyqjdk.jpg", title: "Hitch", author
 photo16 = Photo.create(img_url: "sample.jpg", title: "Flowers", author_id: user2.id)
 
 
-album1 = Album.create(title: "Test Album 1", description: "This is some of my favorite photos", author_id: user1.id)
-album2 = Album.create(title: "Test Album 2", description: "This is some of my favorite photos", author_id: user1.id)
-album3 = Album.create(title: "Test Album 3", description: "This is some of my favorite photos", author_id: user1.id)
+album1 = Album.create(title: "Test Album 1", description: "This is some of my favorite travel photos", author_id: user1.id)
+album2 = Album.create(title: "Test Album 2", description: "This is some of my favorite dinning photos", author_id: user1.id)
+album3 = Album.create(title: "Test Album 3", description: "This is some of my favorite random photos", author_id: user1.id)
+album4 = Album.create(title: "Test Album 4", description: "This is some of my favorite building photos", author_id: user1.id)
+album5 = Album.create(title: "Test Album 5", description: "This is some of my favorite car photos", author_id: user2.id)
 
 # Album 1
 PhotoAlbum.create(album_id: album1.id, photo_id: photo1.id)
@@ -59,3 +61,8 @@ PhotoAlbum.create(album_id: album3.id, photo_id: photo12.id)
 PhotoAlbum.create(album_id: album3.id, photo_id: photo13.id)
 PhotoAlbum.create(album_id: album3.id, photo_id: photo4.id)
 PhotoAlbum.create(album_id: album3.id, photo_id: photo5.id)
+
+# Album 4
+PhotoAlbum.create(album_id: album4.id, photo_id: photo14.id)
+PhotoAlbum.create(album_id: album4.id, photo_id: photo15.id)
+PhotoAlbum.create(album_id: album4.id, photo_id: photo16.id)

@@ -5,7 +5,6 @@ import { receiveCurrentUser } from '../../actions/session_actions';
 import AlbumIndex from './album_index';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
   return {
     albums: selectAllAlbums(state, state.session.currentUser.id),
     currentUser: state.session.currentUser

@@ -18,7 +18,8 @@ const App = () => (
         <AuthRoute path="/signup" component={SessionFormContainer} />
         <ProtectedRoute path="/upload" component={Upload} />
         <ProtectedRoute path="/home" component={PhotoIndexContainer} />
-        <ProtectedRoute path="/albums/" component={AlbumIndexContainer} />
+        <ProtectedRoute path="/albums" component={AlbumIndexContainer} />
+
       </Switch>
       <footer>
         <Footer />
@@ -27,3 +28,6 @@ const App = () => (
 );
 
 export default App;
+
+
+// <ProtectedRoute path="/albums/:albumId" component={AlbumShowContainer} />

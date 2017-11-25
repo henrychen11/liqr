@@ -17,11 +17,10 @@ class Album < ApplicationRecord
               source: :photo
 
   def album_cover_url
-    picture = self.photos.first
-    if picture.nil?
+    if self.photos.first.nil?
       return nil
     else
-      return Photo.find_by(id: picture.id).img_url
+      return self.photos.first.img_url
     end
   end
 
