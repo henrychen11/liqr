@@ -26,38 +26,40 @@ class AlbumIndexItem extends React.Component{
 
   render(){
       return (
-        <div>
-          <div
-            className="photo"
-            onMouseEnter={this.handleMouseHover}
-            onMouseLeave={this.handleMouseHover}
-          >
-            <Image className="" key={this.props.album.id} publicId={this.props.album.album_cover_url} cloudName="liquidpineapple" />
-          </div>
-          {
-            this.state.isHovering &&
-            <div className="">
-                <h1>{this.props.album.title}</h1>
-                <h2>{this.props.album.description}</h2>
-            </div>
-          }
+        <div className="photo-box">
+            <Image className="photo" key={this.props.album.id} publicId={this.props.album.album_cover_url} cloudName="liquidpineapple" />
+        <div className="caption">
+            <p className="caption-text">{this.props.album.title}</p>
+            <p className="caption-text">{this.props.album.description}</p>
+        </div>
+
+
         </div>
       );
   }
 }
 
+// <div className="caption">
+//   <h1>{this.props.album.title}</h1>
+//   <h2>{this.props.album.description}</h2>
+// </div>
 
 // return (
-//
-//   <div className="photo">
+//   <div>
 //     <div
+//       className="photo"
 //       onMouseEnter={this.handleMouseHover}
 //       onMouseLeave={this.handleMouseHover}
-//       >
-//       <h1>{this.props.album.title}</h1>
-//       <h2>{this.props.album.description}</h2>
+//     >
+//       <Image className="" key={this.props.album.id} publicId={this.props.album.album_cover_url} cloudName="liquidpineapple" />
 //     </div>
-//     <Image className="" key={this.props.album.id} publicId={this.props.album.album_cover_url} cloudName="liquidpineapple" />
+//     {
+//       this.state.isHovering &&
+//       <div className="bottom-left-text">
+//           <h1>{this.props.album.title}</h1>
+//           <h2>{this.props.album.description}</h2>
+//       </div>
+//     }
 //   </div>
 // );
 
