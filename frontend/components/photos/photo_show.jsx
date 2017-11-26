@@ -22,15 +22,15 @@ class PhotoShow extends React.Component {
     return (
       <div className="photo-show-container" >
         <div className="photo-show-image-container">
-          <Image key={this.props.photo.id} className="photo-show-image" publicId={this.props.photo.img_url} cloudName="liquidpineapple" />
+          <Image key={ photo.id } className="photo-show-image" publicId={ photo.img_url } cloudName="liquidpineapple" />
         </div>
 
       <div className="photo-show-info-container">
         <div className="photo-show-info-left">
           <div className="photo-show-info">
-            <h1>{this.props.photo.title}</h1>
-            <h2>{this.props.photo.description}</h2>
-            <h1>Posted by: {this.props.photo.author}</h1>
+            <h1>{photo.title}</h1>
+            <h2>{photo.description}</h2>
+            <h1>Posted by: {photo.author}</h1>
             <br/>
             <h1>Currently in the following albums:</h1>
               {photo.albumIds }
