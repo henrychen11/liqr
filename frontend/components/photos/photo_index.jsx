@@ -8,13 +8,19 @@ class PhotoIndex extends React.Component {
     this.props.requestAllPhotos();
   }
 
+  componentDidMount(){
+    this.props.requestAllPhotos();
+  }
+
   render() {
     let temp = chunk(this.props.photos, 4);
+    console.log(this.props.photos);
     return (
       <div>
         <h2 className="photo-text">My Photos</h2>
         <div className="row">
-          {temp.map( (photo, idx) =>
+          {
+            temp.map( (photo, idx) =>
             <PhotoIndexItem key={idx} photo={photo} />
           )}
         </div>

@@ -4,22 +4,24 @@ class PhotoShow extends React.Component {
   constructor(props){
     super(props);
   }
-
+  //
   componentWillMount(){
     this.props.requestPhoto(this.props.photoId);
-    this.props.requestAlbums(this.props.currentUser.id);
+    // this.props.requestAlbums(this.props.currentUser.id);
+    // debugger
   }
 
   componentWillReceiveProps(newProps) {
   if (this.props.match.params.photoId !== newProps.match.params.photoId) {
     this.props.requestPhoto(newProps.match.params.photoId);
-    this.props.requestAlbums(this.props.currentUser.id);
+    // this.props.requestAlbums(this.props.currentUser.id);
     }
   }
   render() {
     const { photo, albums, currentUser } = this.props;
-
+    console.log(this.props.albums);
     return (
+
       <div className="photo-show-container" >
         <div className="photo-show-image-container">
           <Image key={ photo.id } className="photo-show-image" publicId={ photo.img_url } cloudName="liquidpineapple" />
@@ -33,7 +35,14 @@ class PhotoShow extends React.Component {
             <h1>Posted by: {photo.author}</h1>
             <br/>
             <h1>Currently in the following albums:</h1>
-              {photo.albumIds }
+              { (albums === undefined ) ? "" :
+                <div>
+                  { albums.map(album => (
+                    album.title
+                  )
+                )}
+                </div>
+              }
             <br/>
             <h1>Tags</h1>
             <h2>Tag 1</h2>

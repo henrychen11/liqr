@@ -8,7 +8,7 @@ const AlbumReducer = (state={}, action) => {
   // debugger
   switch (action.type) {
     case RECEIVE_ALBUMS:
-      console.log(action.albums);
+      // console.log(action.albums);
       return merge({}, state, action.albums);
     case RECEIVE_ALBUM:
       const album = action.payload.album;

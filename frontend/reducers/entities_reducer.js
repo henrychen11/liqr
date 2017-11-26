@@ -8,3 +8,9 @@ const EntitiesReducer = combineReducers({
 });
 
 export default EntitiesReducer;
+
+
+// {albums.map(album => (
+//     <Image key={ album.id } className="photo-show-image" publicId={ album.album_cover_url } cloudName="liquidpineapple" />
+//   )
+// )}

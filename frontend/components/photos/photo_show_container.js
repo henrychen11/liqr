@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   // debugger;
   return {
     photo: state.entities.photos,
+    albums: state.entities.photos.albums,
     currentUser: state.session.currentUser,
     photoId: ownProps.match.params.photoId
 
