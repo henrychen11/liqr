@@ -1,0 +1,45 @@
+.photo-show-container {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.photo-show-image-container {
+  // width: 100%;
+  // align-items: center;
+  // background-color: #4f4f4f;
+}
+
+
+.photo-show-image {
+  margin: 10px;
+  width: auto;
+  max-height: 400px;
+  max-width: 500px;
+}
+
+.photo-show-info-container {
+  width: 85%;
+  height: 50%;
+}
+
+.photo-show-info-left {
+  display: inline-block;
+  height: 100%;
+  width: 45%;
+  margin: 10px;
+}
+
+.photo-show-info-right {
+  display: inline-block;
+  height: 100%;
+  width: 45%;
+  margin: 10px;
+}
+
+.photo-show-info-container:after {
+    content: "";
+    display: table;
+    clear: both;
+}

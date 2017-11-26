@@ -5,13 +5,16 @@ import { Route, Switch } from 'react-router-dom';
 import SessionFormContainer from './SessionFormContainer';
 import PhotoIndexContainer from './photos/photo_index_container';
 import AlbumIndexContainer from './albums/album_container';
+import PhotoShowContainer from './photos/photo_show_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Upload from './photos/upload';
 import Footer from './bottom';
 
 const App = () => (
-  <main>
-    <NavBarContainer />
+  <div>
+
+    <main>
+      <NavBarContainer />
       <Route exact path="/" component={WelcomeContainer} />
       <Switch>
         <AuthRoute path="/login" component={SessionFormContainer} />
@@ -19,12 +22,12 @@ const App = () => (
         <ProtectedRoute path="/upload" component={Upload} />
         <ProtectedRoute path="/home" component={PhotoIndexContainer} />
         <ProtectedRoute path="/albums" component={AlbumIndexContainer} />
-
+        <ProtectedRoute path="/photos/:photoId" component={PhotoShowContainer} />
       </Switch>
-      <footer>
-        <Footer />
-      </footer>
     </main>
+      <Footer className="footer"/>
+
+  </div>
 );
 
 export default App;

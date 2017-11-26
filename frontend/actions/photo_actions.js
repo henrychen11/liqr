@@ -25,6 +25,11 @@ export const requestAllPhotos = () => (dispatch) => (
   .then(photos => dispatch(receivePhotos(photos)))
 );
 
+export const requestUserPhotos = (userId) => (dispatch) => (
+  PhotoAPIUtil.fetchUserPhotos()
+  .then(photos => dispatch(receivePhotos(photos)))
+);
+
 export const requestPhoto = (photoId) => (dispatch) => (
   PhotoAPIUtil.fetchPhoto(photoId)
   .then(photo => dispatch(receivePhoto(photo)))
