@@ -1,5 +1,6 @@
 import React from 'react';
 import AlbumIndexItem from './album_index_item';
+import { Link } from 'react-router-dom';
 
 class AlbumIndex extends React.Component {
   componentWillMount() {
@@ -11,7 +12,9 @@ class AlbumIndex extends React.Component {
         return (
           <div className="grid">
             { this.props.albums.map( (album) =>
-            <AlbumIndexItem key={album.id} album={album}/>
+              <Link key={album.id} to={`/albums/${album.id}`}>
+              <AlbumIndexItem key={album.id} album={album}/>
+              </Link>
             )}
           </div>
         );
@@ -19,16 +22,3 @@ class AlbumIndex extends React.Component {
 }
 
 export default AlbumIndex;
-
-
-// render() {
-//
-//     return (
-//       <div>
-//         { this.props.albums.map( (album) =>
-//         <AlbumIndexItem key={album.id} album={album}/>
-//         )}
-//       </div>
-//     );
-//   }
-// }
