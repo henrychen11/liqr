@@ -12,7 +12,7 @@ const PhotoReducer = (state={}, action) =>{
     case RECEIVE_PHOTOS:
       return merge({}, action.photos);
     case RECEIVE_PHOTO:
-
+      action.photo.albumIds = action.photo.albums.map(album => album.id);
       return merge({}, state, action.photo );
     case REMOVE_PHOTO:
       newState = merge({}, state);

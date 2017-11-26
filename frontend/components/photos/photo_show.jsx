@@ -18,24 +18,7 @@ class PhotoShow extends React.Component {
   }
   render() {
     const { photo, albums, currentUser } = this.props;
-    
-    let albumList = [];
-    let albumCount = 0;
-    if (this.props.photo.albumIds.length > 0) {
-      albumListItems = photo.albumIds.map(id => {
-          return (
-            <Link key={id} to={`/albums/${id}`}>
-              <div className="album-list-item">
-                <Image publicId={albums[id].cover_photo_url} cloudName="shuttr" >
-                  <Transformation width="100" height="100" crop="thumb" />
-                </Image>
-                {albums[id].title}
-              </div>
-            </Link>
-          );
-        }
-      );
-    }
+
     return (
       <div className="photo-show-container" >
         <div className="photo-show-image-container">
@@ -50,9 +33,7 @@ class PhotoShow extends React.Component {
             <h1>Posted by: {this.props.photo.author}</h1>
             <br/>
             <h1>Currently in the following albums:</h1>
-                {this.props.photo.albums.map( (album) =>
-                  <h2>{album.title}</h2>
-                )}
+              {photo.albumIds }
             <br/>
             <h1>Tags</h1>
             <h2>Tag 1</h2>

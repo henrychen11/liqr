@@ -16,3 +16,13 @@ class Photo < ApplicationRecord
           through: :photo_albums,
           source: :album
 end
+
+#
+# <Link key={id} to={`/albums/${id}`}>
+#   <div className="">
+#     <Image publicId={albums[id].album_cover_url} cloudName="shuttr" >
+#       <Transformation width="100" height="100" crop="thumb" />
+#     </Image>
+#     {albums[id].title}
+#   </div>
+# </Link>
