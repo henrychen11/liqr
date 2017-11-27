@@ -1,6 +1,11 @@
 class Api::AlbumsController < ApplicationController
   def index
-    @albums = Album.where(author_id: params[:user_id].includes(:author_id))
+    @albums = Album.where(author_id: params[:user_id]).includes(:author)
+  end
+
+  def show
+    @album = Album.includes(:author, :photos).where(id: params[:id]).first
+    # The .first is to conver the array to an object
   end
 
   def create
@@ -24,10 +29,6 @@ class Api::AlbumsController < ApplicationController
     end
   end
 
-  def show
-    @album = Album.includes(:author, :photos).where(id: params[:id]).first
-    # The .first is to conver the array to an object
-  end
 
   def destroy
     @album = current_user.albums.find_by(id: params[:id])

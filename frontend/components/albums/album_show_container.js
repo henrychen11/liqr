@@ -4,10 +4,11 @@ import { requestAlbum } from '../../actions/album_actions';
 import { selectAllPhotos } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
-    album: state.entities.albums,
-    currentUser: state.session.currentUser
+    album: state.entities.albums.album,
+    photos: state.entities.albums.photos,
+    currentUser: state.session.currentUser,
+    albumId: ownProps.match.params.albumId
   };
 };
 

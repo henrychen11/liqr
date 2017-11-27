@@ -5,14 +5,15 @@ import { RECEIVE_PHOTO } from '../actions/photo_actions';
 
 const AlbumReducer = (state={}, action) => {
   Object.freeze(state);
-  // debugger
+
   switch (action.type) {
     case RECEIVE_ALBUMS:
-      // console.log(action.albums);
       return merge({}, state, action.albums);
+
     case RECEIVE_ALBUM:
-      const album = action.payload.album;
-      return merge({}, state, { [album.id]: album });
+      // debugger
+      // const album = action.payload.album;
+      return merge({}, action.album);
     case REMOVE_ALBUM:
       let newState = merge({}, state);
       delete newState[action.album.id];

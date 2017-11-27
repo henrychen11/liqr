@@ -4,8 +4,8 @@ import { signup, login, logout } from './actions/session_actions';
 // import { signup, login, logout } from './util/session_api_util';
 import configureStore from './store/store';
 import Root from './components/root';
-// import {fetchAlbums} from './util/album_api_util';
-import {requestAlbums} from './actions/album_actions';
+import {fetchAlbum} from './util/album_api_util';
+import {requestAlbum} from './actions/album_actions';
 import {requestPhoto} from './actions/photo_actions';
 
 
@@ -32,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.logout = logout;
   window.currentUser = store.currentUser;
   window.requestPhoto = requestPhoto;
-  window.requestAlbums = requestAlbums;
+  window.requestAlbum = requestAlbum;
+  window.fetchAlbum = fetchAlbum;
   //
   ReactDOM.render(<Root store={store}/>, root);
 });
