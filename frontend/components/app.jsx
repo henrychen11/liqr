@@ -20,16 +20,16 @@ const App = () => (
       <NavBarContainer />
       <Route exact path="/" component={WelcomeContainer} />
       <Switch>
+        <ProtectedRoute exact path="/photos/new" component={PhotoFormContainer} />
+        <ProtectedRoute exact path="/albums/new" component={AlbumFormContainer} />
         <AuthRoute path="/login" component={SessionFormContainer} />
         <AuthRoute path="/signup" component={SessionFormContainer} />
         <ProtectedRoute exact path="/photos/:photoId" component={PhotoShowContainer} />
         <ProtectedRoute exact path="/albums/:albumId" component={AlbumShowContainer} />
-        <ProtectedRoute exact path="/photos/new" component={PhotoFormContainer} />
         <ProtectedRoute exact path="/explore" component={PhotoIndexContainer} />
         <ProtectedRoute exact path="/home" component={PhotoUserContainer} />
         <ProtectedRoute exact path="/photos" component={PhotoIndexContainer} />
 
-        <ProtectedRoute exact path="/albums/new" component={AlbumFormContainer} />
 
         <ProtectedRoute path="/albums" component={AlbumIndexContainer} />
       </Switch>

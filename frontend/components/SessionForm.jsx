@@ -90,7 +90,7 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')} />
             </label>
             <button className="normal" type="submit">Login</button>
-            <button onClick={this.handleDemo}>Demo</button>
+            <button className="normal" onClick={this.handleDemo}>Demo</button>
             <p className="message">Need an Account?</p>
             <a href="#/signup" onClick={this.props.clearErrors.bind(this)}>Sign Up</a>
           </form>
@@ -123,7 +123,7 @@ class SessionForm extends React.Component {
             </label>
             <br />
               <button className="normal" type="submit">Sign Up</button>
-              <button onClick={this.handleDemo}>Demo</button>
+              <button className="normal" onClick={this.handleDemo}>Demo</button>
             <p className="message">Already registered?</p>
             <a href="#/login" onClick={this.props.clearErrors.bind(this)}>Login</a>
           </form>
