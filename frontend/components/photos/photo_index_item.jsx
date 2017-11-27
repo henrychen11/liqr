@@ -8,7 +8,10 @@ export default ({photo}) => {
       <Link key={photo.id} to={`/photos/${photo.id}`}>
         <Image key={photo.id} className="photo-image" publicId={photo.img_url} cloudName="liquidpineapple" />
 
-        <p className="photo-caption-text">{photo.title}</p>
+        <div className="photo-caption-text">
+          <p>{photo.title}</p>
+          <p>By: {photo.author}</p>
+        </div>
 
       </Link>
 

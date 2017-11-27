@@ -1,6 +1,13 @@
 class Api::PhotosController < ApplicationController
   def index
-    @photos = Photo.all
+    # @photos = Photo.all
+    # Need to filter by user id
+    @photos = if params[:user_id]
+                Photo.where(author_id: params[:user_id]).includes(:author)
+              else
+                Photo.all.includes(:author)
+              end
+
     render :index
   end
 
@@ -42,7 +49,7 @@ class Api::PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:img_url, :title, :description)
+    params.require(:photo).permit(:title, :description, :img_url)
   end
 
 end

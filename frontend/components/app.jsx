@@ -7,8 +7,10 @@ import PhotoIndexContainer from './photos/photo_index_container';
 import AlbumIndexContainer from './albums/album_container';
 import PhotoShowContainer from './photos/photo_show_container';
 import AlbumShowContainer from './albums/album_show_container';
+import PhotoUserContainer from './photos/photo_user_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import Upload from './photos/upload';
+import PhotoFormContainer from './photos/photo_form_container';
+
 import Footer from './bottom';
 
 const App = () => (
@@ -22,8 +24,9 @@ const App = () => (
         <AuthRoute path="/signup" component={SessionFormContainer} />
         <ProtectedRoute exact path="/photos/:photoId" component={PhotoShowContainer} />
         <ProtectedRoute exact path="/albums/:albumId" component={AlbumShowContainer} />
-        <ProtectedRoute path="/upload" component={Upload} />
-        <ProtectedRoute path="/home" component={PhotoIndexContainer} />
+        <ProtectedRoute exact path="/photos/new" component={PhotoFormContainer} />
+        <ProtectedRoute exact path="/explore" component={PhotoIndexContainer} />
+        <ProtectedRoute exact path="/home" component={PhotoUserContainer} />
         <ProtectedRoute path="/photos" component={PhotoIndexContainer} />
         <ProtectedRoute path="/albums" component={AlbumIndexContainer} />
       </Switch>
@@ -34,6 +37,3 @@ const App = () => (
 );
 
 export default App;
-
-
-// <ProtectedRoute path="/albums/:albumId" component={AlbumShowContainer} />

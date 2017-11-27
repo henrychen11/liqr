@@ -15,8 +15,12 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  let action = createPhoto;
-  if (ownProps.location.pathname.includes('edit')){
-    action = editPhoto;
+  let action = (ownProps.location.pathname.includes('edit')) ? editPhoto : createPhoto;
+
+  return {
+    action: (photo) => dispatch(action(photo)),
+    requestPhoto: (photoId) => dispatch(requestPhoto(photoId))
   };
-}
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PhotoForm);

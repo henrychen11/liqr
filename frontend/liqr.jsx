@@ -6,8 +6,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 import {fetchAlbum} from './util/album_api_util';
 import {requestAlbum} from './actions/album_actions';
-import {requestPhoto} from './actions/photo_actions';
-
+import {requestPhoto, requestUserPhotos} from './actions/photo_actions';
+import { fetchUserPhotos } from './util/photo_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.requestPhoto = requestPhoto;
   window.requestAlbum = requestAlbum;
   window.fetchAlbum = fetchAlbum;
+  window.requestUserPhotos = requestUserPhotos;
+  window.fetchUserPhotos = fetchUserPhotos;
   //
   ReactDOM.render(<Root store={store}/>, root);
 });

@@ -1,23 +1,18 @@
 import React from 'react';
 import PhotoIndexItem from './photo_index_item';
-import {chunk, flatten} from 'lodash';
 
-class PhotoIndex extends React.Component {
+class PhotoUserIndex extends React.Component {
 
   componentWillMount(){
-    this.props.requestAllPhotos();
-  }
-
-  componentDidMount(){
-    this.props.requestAllPhotos();
+    // debugger
+    this.props.requestUserPhotos(this.props.currentUser.id);
   }
 
   render() {
-    // let temp = chunk(this.props.photos, 4);
     const {photos} = this.props;
     return (
       <div>
-        <h2 className="photo-header">Explore</h2>
+        <h2 className="photo-header">My Pictures</h2>
         <div className="photo-grid">
           {
             photos.map( (photo, idx) =>
@@ -30,4 +25,4 @@ class PhotoIndex extends React.Component {
   }
 }
 
-export default PhotoIndex;
+export default PhotoUserIndex;
