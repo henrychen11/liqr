@@ -3,7 +3,10 @@ import AlbumForm from './album_form';
 import { requestAlbum, createAlbum, updateAlbum, destroyAlbum } from '../../actions/photo_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  let album = { title: '', description: '', author_id: '', author_username: ''};
+  let album = { title: '',
+                description: '',
+                author_id: '',
+                author_username: ''};
   let formType = 'new';
 
   if (ownProps.location.pathname.includes('edit')) {

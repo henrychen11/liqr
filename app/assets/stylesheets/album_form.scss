@@ -25,12 +25,27 @@
   padding: 5px 0;
 }
 
-.album-form button {
-  text-decoration: none;
+.album-form-button {
+  height: 30px;
+  width: 25%;
+  padding: 5px;
+  margin: 10px;
+  background-color: lightgray;
+}
+
+.album-form-button:hover {
+  background-color: gray;
 }
 
 .album-form input {
   border: 1px solid gray;
   height: 30px;
   border-radius: 3px;
+}
+
+.album-form textarea {
+  height: 100px;
+  width: 300px;
+  border-radius: 3px;
+  border: 1px solid gray;
 }
