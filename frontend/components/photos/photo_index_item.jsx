@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 
 export default ({photo}) => {
   return (
-    <div className="column">
-      {photo.map( (el) =>
-         <Link key={el.id} to={`/photos/${el.id}`}>
-          <Image key={el.id} className="image" publicId={el.img_url} cloudName="liquidpineapple" />
-        </Link>
-      )}
+    <div className="photo-image-container">
+      <Link key={photo.id} to={`/photos/${photo.id}`}>
+        <Image key={photo.id} className="photo-image" publicId={photo.img_url} cloudName="liquidpineapple" />
+
+        <p className="photo-caption-text">{photo.title}</p>
+
+      </Link>
+
     </div>
     );
   };

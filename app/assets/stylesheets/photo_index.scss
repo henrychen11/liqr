@@ -1,4 +1,4 @@
-.photo-text {
+.photo-header {
   font-family: 'Lobster', sans-serif;
   padding-left: 20px;
   text-align: center;
@@ -7,27 +7,65 @@
   font-weight: 600;
   color: black;
 }
-.row {
+.photo-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  margin: 10px;
+  // justify-content: center;
   width: 100%
 }
-/* Create four equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 20%;
-    padding: 10px 0 0 30px;
-}
 
-.image {
-    margin-top: 12px;
-    border-radius: 5px;
+// .photo-image-container {
+//   position: absolute;
+//   transition: .5s ease;
+// }
+// //
+.photo-image {
+  padding: 2px;
+  height: 300px;
+  width: auto;
 }
+//
+// .photo-image:hover {
+//   opacity: 0.5;
+// }
+//
+// .photo-caption {
+//   position: absolute;
+//   width: 100%;
+//   box-sizing: border-box;
+//
+// }
+//
+// .photo-caption-text {
+//   font-size: 16px;
+//   border: 1px solid black;
+// }
+.photo-image-container {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+.photo-image-container img {
+  display: block;
 
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+}
+.photo-caption-text {
+opacity: 0;
+position: absolute;
+width: 100%;
+color: #fff;
+left: 0;
+bottom: 0;
+padding: 0.75em 1em;
+font-weight: 700;
+z-index: 2;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+background-color: rgba(0,0,0,.7);
+-webkit-transition: opacity .3s ease-in-out;
+transition: opacity .3s ease-in-out;
+}
+.photo-image-container:hover .photo-caption-text {
+opacity: 1;
 }

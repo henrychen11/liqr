@@ -26,8 +26,8 @@ class AlbumIndexItem extends React.Component{
 
   render(){
       return (
-        <div className="photo-box">
-            <Image className="photo" key={this.props.album.id} publicId={this.props.album.album_cover_url} cloudName="liquidpineapple" />
+        <div className="album-image-container">
+            <Image className="album-image" key={this.props.album.id} publicId={this.props.album.album_cover_url} cloudName="liquidpineapple" />
         <div className="caption">
             <p className="caption-text">{this.props.album.title}</p>
             <p className="caption-text">{this.props.album.description}</p>

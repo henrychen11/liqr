@@ -20,12 +20,12 @@ const App = () => (
       <Switch>
         <AuthRoute path="/login" component={SessionFormContainer} />
         <AuthRoute path="/signup" component={SessionFormContainer} />
+        <ProtectedRoute exact path="/photos/:photoId" component={PhotoShowContainer} />
+        <ProtectedRoute exact path="/albums/:albumId" component={AlbumShowContainer} />
         <ProtectedRoute path="/upload" component={Upload} />
         <ProtectedRoute path="/home" component={PhotoIndexContainer} />
         <ProtectedRoute path="/photos" component={PhotoIndexContainer} />
-        <ProtectedRoute path="/albums/:albumId" component={AlbumShowContainer} />
         <ProtectedRoute path="/albums" component={AlbumIndexContainer} />
-        <ProtectedRoute path="/photos/:photoId" component={PhotoShowContainer} />
       </Switch>
     </main>
       <Footer className="footer"/>

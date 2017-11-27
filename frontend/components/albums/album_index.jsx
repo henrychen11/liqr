@@ -10,7 +10,7 @@ class AlbumIndex extends React.Component {
 
   render() {
         return (
-          <div className="grid">
+          <div className="album-grid">
             { this.props.albums.map( (album) =>
               <Link key={album.id} to={`/albums/${album.id}`}>
               <AlbumIndexItem key={album.id} album={album}/>
