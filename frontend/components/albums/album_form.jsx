@@ -4,19 +4,30 @@ class AlbumForm extends React.Component {
 
   render(){
     return (
-      <div>
-        <h1>This is alubme create</h1>
-        <form>
-          <label>Title
-            <input type="text"></input>
-          </label>
+      <div className="album-form-container">
+        <div className="album-form">
 
-          <label>Description
-            <input type="text"></input>
-          </label>
+          <h1 className="album-form-header">Create a New Album</h1>
 
-          <input type="submit" value="Create New Album"></input>
-        </form>
+            <form>
+              <label>Title
+                <br />
+                <input className="album-input"type="text"></input>
+              </label>
+              <br/>
+              <label>Description
+                <br />
+                <input type="text"></input>
+              </label>
+              <br/>
+              <button type="submit" value="Create New Album"></button>
+
+            </form>
+  
+
+
+
+        </div>
       </div>
 
     );

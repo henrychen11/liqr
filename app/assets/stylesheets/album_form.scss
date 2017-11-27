@@ -1,0 +1,36 @@
+.album-form-container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin-top: 200px;
+}
+
+.album-form-header {
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.album-form {
+  width: 50%;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.album-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.album-form button {
+  text-decoration: none;
+}
+
+.album-form input {
+  border: 1px solid gray;
+  height: 30px;
+  border-radius: 3px;
+}

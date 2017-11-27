@@ -6,21 +6,36 @@
     background-color: #333;
     display: flex;
     align-items: center;
+    // justify-content: flex-end;
     justify-content: space-between;
 }
 
 .navbar ul {
   display: flex;
   align-items: center;
+  height: 100%;
+}
+//
+.navbar ul .right {
+  // display: inline-block;
+  justify-content: flex-end;
+
+}
+
+.navbar li {
+  display: flex;
+  height: 58px;
+  text-align: center;
 }
 
 .navbar li a {
-  display: block;
+  display: flex;
   color: white;
   text-align: center;
-  text-decoration: none;
   height: 100%;
-  padding: 10px;
+  // margin: 0 10px;
+  padding: 20px 10px 0 10px;
+  justify-content: center;
 }
 
 #logo {
@@ -30,8 +45,6 @@
   font-size: 30px;
   text-decoration: none;
 }
-
-.navbar li {float: left;}
 
 
 .navbar li a:hover:not(.active) {background-color: #111;}
@@ -44,21 +57,27 @@
     .navbar li {float: none;}
 }
 
+.session-button {
+  display: flex;
+  flex-direction: row;
+  margin-right: 15px;
+}
+
 .footer {
-  position: fixed;
   display: flex;
   bottom: 0;
   justify-content: flex-end;
   background-color: #333333;
   height: 30px;
   width: 100%;
-  color: white;
   font-size: 25px;
 }
 
-
-.footer a {
+//
+.footer a .footer-text {
   padding: 0 10px;
+  color: white;
+  z-index: 1;
 }
 
 @media only screen and (max-width : 400px) {

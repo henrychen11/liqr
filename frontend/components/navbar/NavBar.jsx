@@ -28,8 +28,11 @@ export default ({ currentUser, logout }) => {
     <nav>
       <ul className="navbar">
         <li><Link to="/" id="logo">liqr</Link></li>
-        <li className="right"><Link to="/signup">Signup</Link></li>
-        <li className="right"><Link to="/login">Login</Link></li>
+        <div className="session-button">
+          <li className=""><Link to="/signup">Signup</Link></li>
+          <li className=""><Link to="/login">Login</Link></li>
+        </div>
+
       </ul>
     </nav>
 

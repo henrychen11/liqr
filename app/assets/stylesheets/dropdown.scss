@@ -1,6 +1,6 @@
 
 .dropdown-content {
-    // top: 7%;
+    top: 58px;
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -19,6 +19,7 @@
 
 .dropdown-content .text {
   color: black;
+  padding: 10px;
 }
 
 .dropdown-content .text:hover {

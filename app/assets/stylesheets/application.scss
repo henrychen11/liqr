@@ -15,14 +15,19 @@
   $quicksand: 'Quicksand', sans-serif;
   @import url('https://fonts.googleapis.com/css?family=Lobster');
   @import url('https://fonts.googleapis.com/css?family=Quicksand');
-  @import "font-awesome-sprockets";
-  @import "font-awesome";
-  @import "reset";
-  @import "session_form";
-  @import "nav_bar";
-  @import "splash";
-  @import "photos_show";
-  @import "photo_index";
-  @import "upload";
-  @import "albums";
-  @import "dropdown";
+  // @import "font-awesome-sprockets";
+  // @import "font-awesome";
+  // @import "reset";
+  // @import "session_form";
+  // @import "nav_bar";
+  // @import "splash";
+  // @import "photos_show";
+  // @import "photo_index";
+  // @import "upload";
+  // @import "albums";
+  // @import "dropdown";
+  // @import "album_form";
+
+
+  // Components
+  @import "./*";

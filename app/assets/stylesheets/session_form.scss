@@ -1,5 +1,5 @@
 main {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .background {
@@ -52,7 +52,7 @@ main {
   text-decoration: none;
 }
 
-button {
+.session-form button {
   font-family: 'Quicksand', sans-serif;
   background: #b8bec4;
   color: black;
