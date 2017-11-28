@@ -21,14 +21,10 @@ class Photo < ApplicationRecord
          foreign_key: :photo_id,
          class_name: 'Comment',
          dependent: :destroy
-end
 
-#
-# <Link key={id} to={`/albums/${id}`}>
-#   <div className="">
-#     <Image publicId={albums[id].album_cover_url} cloudName="shuttr" >
-#       <Transformation width="100" height="100" crop="thumb" />
-#     </Image>
-#     {albums[id].title}
-#   </div>
-# </Link>
+  # def self.top_five_results(query_params)
+  #   params = '%' + query_params + '%'
+  #   Photo.where('lower(title)' LIKE ? , params).limit(5)  
+  # end
+
+end

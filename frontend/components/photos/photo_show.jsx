@@ -17,12 +17,15 @@ class PhotoShow extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      photo: this.props.photo
     };
+    console.log("props", props);
     this.openModal = this.openModal.bind(this);
     // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   //
   componentWillMount(){
@@ -46,6 +49,20 @@ class PhotoShow extends React.Component {
     }
   }
 
+  handleSubmit(event){
+    event.preventDefault();
+    console.log(this.state);
+    this.props.editPhoto(this.state.photo.id)
+      .then( (response) => console.log(response));
+      // .then( (response) => this.props.history.push(`/photos/${response.payload.photo.id}`));
+  }
+
+  update(field){
+    return (event) => this.setState({
+      photo: Object.assign({}, this.state.photo, { [field]: event.target.value })
+    });
+  }
+
   openModal() {
     this.setState({modalIsOpen: true});
   }
@@ -61,9 +78,10 @@ class PhotoShow extends React.Component {
 
   render() {
     const { photo, albums, currentUser, userAlbums } = this.props;
-    console.log(this.props.userAlbums);
-    return (
 
+
+    return (
+      (!photo || !albums || !userAlbums) ? <div></div> :
       <div className="photo-show-container" >
         <div className="photo-show-image-container">
           <Image key={ photo.id } className="photo-show-image" publicId={ photo.img_url } cloudName="liquidpineapple" />
@@ -88,7 +106,7 @@ class PhotoShow extends React.Component {
             <br />
             <h1>Add to albums</h1>
             <ul>
-              { (userAlbums.length === 0) ? "" :
+              { (userAlbums.length === 0) ? <div></div> :
                 userAlbums.map(album => (
                   <li key={album.id}>{album.title}</li>
                 ))
@@ -113,19 +131,29 @@ class PhotoShow extends React.Component {
               style={customStyles}
               contentLabel="Edit Modal"
             >
-              <form>
-                <label>Picture Title:
-                  <input type="text" value={photo.title}></input>
-                </label>
+              <form className="modal-form" onSubmit={this.handleSubmit}>
+                <label className="modal-label">Picture Title:</label>
+                  <input
+                    className="modal-input"
+                    placeholder="Enter Title"
+                    type="text"
+                    onChange={this.update('title')}
+                    value={this.state.photo.title} />
+                <label className="modal-label">Picture Description:</label>
+                  <textarea
+                    className="modal-input"
+                    placeholder="Enter Description"
+                    value={this.state.photo.description}
+                    onChange={this.update('description')} />
+                <div className="modal-button-container">
+                  <input
+                    className="modal-button"
 
-                <label>Picture Description:
-                  <textarea type="text" value={photo.title}></textarea>
-                </label>
+                    type="submit"
+                    value="Save" />
+                  <button className="modal-button" onClick={this.closeModal}>Cancel</button>
+                </div>
               </form>
-              <div className="modal-button">
-                <button>Save</button>
-                <button onClick={this.closeModal}>Cancel</button>
-              </div>
             </Modal>
 
 

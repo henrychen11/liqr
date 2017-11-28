@@ -18,7 +18,7 @@
 }
 
 
-.photo-show-info buttonß:hover {
+.photo-show-info button:hover {
   background-color: gray;
 }
 
@@ -81,7 +81,44 @@
   margin: 10px auto;
 }
 
-.modal {
-  // display: flex;
-  // justify-content: flex-end;
+.modal-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-button {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  background: #b8bec4;
+  color: black;
+  height: 30px;
+  width: 40%;
+  font-size: 14px;
+  margin: 10px;
+}
+
+.modal-button:hover {
+  background-color: gray;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 500px;
+  min-height: 200px;
+}
+
+.modal-label {
+  margin: 10px;
+}
+
+.modal-input {
+  margin: 10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  min-height: 50px;
+  width: 80%;
 }
