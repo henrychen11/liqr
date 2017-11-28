@@ -16,8 +16,6 @@ class AlbumShow extends React.Component {
     }
   }
 
-
-
   render(){
     const {album, photos} = this.props;
 
@@ -30,13 +28,13 @@ class AlbumShow extends React.Component {
 
     if (!album) {
       return (
-        <h1> You currently have no albums </h1>
+        <h1 className="page-header"> You currently have no albums </h1>
       );
     } else if (photos.length === 0){
       return (
         <div>
-          <h1>This is the Album: {album.title}</h1>
-          <h2>You currently no pictures in this album</h2>
+          <h1 className="page-header">This is the Album: {album.title}</h1>
+          <h2 className="page-header">You currently no pictures in this album</h2>
           <button className="album-form-button"><a href="#/photos">Add Photos</a></button>
         </div>
       );
@@ -44,8 +42,8 @@ class AlbumShow extends React.Component {
 
       return (
         <div>
-          <h1>{album.title}</h1>
-        <div className="masonry">
+          <h1 className="page-header">{album.title}</h1>
+
           <Masonry
             className={'my-gallery-class'}
             elementType={'ul'}
@@ -60,7 +58,7 @@ class AlbumShow extends React.Component {
             ))}
           </Masonry>
         </div>
-      </div>
+
       );
     }
   }
