@@ -5,9 +5,10 @@ import { signup, login, logout } from './actions/session_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 import {fetchAlbum} from './util/album_api_util';
-import {requestAlbum} from './actions/album_actions';
+import {requestAlbum, createAlbum, updateAlbum} from './actions/album_actions';
 import {requestPhoto, requestUserPhotos} from './actions/photo_actions';
 import { fetchUserPhotos } from './util/photo_api_util';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -36,6 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchAlbum = fetchAlbum;
   window.requestUserPhotos = requestUserPhotos;
   window.fetchUserPhotos = fetchUserPhotos;
+  window.createAlbum = createAlbum;
+  window.updateAlbum = updateAlbum;
+  
+
   //
   ReactDOM.render(<Root store={store}/>, root);
 });

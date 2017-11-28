@@ -28,19 +28,15 @@ class AlbumForm extends React.Component {
 
   update(field){
     return (event) => this.setState({
-      [field]: event.currentTarget.value
+      album: Object.assign({}, this.state.album, {[field]: event.currentTarget.value})
     });
   }
 
   handleSubmit(event){
     event.preventDefault();
-    let album = Object.assign({},
-      this.state,
-      {[this.state.author_id]: this.props.curretUser.id},
-      {[this.state.author_username]: this.props.curretUser.username});
-
-    this.props.action(album)
-      .then( (response) => this.props.history.push(`/albums/${response.albums.album.id}`));
+    this.props.action(this.state.album)
+      // .then( response => console.log(response));
+      .then( (response) => this.props.history.push(`/albums/${response.album.album.id}`));
   }
   render(){
 
@@ -49,7 +45,9 @@ class AlbumForm extends React.Component {
       <div className="album-form-container">
         <div className="album-form">
 
-          <h1 className="album-form-header">Create a New Album</h1>
+          <h1 className="album-form-header">
+            { this.props.formType === "new" ? "Create new Album" : "Edit Album"}
+          </h1>
 
             <form onSubmit={this.handleSubmit}>
               <label>Title

@@ -25,6 +25,14 @@ class AlbumShow extends React.Component {
       return (
         <h1> You currently have no albums </h1>
       );
+    } else if (photos.length === 0){
+      return (
+        <div>
+          <h1>This is the Album: {album.title}</h1>
+          <h2>You currently no pictures in this album</h2>
+          <button className="album-form-button"><a href="#/photos">Add Photos</a></button>
+        </div>
+      );
     } else {
       return (
         <div>
