@@ -4,17 +4,23 @@ class Photo < ApplicationRecord
   belongs_to :author,
            primary_key: :id,
            foreign_key: :author_id,
-           class_name: :User
+           class_name: 'User'
 
   has_many :photo_albums,
            primary_key: :id,
            foreign_key: :photo_id,
-           class_name: :PhotoAlbum,
+           class_name: 'PhotoAlbum',
            dependent: :destroy
 
   has_many :albums,
           through: :photo_albums,
           source: :album
+
+  has_many :comments,
+         primary_key: :id,
+         foreign_key: :photo_id,
+         class_name: 'Comment',
+         dependent: :destroy
 end
 
 #
