@@ -4,12 +4,13 @@ import { selectAllPhotos } from  '../../reducers/selectors';
 import { requestPhoto, editPhoto, destroyPhoto, requestAllPhotos } from '../../actions/photo_actions';
 import { requestAlbums } from '../../actions/album_actions';
 import { withRouter } from 'react-router-dom';
+import { values } from 'lodash';
 
 const mapStateToProps = (state, ownProps) => {
   // debugger
   return {
     photo: state.entities.photos,
-    userAlbums: state.entities.albums,
+    userAlbums: values(state.entities.albums),
     albums: state.entities.photos.albums,
     currentUser: state.session.currentUser,
     photoId: ownProps.match.params.photoId

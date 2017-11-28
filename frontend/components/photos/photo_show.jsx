@@ -3,6 +3,7 @@ import { Image, Transformation } from 'cloudinary-react';
 class PhotoShow extends React.Component {
   constructor(props){
     super(props);
+    this.handleDelete = this.handleDelete.bind(this);
   }
   //
   componentWillMount(){
@@ -17,6 +18,18 @@ class PhotoShow extends React.Component {
     this.props.requestAlbums(this.props.currentUser.id);
     }
   }
+
+  handleDelete(event){
+    event.preventDefault();
+    if(confirm("Are you sure you want to delete this picture?")){
+      this.props.destroyPhoto(this.props.photo.id)
+        .then( () => this.props.history.push('/photos') );
+
+    }
+
+  }
+
+
   render() {
     const { photo, albums, currentUser, userAlbums } = this.props;
     console.log(this.props.userAlbums);
@@ -46,14 +59,14 @@ class PhotoShow extends React.Component {
             <br />
             <h1>Add to albums</h1>
             <ul>
-              { (this.props.userAlbums.length === 0) ? "" :
-                this.props.userAlbums.map( album => (
-                  <li>{album.title}</li>
-                )
-              )}
+              { (userAlbums.length === 0) ? "" :
+                userAlbums.map(album => (
+                  <li key={album.id}>{album.title}</li>
+                ))
+              }
             </ul>
             <br/>
-            <h1>Tags</h1>
+            <h1 className="photo-info-header">Tags</h1>
             <h2>Tag 1</h2>
             <h2>Tag 2</h2>
             <h2>Tag 3</h2>
@@ -62,13 +75,17 @@ class PhotoShow extends React.Component {
 
         <div className="photo-show-info-right">
           <div className="photo-show-info">
-            <h1>Comments</h1>
+            <button>Edit Picture</button>
+            <button onClick={this.handleDelete}>Delete Picture</button>
+            <h1 className="photo-info-header">Comments</h1>
             <h2>Comment 1</h2>
             <h2>Comment 2</h2>
             <h2>Comment 3</h2>
             <br/>
-            <h1>Add a comment:</h1>
+            <h1 className="photo-info-header">Add a comment:</h1>
             <textarea />
+            <button>Add Comment</button>
+
           </div>
         </div>
       </div>
@@ -80,5 +97,3 @@ class PhotoShow extends React.Component {
 }
 
 export default PhotoShow;
-
-//
