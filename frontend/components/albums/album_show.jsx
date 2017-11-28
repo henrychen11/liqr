@@ -37,12 +37,16 @@ class AlbumShow extends React.Component {
       return (
         <div>
           <h1>This is the Album: {album.title}</h1>
-          {
-            photos.map( (photo) => (
-            <Link key={photo.id} to={`/photos/${photo.id}`}>
-              <Image className="photo" key={photo.id} publicId={photo.img_url} cloudName="liquidpineapple" />
-            </Link>
-          ))}
+          <div className="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+            {
+              photos.map( (photo) => (
+                <div key={photo.id} className="grid-item">
+                  <Link to={`/photos/${photo.id}`}>
+                    <Image className="photo" key={photo.id} publicId={photo.img_url} cloudName="liquidpineapple" />
+                  </Link>
+                </div>
+              ))}
+          </div>
         </div>
 
       );
