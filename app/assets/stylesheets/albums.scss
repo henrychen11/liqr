@@ -1,3 +1,4 @@
+
 .album-header {
   font-family: 'Lobster', sans-serif;
   padding-left: 20px;
@@ -49,4 +50,27 @@ transition: opacity .3s ease-in-out;
 }
 .album-image-container:hover .album-caption-text {
 opacity: 1;
+}
+// MASONRY OPTIONS
+.masonry{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.my-gallery-class {
+
+}
+
+
+.image-element-class {
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  padding: 2px;
+  // margin: 20px;
+  // border: 1px solid black;
 }

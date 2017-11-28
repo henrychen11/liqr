@@ -53,9 +53,11 @@ class Upload extends React.Component {
       if (response.body.secure_url !== '') {
         // console.log("before", this.state, this.props);
         this.setState({
-          photo: { img_url: /liquidpineapple.*/.exec(response.body.secure_url)[0] }        });
+          photo: { img_url: /liquidpineapple.*/.exec(response.body.secure_url)[0] }
+
+        }, () => console.log(this.state));
       }
-      // console.log("after", this.state, this.props);
+      console.log("after", response);
     });
   }
   // This is the standard submit data actions:
@@ -79,7 +81,8 @@ class Upload extends React.Component {
 
 
   render() {
-    const { photo, formType } = this.props;
+    const { formType } = this.props;
+    const { photo } = this.state;
 
     if (formType === 'new' && photo.img_url === ""){
         return (
@@ -97,7 +100,7 @@ class Upload extends React.Component {
           <div className="">
           { this.state.photo.img_url === '' ? null :
             <div className="">
-              <Image publicId={this.state.photo.img_url} cloudName="liquidpineapple" >
+              <Image publicId={photo.img_url} cloudName="liquidpineapple" >
                 <Transformation height="500" crop="scale" />
               </Image>
             </div>

@@ -12,7 +12,6 @@ import { fetchUserPhotos } from './util/photo_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-
   let store;
   if (window.currentUser) {
     const preloadedState = {
@@ -39,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchUserPhotos = fetchUserPhotos;
   window.createAlbum = createAlbum;
   window.updateAlbum = updateAlbum;
-  
+
 
   //
   ReactDOM.render(<Root store={store}/>, root);

@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import PhotoForm from './photo_form';
 import { createPhoto, editPhoto, requestPhoto } from '../../actions/photo_actions';
 
+
 const mapStateToProps = (state, ownProps) => {
   let photo = { title: '', description: '', img_url: ''};
   let formType = 'new';

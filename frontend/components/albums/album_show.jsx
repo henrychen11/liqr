@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image } from 'cloudinary-react';
 import { Link } from 'react-router-dom';
+import Masonry from 'react-masonry-component';
 
 class AlbumShow extends React.Component {
 
@@ -19,7 +20,13 @@ class AlbumShow extends React.Component {
 
   render(){
     const {album, photos} = this.props;
-    // console.log(photos);
+
+    const masonryOptions = {
+      // fitWidth: true,
+      // stagger: 100,
+      // gutter: 3,
+      transitionDuration: '0.3s' };
+
 
     if (!album) {
       return (
@@ -34,21 +41,26 @@ class AlbumShow extends React.Component {
         </div>
       );
     } else {
+
       return (
         <div>
-          <h1>This is the Album: {album.title}</h1>
-          <div className="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
-            {
-              photos.map( (photo) => (
-                <div key={photo.id} className="grid-item">
-                  <Link to={`/photos/${photo.id}`}>
-                    <Image className="photo" key={photo.id} publicId={photo.img_url} cloudName="liquidpineapple" />
-                  </Link>
-                </div>
-              ))}
-          </div>
+          <h1>{album.title}</h1>
+        <div className="masonry">
+          <Masonry
+            className={'my-gallery-class'}
+            elementType={'ul'}
+            options={masonryOptions}
+            disableImagesLoaded={false}
+            updateOnEachImageLoad={false}
+            >
+            {photos.map( (photo) => (
+              <Link to={`/photos/${photo.id}`}>
+                <Image className="image-element-class" key={photo.id} publicId={photo.img_url} cloudName="liquidpineapple" />
+              </Link>
+            ))}
+          </Masonry>
         </div>
-
+      </div>
       );
     }
   }
