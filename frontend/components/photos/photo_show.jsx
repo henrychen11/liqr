@@ -9,7 +9,7 @@ const customStyles = {
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
     }
 };
 
@@ -111,12 +111,16 @@ class PhotoShow extends React.Component {
               onAfterOpen={this.afterOpenModal}
               onRequestClose={this.closeModal}
               style={customStyles}
-              contentLabel="Example Modal"
+              contentLabel="Edit Modal"
             >
-              <button className="modal-close-button" onClick={this.closeModal}>close</button>
               <form>
-                <label>Picture Title:</label>
-                <label>Picture Description:</label>
+                <label>Picture Title:
+                  <input type="text" value={photo.title}></input>
+                </label>
+
+                <label>Picture Description:
+                  <textarea type="text" value={photo.title}></textarea>
+                </label>
               </form>
               <div className="modal-button">
                 <button>Save</button>
