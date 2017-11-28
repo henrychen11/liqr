@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, Transformation } from 'cloudinary-react';
 import Modal from 'react-modal';
+import CommentForm from '../comments/comment_form_container';
 
 const customStyles = {
   content : {
@@ -156,17 +157,12 @@ class PhotoShow extends React.Component {
               </form>
             </Modal>
 
-
-
             <button onClick={this.handleDelete}>Delete Picture</button>
             <h1 className="photo-info-header">Comments</h1>
-            <h2 className="photo-comment-item">Comment 1</h2>
-            <h2 className="photo-comment-item">Comment 2</h2>
-            <h2 className="photo-comment-item">Comment 3</h2>
+
+            <CommentForm className="photo-comment-item" photo={photo} />
 
 
-            <textarea className="photo-comment-new" />
-            <button>Add Comment</button>
 
           </div>
         </div>

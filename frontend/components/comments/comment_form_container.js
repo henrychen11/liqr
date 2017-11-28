@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import {requestPhotoComments, createComment, editComment, destroyComment } from '../../actions/comment_actions';
 import CommentForm from './comment_form';
+import { values } from 'lodash';
 
 const mapStateToProps = (state) => ({
-  comments: state.entities.comments
+  comments: values(state.entities.comments)
 });
 
 const mapDispatchToProps = (dispatch) => ({
