@@ -35,10 +35,11 @@ class PhotoShow extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-  if (this.props.match.params.photoId !== newProps.match.params.photoId) {
-    this.props.requestPhoto(newProps.match.params.photoId);
-    this.props.requestAlbums(this.props.currentUser.id);
-    }
+    if (this.props.match.params.photoId !== newProps.match.params.photoId) {
+      this.props.requestPhoto(newProps.match.params.photoId);
+      this.props.requestAlbums(this.props.currentUser.id);
+      }
+      this.setState({photo: newProps.photo});
   }
 
   handleDelete(event){
@@ -51,10 +52,9 @@ class PhotoShow extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-    console.log(this.state);
-    this.props.editPhoto(this.state.photo.id)
-      .then( (response) => console.log(response));
-      // .then( (response) => this.props.history.push(`/photos/${response.payload.photo.id}`));
+    console.log(this.state.photo.id);
+    this.props.editPhoto(this.state.photo)
+      .then( () => this.closeModal());
   }
 
   update(field){
