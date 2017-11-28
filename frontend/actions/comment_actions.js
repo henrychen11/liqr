@@ -35,6 +35,6 @@ export const editComment = comment => dispatch => (
   CommentAPIUtil.patchComment(comment).then(newComment => dispatch(receiveComment(newComment)))
 );
 
-export const destroyComment = commentId => dispatch => (
+export const deleteComment = commentId => dispatch => (
   CommentAPIUtil.deleteComment(commentId).then(comment => dispatch(removeComment(comment)))
 );

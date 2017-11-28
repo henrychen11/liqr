@@ -34,15 +34,22 @@ class CommentForm extends React.Component {
           <div key={comment.id}>
             <div>{comment.body}
               { (comment.author_id !== currentUser.id) ? <div></div> :
-                <span>
-                  <i class="fa fa-trash-o" aria-hidden="true"></i>
-                </span>
+                <button onClick={this.props.destroyComment(comment.id)}>
+                  <i className="fa fa-trash-o" aria-hidden="true"></i>
+                </button>
               }
           </div>
+          <div>Posted By: {comment.author_username}</div>
 
           </div>
         )
       }
+      <form onSubmit={this.handleSubmit}>
+        <textarea className="photo-comment-new"
+          onChange={this.update('body')}
+          placeholder="Enter Comment" />
+
+      </form>
 
       </div>
     );
@@ -52,9 +59,4 @@ class CommentForm extends React.Component {
 export default CommentForm;
 
 
-// <form onSubmit={this.handleSubmit}>
-//   <textarea className="photo-comment-new"
-//     onChange={this.update('body')}
-//     placeholder="Enter Comment" />
-//   <input className="modal-button" type="submit">Add Comment</input>
-// </form>
+        // <input className="modal-button" type="submit">Add Comment</input>
