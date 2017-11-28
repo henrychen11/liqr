@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch) => ({
   requestPhotoComments: (photoId) => dispatch(requestPhotoComments(photoId)),
   createComment: (comment) => dispatch(createComment(comment)),
   editComment: (comment) => dispatch(editComment(comment)),
-  deleteComment: (commentId) => dispatch(destroyComment(commentId))
+  deleteComment: (commentId) => dispatch(deleteComment(commentId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentForm);
