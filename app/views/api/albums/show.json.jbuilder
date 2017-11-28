@@ -7,6 +7,7 @@ end
 # This is for the show page under each album
 json.photos do
   json.array! @album.photos do |photo|
-    json.extract! photo, :id, :img_url
+    json.extract! photo, :id, :img_url, :title
+    json.author photo.author.username
   end
 end

@@ -7,19 +7,19 @@ class PhotoShow extends React.Component {
   //
   componentWillMount(){
     this.props.requestPhoto(this.props.photoId);
-    // this.props.requestAlbums(this.props.currentUser.id);
+    this.props.requestAlbums(this.props.currentUser.id);
     // debugger
   }
 
   componentWillReceiveProps(newProps) {
   if (this.props.match.params.photoId !== newProps.match.params.photoId) {
     this.props.requestPhoto(newProps.match.params.photoId);
-    // this.props.requestAlbums(this.props.currentUser.id);
+    this.props.requestAlbums(this.props.currentUser.id);
     }
   }
   render() {
-    const { photo, albums, currentUser } = this.props;
-    console.log(this.props.albums);
+    const { photo, albums, currentUser, userAlbums } = this.props;
+    console.log(this.props.userAlbums);
     return (
 
       <div className="photo-show-container" >
@@ -43,6 +43,15 @@ class PhotoShow extends React.Component {
                 )}
                 </div>
               }
+            <br />
+            <h1>Add to albums</h1>
+            <ul>
+              { (this.props.userAlbums.length === 0) ? "" :
+                this.props.userAlbums.map( album => (
+                  <li>{album.title}</li>
+                )
+              )}
+            </ul>
             <br/>
             <h1>Tags</h1>
             <h2>Tag 1</h2>
@@ -71,3 +80,5 @@ class PhotoShow extends React.Component {
 }
 
 export default PhotoShow;
+
+//

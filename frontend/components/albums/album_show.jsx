@@ -18,7 +18,6 @@ class AlbumShow extends React.Component {
 
   render(){
     const {album, photos} = this.props;
-
     const masonryOptions = {
       // fitWidth: true,
       // stagger: 100,
@@ -34,14 +33,17 @@ class AlbumShow extends React.Component {
       return (
         <div>
           <h1 className="page-header">This is the Album: {album.title}</h1>
-          <h2 className="page-header">You currently no pictures in this album</h2>
-          <button className="album-form-button"><a href="#/photos">Add Photos</a></button>
+          <h1 className="page-header">You currently no pictures in this album</h1>
+
+            <button className="album-form-button"><a href="#/home">Add Photos</a></button>
+
         </div>
       );
     } else {
 
       return (
         <div>
+
           <h1 className="page-header">{album.title}</h1>
 
           <Masonry
@@ -52,9 +54,16 @@ class AlbumShow extends React.Component {
             updateOnEachImageLoad={false}
             >
             {photos.map( (photo) => (
-              <Link to={`/photos/${photo.id}`}>
-                <Image className="image-element-class" key={photo.id} publicId={photo.img_url} cloudName="liquidpineapple" />
-              </Link>
+              <div  key={photo.id} className="image-element-class">
+                {console.log(photo)}
+                <Link to={`/photos/${photo.id}`}>
+                  <Image publicId={photo.img_url} cloudName="liquidpineapple" />
+                </Link>
+                <div className="photo-caption-text">
+                  <p>{photo.title}</p>
+                  <p>By: {photo.author}</p>
+                </div>
+              </div>
             ))}
           </Masonry>
         </div>

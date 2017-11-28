@@ -6,13 +6,13 @@ import { requestAlbums } from '../../actions/album_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger;
+  // debugger
   return {
     photo: state.entities.photos,
+    userAlbums: state.entities.albums,
     albums: state.entities.photos.albums,
     currentUser: state.session.currentUser,
     photoId: ownProps.match.params.photoId
-
   };
 };
 
