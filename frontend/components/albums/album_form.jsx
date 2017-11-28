@@ -18,9 +18,6 @@ class AlbumForm extends React.Component {
     });
   }
 
-
-
-
   cancelForm(event) {
     event.preventDefault();
     this.props.history.goBack();

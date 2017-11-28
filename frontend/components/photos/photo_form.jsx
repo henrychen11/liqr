@@ -11,7 +11,7 @@ class Upload extends React.Component {
     super(props);
 
     this.state = {
-      uploadedFileCloudinaryUrl: '',
+      uploadedFile: null,
       photo: props.photo
     };
 
@@ -49,12 +49,13 @@ class Upload extends React.Component {
       if (err) {
         console.error(err);
       }
-
+      // console.log(response);
       if (response.body.secure_url !== '') {
+        // console.log("before", this.state, this.props);
         this.setState({
-          uploadedFileCloudinaryUrl: response.body.secure_url
-        });
+          photo: { img_url: /liquidpineapple.*/.exec(response.body.secure_url)[0] }        });
       }
+      // console.log("after", this.state, this.props);
     });
   }
   // This is the standard submit data actions:
@@ -67,64 +68,69 @@ class Upload extends React.Component {
   handleSubmit(event){
     event.preventDefault();
     this.props.action(this.state.photo)
-      .then( (response) => this.props.history.push(`/photos/${response.payload.photo.id}`));
+      .then( (response) => console.log(response));
+      // .then( (response) => this.props.history.push(`/photos/${response.payload.photo.id}`));
   }
 
-cancelForm(event) {
-  event.preventDefault();
-  this.props.history.goBack();
-}
+  cancelForm(event) {
+    event.preventDefault();
+    this.props.history.goBack();
+  }
+
+
   render() {
+    const { photo, formType } = this.props;
+
+    if (formType === 'new' && photo.img_url === ""){
         return (
           <div className="upload">
             <Dropzone
               multiple={false}
               accept="image/*"
-              onDrop={this.onImageDrop.bind(this)}>
+              onDrop={this.onImageDrop}>
               <p className="drop-text">Drop an image or click to select a file to upload.</p>
             </Dropzone>
           </div>
         );
+      } else {
+        return (
+          <div className="">
+          { this.state.photo.img_url === '' ? null :
+            <div className="">
+              <Image publicId={this.state.photo.img_url} cloudName="liquidpineapple" >
+                <Transformation height="500" crop="scale" />
+              </Image>
+            </div>
+          }
+        <div className="">
+          <form className="" onSubmit={this.handleSubmit}>
+            <input type=""
+              onChange={this.update("title")}
+              placeholder="Title"
+              value={photo.title}
+            />
+            <br />
+            <textarea
+              onChange={this.update("description")}
+              placeholder="Description"
+              value={photo.description}
+            />
+            <br />
+
+            <div className="form-buttons">
+              <input
+                type="submit"
+                value={formType === 'new' ? "Upload" : "Edit" }
+              />
+            <button className="" onClick={this.cancelForm}>Cancel</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+      );
       }
+    }
 }
-  // if (this.props.formType === 'new'){
-// else {
-//   return (
-//     <div className="">
-//     { this.state.photo.img_url === '' ? null :
-//       <div className="">
-//         <Image publicId={this.state.photo.img_url} cloudName="liquidpineapple" >
-//           <Transformation height="400" crop="scale" />
-//         </Image>
-//       </div>
-//     }
-//   <div className="">
-//     <form className="" onSubmit={this.handleSubmit}>
-//       <input type=""
-//         onChange={this.update("title")}
-//         placeholder="Title"
-//         value={this.state.photo.title}
-//       />
-//       <br />
-//       <textarea
-//         onChange={this.update("description")}
-//         placeholder="Description"
-//         value={this.state.photo.description}
-//       />
-//       <br />
-//
-//       <div className="form-buttons">
-//         <input
-//           type="submit"
-//           value={this.props.formType === 'new' ? "Upload" : "Edit" }
-//         />
-//       <button className="" onClick={this.cancelForm}>Cancel</button>
-//       </div>
-//     </form>
-//
-//   </div>
-// </div>
-// );
-// }
 
 export default Upload;

@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   let action = (ownProps.location.pathname.includes('edit')) ? updateAlbum : createAlbum;
 
   return {
-    action: (album) => dispatch(createAlbum(album)),
+    action: (album) => dispatch(action(album)),
     requestAlbum: (albumId) => dispatch(requestAlbum(albumId))
   };
 };
