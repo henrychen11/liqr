@@ -9,6 +9,7 @@ import {requestAlbum, createAlbum, updateAlbum} from './actions/album_actions';
 import {requestPhoto, requestUserPhotos} from './actions/photo_actions';
 import { fetchUserPhotos } from './util/photo_api_util';
 
+import { requestPhotoComments, requestComment, createComment, destroyComment } from './actions/comment_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -38,6 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchUserPhotos = fetchUserPhotos;
   window.createAlbum = createAlbum;
   window.updateAlbum = updateAlbum;
+
+  window.requestPhotoComments = requestPhotoComments;
+  window.requestComment = requestComment;
+  window.createComment = createComment;
+  window.destroyComment = destroyComment;
 
 
   //
