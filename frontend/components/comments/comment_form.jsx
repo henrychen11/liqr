@@ -24,7 +24,7 @@ class CommentForm extends React.Component {
   }
 
   render(){
-    const { comments } = this.props;
+    const { comments, currentUser } = this.props;
 
     return (
       <div className="comment-container">
@@ -32,10 +32,14 @@ class CommentForm extends React.Component {
         (!comments) ? <div></div> :
           comments.map( (comment) =>
           <div key={comment.id}>
-            <div>{comment.body}</div>
-            <div>
-              <i class="fa fa-trash-o" aria-hidden="true">Delete</i>
-            </div>
+            <div>{comment.body}
+              { (comment.author_id !== currentUser.id) ? <div></div> :
+                <span>
+                  <i class="fa fa-trash-o" aria-hidden="true"></i>
+                </span>
+              }
+          </div>
+
           </div>
         )
       }

@@ -71,9 +71,9 @@ PhotoAlbum.create(album_id: album4.id, photo_id: photo16.id)
 
 # Comments
 
-Comment.create(body: "This is a very good comment", photo_id: photo1.id, author_id: user1.id )
-Comment.create(body: "This is a very good comment", photo_id: photo1.id, author_id: user1.id )
-Comment.create(body: "This is a very good comment", photo_id: photo1.id, author_id: user1.id )
+Comment.create(body: "This is a very good comment from user1", photo_id: photo1.id, author_id: user1.id )
+Comment.create(body: "This is a very good comment from user1", photo_id: photo1.id, author_id: user1.id )
+Comment.create(body: "This is a very good comment from user2", photo_id: photo1.id, author_id: user2.id )
 Comment.create(body: "This is a very good comment", photo_id: photo2.id, author_id: user2.id )
 Comment.create(body: "This is a very good comment", photo_id: photo2.id, author_id: user2.id )
 Comment.create(body: "This is a very good comment", photo_id: photo2.id, author_id: user2.id )
