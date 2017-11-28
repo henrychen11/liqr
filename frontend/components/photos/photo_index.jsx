@@ -8,9 +8,6 @@ class PhotoIndex extends React.Component {
     this.props.requestAllPhotos();
   }
 
-  componentDidMount(){
-    this.props.requestAllPhotos();
-  }
 
   render() {
 

@@ -6,7 +6,7 @@
   flex-direction: column;
 }
 
-.photo-show-info button {
+.photo-show-container button {
   font-family: 'Quicksand', sans-serif;
   text-align: center;
   background: #b8bec4;
@@ -16,6 +16,7 @@
   font-size: 14px;
   margin: 10px;
 }
+
 
 .photo-show-info buttonß:hover {
   background-color: gray;
@@ -46,6 +47,7 @@
 
 .photo-info-header {
   font-size: 20px;
+  margin: 15px;
 }
 
 .photo-show-info-left {
@@ -60,4 +62,24 @@
   height: 100%;
   width: 45%;
   margin: 10px;
+}
+
+.photo-comment-item {
+  border: 1px solid gray;
+  width: 80%;
+  min-height: 50px;
+  border-radius: 3px;
+  margin: 10px auto;
+
+}
+
+.photo-comment-new {
+  border: 1px solid gray;
+  width: 100%;
+  min-height: 50px;
+  border-radius: 3px;
+  margin: 10px auto;
+}
+.modal-close-button {
+  float: right;
 }

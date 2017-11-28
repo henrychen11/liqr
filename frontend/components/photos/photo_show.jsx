@@ -1,8 +1,27 @@
 import React from 'react';
 import { Image, Transformation } from 'cloudinary-react';
+import Modal from 'react-modal';
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+    }
+};
+
 class PhotoShow extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      modalIsOpen: false
+    };
+    this.openModal = this.openModal.bind(this);
+    // this.afterOpenModal = this.afterOpenModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
   //
@@ -22,13 +41,23 @@ class PhotoShow extends React.Component {
   handleDelete(event){
     event.preventDefault();
     if(confirm("Are you sure you want to delete this picture?")){
-      this.props.destroyPhoto(this.props.photo.id)
-        .then( () => this.props.history.push('/photos') );
-
+      this.props.destroyPhoto(this.props.photoId)
+        .then( () => this.props.history.push('/home'));
     }
-
   }
 
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  // afterOpenModal() {
+  //   // references are now sync'd and can be accessed.
+  //   this.subtitle.style.color = '#f00';
+  // }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
 
   render() {
     const { photo, albums, currentUser, userAlbums } = this.props;
@@ -49,12 +78,12 @@ class PhotoShow extends React.Component {
             <br/>
             <h1>Currently in the following albums:</h1>
               { (albums === undefined ) ? "" :
-                <div>
+                <ul>
                   { albums.map(album => (
-                    album.title
+                    <li key={album.id}>{album.title}</li>
                   )
                 )}
-                </div>
+              </ul>
               }
             <br />
             <h1>Add to albums</h1>
@@ -70,24 +99,49 @@ class PhotoShow extends React.Component {
             <h2>Tag 1</h2>
             <h2>Tag 2</h2>
             <h2>Tag 3</h2>
+            <button>Add Tag</button>
           </div>
         </div>
 
         <div className="photo-show-info-right">
           <div className="photo-show-info">
-            <button>Edit Picture</button>
+            <button onClick={this.openModal}>Edit Picture</button>
+            <Modal
+              isOpen={this.state.modalIsOpen}
+              onAfterOpen={this.afterOpenModal}
+              onRequestClose={this.closeModal}
+              style={customStyles}
+              contentLabel="Example Modal"
+            >
+              <button className="modal-close-button" onClick={this.closeModal}>close</button>
+              <form>
+                <label>Picture Title:</label>
+                <label>Picture Description:</label>
+              </form>
+              <div className="modal-button">
+                <button>Save</button>
+                <button onClick={this.closeModal}>Cancel</button>
+              </div>
+            </Modal>
+
+
+
             <button onClick={this.handleDelete}>Delete Picture</button>
             <h1 className="photo-info-header">Comments</h1>
-            <h2>Comment 1</h2>
-            <h2>Comment 2</h2>
-            <h2>Comment 3</h2>
-            <br/>
-            <h1 className="photo-info-header">Add a comment:</h1>
-            <textarea />
+            <h2 className="photo-comment-item">Comment 1</h2>
+            <h2 className="photo-comment-item">Comment 2</h2>
+            <h2 className="photo-comment-item">Comment 3</h2>
+
+
+            <textarea className="photo-comment-new" />
             <button>Add Comment</button>
 
           </div>
         </div>
+      </div>
+
+      <div>
+
       </div>
 
       </div>

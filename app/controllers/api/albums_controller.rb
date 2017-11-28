@@ -9,7 +9,6 @@ class Api::AlbumsController < ApplicationController
   end
 
   def create
-
     @album = current_user.albums.new(album_params)
 
     if @album.save

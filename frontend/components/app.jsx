@@ -18,20 +18,20 @@ const App = () => (
 
     <main>
       <NavBarContainer />
-      <Route exact path="/" component={WelcomeContainer} />
+
       <Switch>
-        <ProtectedRoute exact path="/photos/new" component={PhotoFormContainer} />
-        <ProtectedRoute exact path="/albums/new" component={AlbumFormContainer} />
         <AuthRoute exact path="/login" component={SessionFormContainer} />
         <AuthRoute exact path="/signup" component={SessionFormContainer} />
+        <ProtectedRoute exact path="/photos/new" component={PhotoFormContainer} />
+        <ProtectedRoute exact path="/albums/new" component={AlbumFormContainer} />
         <ProtectedRoute exact path="/photos/:photoId" component={PhotoShowContainer} />
         <ProtectedRoute exact path="/albums/:albumId" component={AlbumShowContainer} />
+        <ProtectedRoute exact path="/photos/:photoId/edit" component={PhotoFormContainer} />
+        <ProtectedRoute exact path="/albums/:albumId/edit" component={AlbumFormContainer} />
         <ProtectedRoute exact path="/explore" component={PhotoIndexContainer} />
         <ProtectedRoute exact path="/home" component={PhotoUserContainer} />
-        <ProtectedRoute exact path="/photos" component={PhotoIndexContainer} />
+        <ProtectedRoute exact path="/albums" component={AlbumIndexContainer} />
 
-
-        <ProtectedRoute path="/albums" component={AlbumIndexContainer} />
       </Switch>
     </main>
       <Footer className="footer"/>

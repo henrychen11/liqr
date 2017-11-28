@@ -12,7 +12,7 @@ class AlbumShow extends React.Component {
 
   componentWillReceiveProps(newProps){
     if (this.props.albumId !== newProps.match.params.albumId) {
-      this.props.requestAlbum(newProps.match.params.albumId);
+      this.props.requestAlbum(this.props.albumId);
     }
   }
 
@@ -24,7 +24,7 @@ class AlbumShow extends React.Component {
       // gutter: 3,
       transitionDuration: '0.3s' };
 
-
+    console.log(photos);
     if (!album) {
       return (
         <h1 className="page-header"> You currently have no albums </h1>
@@ -55,7 +55,7 @@ class AlbumShow extends React.Component {
             >
             {photos.map( (photo) => (
               <div  key={photo.id} className="image-element-class">
-                {console.log(photo)}
+
                 <Link to={`/photos/${photo.id}`}>
                   <Image publicId={photo.img_url} cloudName="liquidpineapple" />
                 </Link>

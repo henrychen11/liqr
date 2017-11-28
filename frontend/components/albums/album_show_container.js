@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  requestAlbum: (albumId) => dispatch(requestAlbum(albumId))
+  requestAlbum: (userId) => dispatch(requestAlbum(userId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlbumShow);
