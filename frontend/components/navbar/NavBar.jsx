@@ -17,7 +17,7 @@ export default ({ currentUser, logout }) => {
           <a>Welcome: {currentUser.username}</a>
           <div className="dropdown-content">
             <a className="text" onClick={logout}>Logout</a>
-            <a className="text" href="#/photos/new">Upload Photo <i className="fa fa-upload" aria-hidden="true"></i></a>
+            <a className="text" href="#/photos/new">Upload Photo</a>
             <a className="text" href="#/albums/new">Create New Album</a>
 
           </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import WelcomeContainer from './welcome/welcome_container';
 import NavBarContainer from './navbar/NavBarContainer';
 import { Route, Switch } from 'react-router-dom';
-import SessionFormContainer from './SessionFormContainer';
+import SessionFormContainer from './session/SessionFormContainer';
 import PhotoIndexContainer from './photos/photo_index_container';
 import AlbumIndexContainer from './albums/album_container';
 import PhotoShowContainer from './photos/photo_show_container';
