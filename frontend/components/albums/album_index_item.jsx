@@ -5,14 +5,19 @@ import { Image } from 'cloudinary-react';
 class AlbumIndexItem extends React.Component{
 
   render(){
+      console.log(this.props.album.album_cover_url);
+
       return (
         <div className="album-image-container">
-            <Image className="image-element-class-album" publicId={this.props.album.album_cover_url} cloudName="liquidpineapple" />
-          <div className="album-caption-text">
-                <p className="custom-album-text">{this.props.album.title}</p>
-                <p className="custom-album-text">{this.props.album.description}</p>
-          </div>
-        </div>
+          {
+            (this.props.album.album_cover_url === null) ? <img className="image-element-class-album" src="https://images.unsplash.com/photo-1493156624194-053884f699d4?auto=format&fit=crop&w=1500&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" /> :
+              <Image className="image-element-class-album" publicId={this.props.album.album_cover_url} cloudName="liquidpineapple" />
+          }
+      <div className="album-caption-text">
+        <p className="custom-album-text">{this.props.album.title}</p>
+        <p className="custom-album-text">{this.props.album.description}</p>
+      </div>
+    </div>
       );
   }
 }

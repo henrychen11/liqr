@@ -34,7 +34,7 @@ class CommentForm extends React.Component {
 
   render(){
     const { comments, currentUser } = this.props;
-
+    console.log(this.props.comments);
     return (
       <div className="comment-container">
       {

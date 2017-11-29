@@ -11,7 +11,7 @@ import { fetchUserPhotos } from './util/photo_api_util';
 
 import { requestPhotoComments, requestComment, createComment, destroyComment } from './actions/comment_actions';
 
-// import { requestPhotoComments, requestComment, createComment, destroyComment } from './util/comment_api_util';
+// import { getPhotoComments, requestComment, createComment, destroyComment } from './util/comment_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.updateAlbum = updateAlbum;
 
   window.requestPhotoComments = requestPhotoComments;
+  // window.getPhotoComments = getPhotoComments;
   window.requestComment = requestComment;
   window.createComment = createComment;
   window.destroyComment = destroyComment;

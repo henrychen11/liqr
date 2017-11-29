@@ -33,7 +33,7 @@ class AlbumForm extends React.Component {
     event.preventDefault();
     this.props.action(this.state.album)
       // .then( response => console.log(response));
-      .then( (response) => this.props.history.push(`/albums/${response.album.album.id}`));
+      .then( (response) => this.props.history.push(`/albums/${response.payload.album.id}`));
   }
   render(){
 

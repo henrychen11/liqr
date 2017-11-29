@@ -6,6 +6,7 @@ export const getComment = (commentId) => (
 
 export const getPhotoComments = (photoId) => (
   $.ajax({
+    method: 'GET',
     url: `api/photos/${photoId}/comments`
   })
 );

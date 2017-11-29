@@ -46,6 +46,12 @@ class Api::PhotosController < ApplicationController
     render :show
   end
 
+  def update_photo_album
+    @photo = current_user.photos.find_by(id: params[:id])
+    @photo.album_ids = params[:albums]
+    render :show
+  end
+
   private
 
   def photo_params

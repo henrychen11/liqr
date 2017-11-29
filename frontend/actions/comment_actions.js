@@ -19,7 +19,7 @@ export const removeComment = (comment) => ({
   comment
 });
 
-export const requestPhotoComments = photoId => dispatch => (
+export const requestPhotoComments = (photoId) => dispatch => (
   CommentAPIUtil.getPhotoComments(photoId).then(comments => dispatch(receiveComments(comments)))
 );
 
