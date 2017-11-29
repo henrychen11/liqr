@@ -2,6 +2,7 @@ import React from 'react';
 import { Image, Transformation } from 'cloudinary-react';
 import Modal from 'react-modal';
 import CommentForm from '../comments/comment_form_container';
+import AddToAlbum from './add_to_album';
 
 const customStyles = {
   content : {
@@ -101,12 +102,12 @@ class PhotoShow extends React.Component {
 
               { (currentUser === undefined || currentUser.id !== photo.author_id || albums === undefined || userAlbums[0] === undefined) ? <div></div> :
                 <div className="album-cover-preview">
-                  <h1>Currently in the following albums:</h1>
+                  <h1 className="album-title">Currently in the following albums:</h1>
                       { albums.map( (album, idx) => (
-                        <div key={ album.id } className="album-cover-text">
+                        <div key={ album.id } className="album-cover-box">
                           <Image className="album-thumb" publicId={ userAlbums[0].album_cover_url } cloudName="liquidpineapple">
                           </Image>
-                          <h1>{album.title}</h1>
+                          <h1 className="album-cover-text">{album.title}</h1>
                         </div>
                       )
                     )}
@@ -114,14 +115,7 @@ class PhotoShow extends React.Component {
               }
 
           <div className="add-to-album">
-              <h1>Add to albums</h1>
-              <ul>
-                { (userAlbums.length === 0) ? <div></div> :
-                  userAlbums.map(album => (
-                    <li key={album.id}>{album.title}</li>
-                  ))
-                }
-              </ul>
+            <AddToAlbum userAlbums={userAlbums} />
           </div>
 
           <div>
