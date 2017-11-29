@@ -28,6 +28,7 @@ class Upload extends React.Component {
       uploadedFile: null,
       photo: this.props.photo,
       modalIsOpen: false,
+      loading: true
     };
     console.log(this.state.photo);
     this.onImageDrop = this.onImageDrop.bind(this);
@@ -96,7 +97,7 @@ class Upload extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-    this.props.action(this.state.photo)
+    this.props.createPhoto(this.state.photo)
       .then( (response) => console.log(response));
       // .then( (response) => this.props.history.push(`/photos/${response.payload.photo.id}`));
   }
