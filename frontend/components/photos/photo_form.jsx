@@ -20,35 +20,25 @@ const customStyles = {
 };
 
 class Upload extends React.Component {
-
   constructor(props) {
     super(props);
-
     this.state = {
-      uploadedFile: null,
+      uploadedFile: [],
       photo: this.props.photo,
       modalIsOpen: false,
       loading: true
     };
-    console.log(this.state.photo);
     this.onImageDrop = this.onImageDrop.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.cancelForm = this.cancelForm.bind(this);
 
     this.openModal = this.openModal.bind(this);
-    // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-  }
-
-  componentWillMount() {
-    if (this.props.formType === 'edit') {
-        this.props.requestPhoto(this.props.match.params.photoId);
-      }
   }
 
   componentWillReceiveProps(newProps) {
     this.setState({
-      photo: newProps.photo
+      photo: newProps.photo,
     });
   }
 
@@ -56,8 +46,7 @@ class Upload extends React.Component {
     this.setState({
       uploadedFile: files[0]
     });
-
-    this.handleImageUpload(files[0]);
+    this.openModal();
   }
 
   handleImageUpload(file) {
@@ -69,21 +58,19 @@ class Upload extends React.Component {
       if (err) {
         console.error(err);
       }
-      // console.log(response);
       if (response.body.secure_url !== '') {
-        // console.log("before", this.state, this.props);
         this.setState({
-          photo: { img_url: response.body.public_id }
-
-        }, () => console.log(this.state));
+          photo: Object.assign({}, this.state.photo, {img_url: response.body.public_id })
+        }, () => this.props.createPhoto(this.state.photo)
+                  .then(this.closeModal)
+                    .then(this.props.history.push('/home')));
       }
-      console.log("after", response, this.state);
     });
   }
   // This is the standard submit data actions:
   update(field){
     return (event) => this.setState({
-      photo: Object.assign({}, this.state.photo, { [field]: event.currentTarget.value })
+      photo: Object.assign({}, this.state.photo, { [field]: event.target.value })
     });
   }
 
@@ -97,16 +84,13 @@ class Upload extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-    this.props.createPhoto(this.state.photo)
-      .then( (response) => console.log(response));
-      // .then( (response) => this.props.history.push(`/photos/${response.payload.photo.id}`));
+    this.handleImageUpload(this.state.uploadedFile);
   }
 
   cancelForm(event) {
     event.preventDefault();
     this.props.history.goBack();
   }
-
 
   render() {
     return (
@@ -119,7 +103,6 @@ class Upload extends React.Component {
             accept="image/*"
             onDrop={this.onImageDrop}
             className="drop-box"
-            onDropAccepted={this.openModal}
             >
             <p className="drop-text">Drop an image or click to select a file to upload.</p>
           </Dropzone>
@@ -132,36 +115,36 @@ class Upload extends React.Component {
             style={customStyles}
             contentLabel="Edit Modal"
           >
-              <Image publicId={this.state.photo.img_url} cloudName="liquidpineapple" >
-                <Transformation height="300" crop="scale" />
-              </Image>
+            <img className="photo-preview" src={this.state.uploadedFile.preview} />
 
-        <div className="">
-          <form className="" onSubmit={this.handleSubmit}>
-            <input type=""
-              onChange={this.update("title")}
-              placeholder="Title"
-            />
-            <br />
-            <textarea
-              onChange={this.update("description")}
-              placeholder="Description"
-            />
-            <br />
+              <form className="modal-form" onSubmit={this.handleSubmit}>
+                <input
+                  className="modal-input"
+                  type="text"
+                  onChange={this.update("title")}
+                  placeholder="Title"
+                />
+                <br />
+                <textarea
+                  className="modal-input"
+                  onChange={this.update("description")}
+                  placeholder="Description"
+                />
+                <br />
+                <div className="modal-button-container-form">
+                  <input className="modal-button-form" type="submit" />
+                  <button className="modal-button-form" onClick={this.cancelForm}>Cancel</button>
+                </div>
+              </form>
 
-            <div className="form-buttons">
-              <input
-                type="submit"
-                value="sample"
-              />
-            <button className="" onClick={this.cancelForm}>Cancel</button>
-            </div>
-          </form>
-        </div>
-    </Modal>
+        </Modal>
       </div>
   );
     }
 }
 
 export default Upload;
+
+// <Image publicId={this.state.photo.img_url} cloudName="liquidpineapple" >
+//   <Transformation height="300" crop="scale" />
+// </Image>

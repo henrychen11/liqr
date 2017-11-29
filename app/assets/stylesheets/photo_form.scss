@@ -1,0 +1,27 @@
+.photo-preview {
+  margin: auto;
+  height: 220px;
+  width: auto;
+}
+
+
+.modal-button-container-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.modal-button-form {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  background: #b8bec4;
+  color: black;
+  height: 30px;
+  width: 40%;
+  font-size: 14px;
+  margin: 10px 22px;
+}
+
+.modal-button-form:hover {
+  background-color: gray;
+}
