@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
     resources :albums, only: [:show, :create, :update, :destroy]
     resources :comments, only: [:show, :update, :destroy]
-    resources :photo_albums, only: [:create, :destroy]
+    resources :photo_albums, only: [:show, :create, :destroy]
 
   end
 
