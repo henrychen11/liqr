@@ -86,13 +86,18 @@ class Upload extends React.Component {
 
     if (formType === 'new' && photo.img_url === ""){
         return (
-          <div className="upload">
-            <Dropzone
-              multiple={false}
-              accept="image/*"
-              onDrop={this.onImageDrop}>
-              <p className="drop-text">Drop an image or click to select a file to upload.</p>
-            </Dropzone>
+          <div>
+            <h1 className="page-header">Uplad a picture below:</h1>
+            <div className="upload-container">
+              <Dropzone
+                multiple={false}
+                accept="image/*"
+                onDrop={this.onImageDrop}
+                className="drop-box"
+                >
+                <p className="drop-text">Drop an image or click to select a file to upload.</p>
+              </Dropzone>
+            </div>
           </div>
         );
       } else {
