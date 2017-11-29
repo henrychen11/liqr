@@ -12,9 +12,13 @@ class CommentForm extends React.Component {
     // console.log(this.props);
   }
 
+  componentWillReceiveProps(newProps) {
+    this.setState({comment: newProps.comment});
+  }
+
   handleSubmit(event){
     event.preventDefault();
-    this.props.createComment(this.state.comment);
+    this.props.createComment(this.state.comment, this.props.photo.id);
   }
 
   update(field){
@@ -32,23 +36,22 @@ class CommentForm extends React.Component {
         (!comments) ? <div></div> :
           comments.map( (comment) =>
           <div key={comment.id} className="comment-item-box">
-            <div>{comment.body}
+            <div className="comment-text">{comment.body}
               { (comment.author_id !== currentUser.id) ? <div></div> :
-
-                  <i onClick={this.deleteComment(comment.id).bind(this)} className="fa fa-trash-o" aria-hidden="true"></i>
-
+                  <i className="fa fa-trash-o" aria-hidden="true"></i>
               }
           </div>
-          <div>Posted By: {comment.author_username}</div>
+          <div className="comment-author">Posted By: {comment.author_username}</div>
 
           </div>
         )
       }
-      <form onSubmit={this.handleSubmit}>
+      <form>
         <textarea className="photo-comment-new"
           onChange={this.update('body')}
-          placeholder="Enter Comment" />
 
+          placeholder="Enter Comment" />
+        <button onClick={this.handleSubmit} className="modal-button">Add Comment</button>
       </form>
 
       </div>
@@ -57,6 +60,3 @@ class CommentForm extends React.Component {
 }
 
 export default CommentForm;
-
-
-        // <input className="modal-button" type="submit">Add Comment</input>

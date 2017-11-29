@@ -7,6 +7,18 @@
   padding-left: 10px;
 }
 
-.commment-item-box {
+.comment-item-box {
+  border: 1px solid gray;
+  border-radius: 3px;
   flex-direction: row;
+  margin: 5px;
+  padding: 5px;
+}
+
+.comment-author {
+  color: gray;
+}
+
+.comment-text {
+  min-height: 40px;
 }

@@ -95,15 +95,16 @@ class PhotoShow extends React.Component {
             <h2>{photo.description}</h2>
             <h1>Posted by: {photo.author}</h1>
             <br/>
-            <h1>Currently in the following albums:</h1>
-              { (albums === undefined ) ? "" :
+            { (currentUser === undefined || currentUser.id !== photo.author_id) ? <div></div> :
+              <div>
+              <h1>Currently in the following albums:</h1>
+               (albums === undefined ) ? "" :
                 <ul>
                   { albums.map(album => (
                     <li key={album.id}>{album.title}</li>
                   )
                 )}
               </ul>
-              }
             <br />
             <h1>Add to albums</h1>
             <ul>
@@ -119,13 +120,21 @@ class PhotoShow extends React.Component {
             <h2>Tag 2</h2>
             <h2>Tag 3</h2>
             <button>Add Tag</button>
+            </div>
+            }
           </div>
         </div>
 
         <div className="photo-show-info-right">
           <div className="photo-show-info">
-            <button onClick={this.openModal}>Edit Picture</button>
-            <Modal
+          { (currentUser === undefined || currentUser.id !== photo.author_id) ? <div></div> :
+            <div>
+              <button onClick={this.openModal}>Edit Picture</button>
+              <button onClick={this.handleDelete}>Delete Picture</button>
+            </div>
+          }
+
+          <Modal
               isOpen={this.state.modalIsOpen}
               onAfterOpen={this.afterOpenModal}
               onRequestClose={this.closeModal}
@@ -157,7 +166,7 @@ class PhotoShow extends React.Component {
               </form>
             </Modal>
 
-            <button onClick={this.handleDelete}>Delete Picture</button>
+
             <h1 className="photo-info-header">Comments</h1>
 
             <CommentForm className="photo-comment-item" photo={photo} />

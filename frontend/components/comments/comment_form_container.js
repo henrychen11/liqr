@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   requestPhotoComments: (photoId) => dispatch(requestPhotoComments(photoId)),
-  createComment: (comment) => dispatch(createComment(comment)),
+  createComment: (comment, photoId) => dispatch(createComment(comment, photoId)),
   editComment: (comment) => dispatch(editComment(comment)),
   deleteComment: (commentId) => dispatch(deleteComment(commentId))
 });
