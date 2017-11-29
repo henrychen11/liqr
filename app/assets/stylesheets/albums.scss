@@ -37,6 +37,8 @@ position: absolute;
 width: 100%;
 color: #fff;
 left: 0;
+right: 0;
+top: 0;
 bottom: 0;
 padding: 0.75em 1em;
 font-weight: 700;
@@ -65,4 +67,12 @@ opacity: 1;
   display: flex;
   width: 300px;
   padding: 2px;
+}
+
+.image-element-class-album {
+  display: flex;
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  box-shadow: 10px 10px 5px #888888;
 }

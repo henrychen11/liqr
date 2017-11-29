@@ -20,11 +20,10 @@ class AlbumShow extends React.Component {
     const {album, photos} = this.props;
     const masonryOptions = {
       // fitWidth: true,
-      // stagger: 100,
+      stagger: 100,
       // gutter: 3,
-      transitionDuration: '0.3s' };
+      transitionDuration: '0.2s' };
 
-    console.log(photos);
     if (!album) {
       return (
         <h1 className="page-header"> You currently have no albums </h1>
@@ -59,9 +58,8 @@ class AlbumShow extends React.Component {
                 <Link to={`/photos/${photo.id}`}>
                   <Image publicId={photo.img_url} cloudName="liquidpineapple" />
                 </Link>
-                <div className="photo-caption-text">
+                <div className="album-caption-text">
                   <p>{photo.title}</p>
-                  <p>By: {photo.author}</p>
                 </div>
               </div>
             ))}

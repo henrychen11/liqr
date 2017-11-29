@@ -18,7 +18,7 @@ class PhotoUserIndex extends React.Component {
 
       return (
         <div>
-          { (photos.length === 0) ? "nothing to show" :
+          { (photos.length === 0) ? <div></div> :
             <div>
               <h2 className="page-header">My Pictures</h2>
               <Masonry

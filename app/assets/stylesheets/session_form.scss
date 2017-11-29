@@ -1,7 +1,7 @@
-main {
+body, main {
+  min-width: 100vw;
   min-height: 100vh;
 }
-
 .background {
   background-image: image-url("splash.jpeg");
   height: 100vh;
