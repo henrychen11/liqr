@@ -31,12 +31,12 @@ class CommentForm extends React.Component {
       {
         (!comments) ? <div></div> :
           comments.map( (comment) =>
-          <div key={comment.id}>
+          <div key={comment.id} className="comment-item-box">
             <div>{comment.body}
               { (comment.author_id !== currentUser.id) ? <div></div> :
-                <button>
-                  <i className="fa fa-trash-o" aria-hidden="true"></i>
-                </button>
+
+                  <i onClick={this.deleteComment(comment.id).bind(this)} className="fa fa-trash-o" aria-hidden="true"></i>
+
               }
           </div>
           <div>Posted By: {comment.author_username}</div>
