@@ -17,6 +17,7 @@ class AlbumShow extends React.Component {
   }
 
   render(){
+    // debugger
     const {album, photos} = this.props;
     const masonryOptions = {
       // fitWidth: true,
@@ -58,8 +59,9 @@ class AlbumShow extends React.Component {
                 <Link to={`/photos/${photo.id}`}>
                   <Image publicId={photo.img_url} cloudName="liquidpineapple" />
                 </Link>
-                <div className="album-caption-text">
+                <div className="photo-caption-text">
                   <p>{photo.title}</p>
+
                 </div>
               </div>
             ))}

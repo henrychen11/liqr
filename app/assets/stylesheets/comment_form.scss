@@ -8,8 +8,6 @@
 }
 
 .comment-item-box {
-  border: 1px solid gray;
-  border-radius: 3px;
   flex-direction: row;
   margin: 5px;
   padding: 5px;
@@ -17,8 +15,12 @@
 
 .comment-author {
   color: gray;
+  font-size: 12px;
 }
 
 .comment-text {
+  border: 1px solid gray;
+  border-radius: 3px;
   min-height: 40px;
+  overflow: scroll;
 }

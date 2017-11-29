@@ -144,7 +144,3 @@ class Upload extends React.Component {
 }
 
 export default Upload;
-
-// <Image publicId={this.state.photo.img_url} cloudName="liquidpineapple" >
-//   <Transformation height="300" crop="scale" />
-// </Image>

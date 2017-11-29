@@ -4,6 +4,10 @@ class CommentForm extends React.Component {
 
   constructor(props){
     super(props);
+    this.state = {
+      body: ""
+    };
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -18,12 +22,13 @@ class CommentForm extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-    this.props.createComment(this.state.comment, this.props.photo.id);
+    this.props.createComment( this.state, this.props.photo.id);
+    this.setState({body: ""});
   }
 
   update(field){
     return (event) => this.setState({
-      comment: Object.assign({}, this.state.comment, { [field]: event.target.value })
+      body: event.target.value
     });
   }
 
@@ -38,9 +43,9 @@ class CommentForm extends React.Component {
           <div key={comment.id} className="comment-item-box">
             <div className="comment-text">{comment.body}
               { (comment.author_id !== currentUser.id) ? <div></div> :
-                <button onClick={() => this.props.deleteComment(comment.id)}>
-                  <i  className="fa fa-trash-o" aria-hidden="true"></i>
-                </button>
+
+                  <i onClick={() => this.props.deleteComment(comment.id)} className="fa fa-trash-o" aria-hidden="true"></i>
+
               }
           </div>
           <div className="comment-author">Posted By: {comment.author_username}</div>
@@ -51,7 +56,7 @@ class CommentForm extends React.Component {
       <form>
         <textarea className="photo-comment-new"
           onChange={this.update('body')}
-
+          value={this.state.body}
           placeholder="Enter Comment" />
         <button onClick={this.handleSubmit} className="modal-button">Add Comment</button>
       </form>

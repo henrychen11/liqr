@@ -17,6 +17,12 @@
   margin: 10px;
 }
 
+.photo-show-albums {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
 
 .photo-show-info button:hover {
   background-color: gray;
@@ -29,6 +35,13 @@
 .photo-tags h2 {
   display: flex;
   justify-content: center;
+}
+
+.photo-show-image-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #333333;
 }
 
 .photo-show-image {
@@ -79,6 +92,27 @@
   min-height: 50px;
   border-radius: 3px;
   margin: 10px auto;
+}
+
+.album-thumb {
+  height: 80px;
+  width: 80px;
+}
+
+.album-cover-preview {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.album-cover-text {
+  display: flex;
+  flex-direction: row;
+}
+
+.add-to-album {
+  display: flex;
 }
 
 .modal-button-container {

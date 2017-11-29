@@ -14,7 +14,7 @@ export default ({photo}) => {
 
           <div className="photo-caption-text">
             <p>{photo.title}</p>
-            <p>By: {photo.author}</p>
+            <p>{photo.description}</p>
           </div>
       </div>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import WelcomeContainer from './welcome/welcome_container';
 import NavBarContainer from './navbar/NavBarContainer';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import SessionFormContainer from './session/SessionFormContainer';
 import PhotoIndexContainer from './photos/photo_index_container';
 import AlbumIndexContainer from './albums/album_container';
@@ -18,8 +18,8 @@ const App = () => (
 
     <main>
       <NavBarContainer />
-      <Route exact path="/" component={WelcomeContainer} />
       <Switch>
+        <AuthRoute exact path="/" component={WelcomeContainer} />
         <AuthRoute exact path="/login" component={SessionFormContainer} />
         <AuthRoute exact path="/signup" component={SessionFormContainer} />
         <ProtectedRoute exact path="/photos/new" component={PhotoFormContainer} />
@@ -31,6 +31,8 @@ const App = () => (
         <ProtectedRoute exact path="/explore" component={PhotoIndexContainer} />
         <ProtectedRoute exact path="/home" component={PhotoUserContainer} />
         <ProtectedRoute exact path="/albums" component={AlbumIndexContainer} />
+
+        <Route path="/" render={ () => <Redirect to="/login" />} />
 
       </Switch>
     </main>

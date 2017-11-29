@@ -80,49 +80,58 @@ class PhotoShow extends React.Component {
   render() {
     const { photo, albums, currentUser, userAlbums } = this.props;
 
-
     return (
       (!photo || !albums || !userAlbums) ? <div></div> :
+      <div className="overall-wrap">
       <div className="photo-show-container" >
         <div className="photo-show-image-container">
           <Image key={ photo.id } className="photo-show-image" publicId={ photo.img_url } cloudName="liquidpineapple" />
         </div>
 
       <div className="photo-show-info-container">
+
         <div className="photo-show-info-left">
+
           <div className="photo-show-info">
-            <h1>{photo.title}</h1>
-            <h2>{photo.description}</h2>
-            <h1>Posted by: {photo.author}</h1>
-            <br/>
-            { (currentUser === undefined || currentUser.id !== photo.author_id || albums === undefined) ? <div></div> :
-              <div>
-              <h1>Currently in the following albums:</h1>
-                <ul>
-                  { albums.map(album => (
-                    <li key={album.id}>{album.title}</li>
-                  )
-                )}
-              </ul>
-            <br />
-            <h1>Add to albums</h1>
-            <ul>
-              { (userAlbums.length === 0) ? <div></div> :
-                userAlbums.map(album => (
-                  <li key={album.id}>{album.title}</li>
-                ))
+            <h1 className="photo-info-header">{photo.title}</h1>
+            <h1>{photo.description}</h1>
+            <h1 className="comment-author">Posted by: {photo.author}</h1>
+          </div>
+
+
+              { (currentUser === undefined || currentUser.id !== photo.author_id || albums === undefined || userAlbums[0] === undefined) ? <div></div> :
+                <div className="album-cover-preview">
+                  <h1>Currently in the following albums:</h1>
+                      { albums.map( (album, idx) => (
+                        <div key={ album.id } className="album-cover-text">
+                          <Image className="album-thumb" publicId={ userAlbums[0].album_cover_url } cloudName="liquidpineapple">
+                          </Image>
+                          <h1>{album.title}</h1>
+                        </div>
+                      )
+                    )}
+                </div>
               }
-            </ul>
-            <br/>
+
+          <div className="add-to-album">
+              <h1>Add to albums</h1>
+              <ul>
+                { (userAlbums.length === 0) ? <div></div> :
+                  userAlbums.map(album => (
+                    <li key={album.id}>{album.title}</li>
+                  ))
+                }
+              </ul>
+          </div>
+
+          <div>
             <h1 className="photo-info-header">Tags</h1>
             <h2>Tag 1</h2>
             <h2>Tag 2</h2>
             <h2>Tag 3</h2>
             <button>Add Tag</button>
-            </div>
-            }
           </div>
-        </div>
+      </div>
 
         <div className="photo-show-info-right">
           <div className="photo-show-info">
@@ -167,19 +176,11 @@ class PhotoShow extends React.Component {
 
 
             <h1 className="photo-info-header">Comments</h1>
-
             <CommentForm className="photo-comment-item" photo={photo} />
-
-
-
           </div>
         </div>
       </div>
-
-      <div>
-
       </div>
-
       </div>
     );
 

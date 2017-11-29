@@ -10,9 +10,9 @@ export const receiveAlbums = albums => ({
 });
 
 //rename to payload cuz album.album is very confusing
-export const receiveAlbum = album => ({
+export const receiveAlbum = payload => ({
   type: RECEIVE_ALBUM,
-  album
+  payload
 });
 
 export const removeAlbum = (album) => ({

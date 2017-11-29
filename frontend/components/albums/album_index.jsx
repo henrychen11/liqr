@@ -28,7 +28,7 @@ class AlbumIndex extends React.Component {
             >
             { this.props.albums.map( (album) =>
               <Link key={album.id} to={`/albums/${album.id}`}>
-                <AlbumIndexItem key={album.id} album={album}/>
+                <AlbumIndexItem album={album}/>
               </Link>
             )}
           </Masonry>
