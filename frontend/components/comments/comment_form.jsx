@@ -38,7 +38,9 @@ class CommentForm extends React.Component {
           <div key={comment.id} className="comment-item-box">
             <div className="comment-text">{comment.body}
               { (comment.author_id !== currentUser.id) ? <div></div> :
-                  <i className="fa fa-trash-o" aria-hidden="true"></i>
+                <button onClick={() => this.props.deleteComment(comment.id)}>
+                  <i  className="fa fa-trash-o" aria-hidden="true"></i>
+                </button>
               }
           </div>
           <div className="comment-author">Posted By: {comment.author_username}</div>

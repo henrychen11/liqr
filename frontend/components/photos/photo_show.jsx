@@ -95,10 +95,9 @@ class PhotoShow extends React.Component {
             <h2>{photo.description}</h2>
             <h1>Posted by: {photo.author}</h1>
             <br/>
-            { (currentUser === undefined || currentUser.id !== photo.author_id) ? <div></div> :
+            { (currentUser === undefined || currentUser.id !== photo.author_id || albums === undefined) ? <div></div> :
               <div>
               <h1>Currently in the following albums:</h1>
-               (albums === undefined ) ? "" :
                 <ul>
                   { albums.map(album => (
                     <li key={album.id}>{album.title}</li>
