@@ -19,8 +19,11 @@
 }
 
 .comment-text {
-  border: 1px solid gray;
-  border-radius: 3px;
   min-height: 40px;
   overflow: scroll;
+}
+
+.comment-icon-container {
+  display: flex;
+  justify-content: flex-end;
 }

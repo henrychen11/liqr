@@ -5,13 +5,14 @@ class AddToAlbum extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      currentAlbumId: {}
+      currentAlbumId: 1
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
+    console.log(event.target.value);
     this.setState({currentAlbumId: parseInt(event.target.value)});
   }
 
@@ -50,7 +51,7 @@ class AddToAlbum extends React.Component {
               }
             </select>
           </label>
-          <input onClick={() => this.props.clearErrors().bind(this)} className="album-select-button" type="submit" value="Add to album" />
+          <input onClick={this.props.clearErrors.bind(this)} className="album-select-button" type="submit" value="Add to album" />
         </form>
         <div>{this.renderErrors()}</div>
       </div>

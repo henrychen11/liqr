@@ -10,7 +10,7 @@ class AlbumIndexItem extends React.Component{
           {
             (this.props.album.album_cover_url === null) ? <img className="image-element-class-album" src="https://images.unsplash.com/photo-1493156624194-053884f699d4?auto=format&fit=crop&w=1500&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" /> :
               <Image className="image-element-class-album" publicId={this.props.album.album_cover_url} cloudName="liquidpineapple">
-                <Transformation width="250" crop="scale" />
+                <Transformation quality="30" crop="scale" />
               </Image>
           }
       <div className="album-caption-text">

@@ -4,6 +4,7 @@ export const RECEIVE_ALBUMS = "RECEIVE_ALBUMS";
 export const RECEIVE_ALBUM = "RECEIVE_ALBUM";
 export const REMOVE_ALBUM = "REMOVE_ALBUM";
 export const RECEIVE_PHOTO_ALBUM = 'RECEIVE_PHOTO_ALBUM';
+export const REMOVE_PHOTO_ALBUM = 'REMOVE_PHOTO_ALBUM';
 export const RECEIVE_ALBUM_ERRORS = 'RECEIVE_ALBUM_ERRORS';
 export const CLEAR_ALBUM_ERRORS = 'CLEAR_ALBUM_ERRORS';
 
@@ -26,6 +27,11 @@ export const removeAlbum = (album) => ({
 
 export const receivePhotoAlbum = (photoAlbum) => ({
   type: RECEIVE_PHOTO_ALBUM,
+  photoAlbum
+});
+
+export const removePhotoAlbum = (photoAlbum) => ({
+  type: REMOVE_PHOTO_ALBUM,
   photoAlbum
 });
 
@@ -71,6 +77,6 @@ export const createPhotoAlbums = (photoAlbum) => dispatch => (
 
 export const deletePhotoAlbums = (albumId, photoId) => dispatch => (
   AlbumAPIUtil.deletePhotoAlbums(albumId, photoId)
-    .then(response => dispatch(receivePhotoAlbum(response)),
+    .then(response => dispatch(removePhotoAlbum(response)),
     errors => dispatch(receiveErrors(errors.responseJSON)))
 );

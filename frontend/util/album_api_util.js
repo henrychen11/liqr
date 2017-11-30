@@ -43,10 +43,10 @@ export const createPhotoAlbums = (photoAlbum) => (
   })
 );
 
-export const deletePhotoAlbums = (photoId) => (
+export const deletePhotoAlbums = (albumId, photoId) => (
   $.ajax({
-    url: `api/photo_albums/${photoAlbumId}/`,
-    method: 'DELETE'.
-    data: { photoId }
+    url: `api/photo_albums/${albumId}/`,
+    method: 'DELETE',
+    data: { albumId, photoId }
   })
 );

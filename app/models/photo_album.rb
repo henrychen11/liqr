@@ -1,5 +1,5 @@
 class PhotoAlbum < ApplicationRecord
-  validates :photo_id, uniqueness: { scope: :album_id, message: "Photo already exists in current album" }
+  validates :photo_id, uniqueness: { scope: :album_id, message: " already exists in current album" }
 
   belongs_to :album,
              primary_key: :id,

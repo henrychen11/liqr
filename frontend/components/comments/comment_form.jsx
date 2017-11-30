@@ -78,9 +78,9 @@ class CommentForm extends React.Component {
           <div key={comment.id} className="comment-item-box">
             <div className="comment-text">{comment.body}
               { (comment.author_id !== currentUser.id) ? <div></div> :
-                <div>
-                  <i onClick={() => this.openModal(comment)} className="fa fa-pencil-square-o" aria-hidden="true"></i>
-                  <i onClick={() => this.props.deleteComment(comment.id)} className="fa fa-trash-o" aria-hidden="true"></i>
+                <div className="comment-icon-container">
+                  <i onClick={() => this.openModal(comment)} className="comment-icon fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <i onClick={() => this.props.deleteComment(comment.id)} className="comment-icon fa fa-trash-o" aria-hidden="true"></i>
                 </div>
               }
           </div>

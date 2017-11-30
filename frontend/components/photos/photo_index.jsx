@@ -15,7 +15,8 @@ class PhotoIndex extends React.Component {
       // fitWidth: true,
       // stagger: 100,
       // gutter: 3,
-      transitionDuration: '0.3s' };
+      // transitionDuration: '0.3s' };
+    };
 
     const {photos} = this.props;
     return (

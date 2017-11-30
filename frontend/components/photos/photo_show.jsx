@@ -47,7 +47,7 @@ class PhotoShow extends React.Component {
   handleDelete(event){
     event.preventDefault();
     if(confirm("Are you sure you want to delete this picture?")){
-      this.props.destroyPhoto(albumId, photoId)
+      this.props.destroyPhoto(this.props.photo.id)
         .then( () => this.props.history.push('/home'));
     }
   }
@@ -93,7 +93,7 @@ class PhotoShow extends React.Component {
             <h1 className="comment-author">Posted by: {photo.author}</h1>
           </div>
 
-
+          {console.log(albums)}
               { (currentUser === undefined || currentUser.id !== photo.author_id || albums === undefined || userAlbums[0] === undefined) ? <div></div> :
                 <div className="album-cover-preview">
                   <h1 className="album-title">Currently in the following albums:</h1>
@@ -101,6 +101,7 @@ class PhotoShow extends React.Component {
                         <div key={ album.id } className="album-cover-box">
                           <h1 className="album-cover-text">{album.title}</h1>
                           <i onClick={() => this.props.deletePhotoAlbums(album.id, this.props.photoId)} className="album-trash-icon fa fa-trash-o" aria-hidden="true"></i>
+
                         </div>
                       )
                     )}

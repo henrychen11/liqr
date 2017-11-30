@@ -10,7 +10,7 @@ export default ({photo}) => {
       <div className="image-element-class">
         <Link key={photo.id} to={`/photos/${photo.id}`}>
           <Image key={photo.id} className="" publicId={photo.img_url} cloudName="liquidpineapple">
-            <Transformation width="100" crop="scale" />
+            <Transformation quality="30" crop="scale" />
           </Image>
         </Link>
 
