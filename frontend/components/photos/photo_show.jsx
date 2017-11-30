@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, Transformation } from 'cloudinary-react';
 import Modal from 'react-modal';
 import CommentForm from '../comments/comment_form_container';
-import AddToAlbum from './add_to_album';
+import AddToAlbum from './add_to_album_container';
 
 const customStyles = {
   content : {
@@ -69,11 +69,6 @@ class PhotoShow extends React.Component {
     this.setState({modalIsOpen: true});
   }
 
-  // afterOpenModal() {
-  //   // references are now sync'd and can be accessed.
-  //   this.subtitle.style.color = '#f00';
-  // }
-
   closeModal() {
     this.setState({modalIsOpen: false});
   }
@@ -120,9 +115,6 @@ class PhotoShow extends React.Component {
 
           <div>
             <h1 className="photo-info-header">Tags</h1>
-            <h2>Tag 1</h2>
-            <h2>Tag 2</h2>
-            <h2>Tag 3</h2>
             <button>Add Tag</button>
           </div>
       </div>

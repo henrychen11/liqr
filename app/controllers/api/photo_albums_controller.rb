@@ -1,17 +1,12 @@
 class Api::PhotoAlbumsController < ApplicationController
 
-  def index
-    @photo_albums = PhotoAlbum.all
-    render :index
-  end
-
   def show
     @photo_album = PhotoAlbum.where(id: params[:id]).first
     render :show
   end
 
   def create
-    @photo_album = current_user.photo_albums.new(photo_album_params)
+    @photo_album = PhotoAlbums.new(photo_album_params)
 
     if @photo_album.save
       render :show
@@ -21,7 +16,7 @@ class Api::PhotoAlbumsController < ApplicationController
   end
 
   def destroy
-    @photo_album = current_user.photo_albums.find_by(id: params[:id])
+    @photo_album = photo_albums.find_by(id: params[:id])
     @photo_album.destroy
     render :show
   end
@@ -29,7 +24,7 @@ class Api::PhotoAlbumsController < ApplicationController
   private
 
   def photo_album_params
-    params.require(:photo_album).permit(:author_id, :photo_id)
+    params.require(:photo_album).permit(:album_id, :photo_id)
   end
 
 end

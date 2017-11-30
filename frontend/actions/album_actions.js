@@ -44,3 +44,13 @@ export const destroyAlbum = (albumId) => (dispatch) => (
   AlbumAPIUtil.deleteAlbum(albumId)
   .then(album => dispatch(removeAlbum(album)))
 );
+
+export const createPhotoAlbums = (photoAlbum) => dispatch => (
+  AlbumAPIUtil.createPhotoAlbums(photoAlbum)
+    .then(response => dispatch(receiveAlbum(response)))
+);
+
+export const deletePhotoAlbums = (photoAlbumId) => dispatch => (
+  AlbumAPIUtil.deletePhotoAlbums(photoAlbumId)
+    .then(response => dispatch(receiveAlbum(response)))
+);
