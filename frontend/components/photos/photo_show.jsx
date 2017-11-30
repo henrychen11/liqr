@@ -112,10 +112,6 @@ class PhotoShow extends React.Component {
             <AddToAlbum userAlbums={userAlbums} />
           </div>
 
-          <div>
-            <h1 className="photo-info-header">Tags</h1>
-            <button>Add Tag</button>
-          </div>
       </div>
 
         <div className="photo-show-info-right">
@@ -173,7 +169,3 @@ class PhotoShow extends React.Component {
 }
 
 export default PhotoShow;
-
-// <Image className="album-thumb" publicId={ userAlbums[idx].album_cover_url } cloudName="liquidpineapple">
-// </Image>
-// <div>{userAlbums[idx]}</div>

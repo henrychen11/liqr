@@ -128,7 +128,7 @@ class Upload extends React.Component {
                 <textarea
                   className="modal-input"
                   onChange={this.update("description")}
-                  placeholder="Description"
+                  placeholder="Description (Optional)"
                 />
                 <br />
                 <div className="modal-button-container-form">

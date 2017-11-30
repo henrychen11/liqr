@@ -14,13 +14,14 @@
 }
 
 .comment-author {
+  padding: 5px;
   color: gray;
   font-size: 12px;
 }
 
 .comment-text {
   min-height: 40px;
-  overflow: scroll;
+  word-wrap: break-word;
 }
 
 .comment-icon-container {

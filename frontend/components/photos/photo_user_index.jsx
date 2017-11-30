@@ -10,21 +10,15 @@ class PhotoUserIndex extends React.Component {
 
   render() {
     const {photos} = this.props;
-    const masonryOptions = {
-      // fitWidth: true,
-      // stagger: 100,
-      // gutter: 3,
-      transitionDuration: '0.3s' };
 
       return (
         <div>
-          { (photos.length === 0) ? <div></div> :
+          { (photos.length === 0) ? <div className="loader"></div> :
             <div>
               <h2 className="page-header">My Pictures</h2>
               <Masonry
                 className={'my-gallery-class'}
                 elementType={'ul'}
-                options={masonryOptions}
                 disableImagesLoaded={false}
                 updateOnEachImageLoad={false}
                 >

@@ -3,12 +3,6 @@ import { Image, Transformation } from 'cloudinary-react';
 import { Link } from 'react-router-dom';
 import Masonry from 'react-masonry-component';
 
-const masonryOptions = {
-  // fitWidth: true,
-  stagger: 100,
-  // gutter: 3,
-  transitionDuration: '0.2s' };
-
 class AlbumShow extends React.Component {
 
   constructor(props){
@@ -41,7 +35,6 @@ class AlbumShow extends React.Component {
           <Masonry
             className={'my-gallery-class'}
             elementType={'ul'}
-            options={masonryOptions}
             disableImagesLoaded={false}
             updateOnEachImageLoad={false}
             >
@@ -50,7 +43,6 @@ class AlbumShow extends React.Component {
 
                 <Link to={`/photos/${photo.id}`}>
                   <Image publicId={photo.img_url} cloudName="liquidpineapple" />
-                  <Transformation width="100" crop="scale" />
                 </Link>
                 <div className="photo-caption-text">
                   <p>{photo.title}</p>
