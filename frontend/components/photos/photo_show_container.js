@@ -25,7 +25,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   editPhoto: (photoId) => dispatch(editPhoto(photoId)),
   destroyPhoto: (photoId) => dispatch(destroyPhoto(photoId)),
   requestAlbums: (userId) => dispatch(requestAlbums(userId)),
-  deletePhotoAlbums: (photoAlbumId) => dispatch(deletePhotoAlbums(photoAlbumId))
+  deletePhotoAlbums: (albumId, photoId) => dispatch(deletePhotoAlbums(albumId, photoId))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PhotoShow));

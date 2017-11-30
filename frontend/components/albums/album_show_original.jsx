@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Transformation } from 'cloudinary-react';
+import { Image } from 'cloudinary-react';
 import { Link } from 'react-router-dom';
 import Masonry from 'react-masonry-component';
 
@@ -11,11 +11,6 @@ const masonryOptions = {
 
 class AlbumShow extends React.Component {
 
-  constructor(props){
-    super(props);
-
-  }
-
   componentWillMount(){
     this.props.requestAlbum(this.props.albumId);
     // debugger
@@ -25,19 +20,28 @@ class AlbumShow extends React.Component {
     if (this.props.albumId !== newProps.match.params.albumId) {
       this.props.requestAlbum(this.props.albumId);
     }
-    // this.setState({comment: newProps.comment});
-    console.log(newProps);
-    this.setState({album: newProps.album});
   }
 
   render(){
-    const { photos } = this.props;
+    const {album, photos} = this.props;
 
-    // console.log(this.state.albums);
-    return (
-        (!photos) ? "" :
+
+    let display;
+
+    if (!album) {
+      display = <div className="page-header"> You currently have no albums </div>;
+      }
+    else if (photos === undefined){
+      display =
         <div>
-          <h1 className="page-header">{this.props.album[this.props.albumId].title}</h1>
+          <h1 className="page-header">This is the Album: {album.title}</h1>
+          <h1 className="page-header">You currently no pictures in this album</h1>
+          <button className="album-form-button"><a href="#/home">Add Photos</a></button>
+        </div>;
+    } else {
+      display =
+        <div>
+          <h1 className="page-header">{album.title}</h1>
           <Masonry
             className={'my-gallery-class'}
             elementType={'ul'}
@@ -50,7 +54,6 @@ class AlbumShow extends React.Component {
 
                 <Link to={`/photos/${photo.id}`}>
                   <Image publicId={photo.img_url} cloudName="liquidpineapple" />
-                  <Transformation width="100" crop="scale" />
                 </Link>
                 <div className="photo-caption-text">
                   <p>{photo.title}</p>
@@ -58,9 +61,15 @@ class AlbumShow extends React.Component {
               </div>
             ))}
           </Masonry>
+        </div>;
+
+      return (
+        <div>
+          {display}
         </div>
       );
     }
+  }
 }
 
 export default AlbumShow;

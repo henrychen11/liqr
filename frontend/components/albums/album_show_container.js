@@ -5,7 +5,7 @@ import { selectAllPhotos } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    album: state.entities.albums.album,
+    album: state.entities.albums,
     photos: state.entities.albums.photos,
     currentUser: state.session.currentUser,
     albumId: ownProps.match.params.albumId

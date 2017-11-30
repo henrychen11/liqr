@@ -69,8 +69,8 @@ export const createPhotoAlbums = (photoAlbum) => dispatch => (
   errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
-export const deletePhotoAlbums = (photoAlbumId) => dispatch => (
-  AlbumAPIUtil.deletePhotoAlbums(photoAlbumId)
+export const deletePhotoAlbums = (albumId, photoId) => dispatch => (
+  AlbumAPIUtil.deletePhotoAlbums(albumId, photoId)
     .then(response => dispatch(receivePhotoAlbum(response)),
     errors => dispatch(receiveErrors(errors.responseJSON)))
 );

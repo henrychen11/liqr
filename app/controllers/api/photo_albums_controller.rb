@@ -17,11 +17,11 @@ class Api::PhotoAlbumsController < ApplicationController
   end
 
   def destroy
-    @photo_album = PhotoAlbum.where(id: params[:id]).first
-
-    @album = Album.find(photoAlbum[:album_id])
-    @photo_album.destroy
-    render :destroy
+    @photo_album = PhotoAlbum.find_by(album_id: params[:album_id], photo_id: params[:photo_id]).first
+    debugger
+    @album = Album.find(@photo_album.album_id)
+    # @photo_album.destroy
+    render :show
   end
 
   private
