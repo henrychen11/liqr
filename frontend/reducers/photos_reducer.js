@@ -1,8 +1,11 @@
 import {
   RECEIVE_PHOTOS,
   RECEIVE_PHOTO,
-  REMOVE_PHOTO
+  REMOVE_PHOTO,
 } from '../actions/photo_actions';
+
+import {   RECEIVE_PHOTO_ALBUM } from '../actions/album_actions';
+
 import { merge } from 'lodash';
 
 const PhotoReducer = (state={}, action) =>{
@@ -16,6 +19,10 @@ const PhotoReducer = (state={}, action) =>{
     case REMOVE_PHOTO:
       newState = merge({}, state);
       delete newState[action.photo.id];
+      return newState;
+    case RECEIVE_PHOTO_ALBUM:
+      newState = merge({}, state);
+      newState.albums.push(action.photoAlbum.album);
       return newState;
     default:
       return state;

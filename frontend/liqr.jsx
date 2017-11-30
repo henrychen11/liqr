@@ -9,9 +9,9 @@ import {requestAlbum, createAlbum, updateAlbum} from './actions/album_actions';
 import {requestPhoto, requestUserPhotos} from './actions/photo_actions';
 import { fetchUserPhotos } from './util/photo_api_util';
 
-import { requestPhotoComments, requestComment, createComment, destroyComment } from './actions/comment_actions';
-
-// import { getPhotoComments, requestComment, createComment, destroyComment } from './util/comment_api_util';
+// import { requestPhotoComments, requestComment, createComment, destroyComment } from './actions/comment_actions';
+import {requestPhotoComments } from './actions/comment_actions';
+import { getPhotoComments, requestComment, createComment, destroyComment } from './util/comment_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.updateAlbum = updateAlbum;
 
   window.requestPhotoComments = requestPhotoComments;
-  // window.getPhotoComments = getPhotoComments;
+  window.getPhotoComments = getPhotoComments;
   window.requestComment = requestComment;
   window.createComment = createComment;
   window.destroyComment = destroyComment;

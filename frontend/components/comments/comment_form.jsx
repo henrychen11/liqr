@@ -11,9 +11,8 @@ class CommentForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillMount(){
-    this.props.requestPhotoComments(this.props.photo.id);
-    // console.log(this.props);
+  componentDidMount(){
+    this.props.requestPhotoComments(this.props.match.params.photoId);
   }
 
   componentWillReceiveProps(newProps) {
@@ -34,7 +33,6 @@ class CommentForm extends React.Component {
 
   render(){
     const { comments, currentUser } = this.props;
-    console.log(this.props.comments);
     return (
       <div className="comment-container">
       {
@@ -49,7 +47,6 @@ class CommentForm extends React.Component {
               }
           </div>
           <div className="comment-author">Posted By: {comment.author_username}</div>
-
           </div>
         )
       }

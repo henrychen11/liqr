@@ -2,11 +2,12 @@ class Api::PhotoAlbumsController < ApplicationController
 
   def show
     @photo_album = PhotoAlbum.where(id: params[:id]).first
-    render :show
+    render :destroy
   end
 
   def create
-    @photo_album = PhotoAlbums.new(photo_album_params)
+    @photo_album = PhotoAlbum.new(photo_album_params)
+    @album = Album.find(photo_album_params[:album_id])
 
     if @photo_album.save
       render :show
@@ -16,15 +17,17 @@ class Api::PhotoAlbumsController < ApplicationController
   end
 
   def destroy
-    @photo_album = photo_albums.find_by(id: params[:id])
+    @photo_album = PhotoAlbum.where(id: params[:id]).first
+
+    @album = Album.find(photoAlbum[:album_id])
     @photo_album.destroy
-    render :show
+    render :destroy
   end
 
   private
 
   def photo_album_params
-    params.require(:photo_album).permit(:album_id, :photo_id)
+    params.require(:photoAlbum).permit(:album_id, :photo_id)
   end
 
 end

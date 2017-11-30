@@ -21,6 +21,9 @@ export const removeComment = (comment) => ({
 
 export const requestPhotoComments = (photoId) => dispatch => (
   CommentAPIUtil.getPhotoComments(photoId).then(comments => dispatch(receiveComments(comments)))
+
+  // .then( (comments) => console.log(comments))
+
 );
 
 export const requestComment = commentId => dispatch => (

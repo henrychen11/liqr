@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import {requestPhotoComments, createComment, editComment, deleteComment } from '../../actions/comment_actions';
 import CommentForm from './comment_form';
 import { values } from 'lodash';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state) => ({
   comments: values(state.entities.comments),
@@ -15,4 +16,4 @@ const mapDispatchToProps = (dispatch) => ({
   deleteComment: (commentId) => dispatch(deleteComment(commentId))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CommentForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CommentForm));

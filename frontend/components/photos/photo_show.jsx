@@ -54,7 +54,6 @@ class PhotoShow extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-    console.log(this.state.photo.id);
     this.props.editPhoto(this.state.photo)
       .then( () => this.closeModal());
   }
@@ -100,9 +99,8 @@ class PhotoShow extends React.Component {
                   <h1 className="album-title">Currently in the following albums:</h1>
                       { albums.map( (album, idx) => (
                         <div key={ album.id } className="album-cover-box">
-                          <Image className="album-thumb" publicId={ userAlbums[0].album_cover_url } cloudName="liquidpineapple">
-                          </Image>
                           <h1 className="album-cover-text">{album.title}</h1>
+                          <i onClick={() => this.props.deletePhotoAlbums(album.id)} className="album-trash-icon fa fa-trash-o" aria-hidden="true"></i>
                         </div>
                       )
                     )}
@@ -174,3 +172,7 @@ class PhotoShow extends React.Component {
 }
 
 export default PhotoShow;
+
+// <Image className="album-thumb" publicId={ userAlbums[idx].album_cover_url } cloudName="liquidpineapple">
+// </Image>
+// <div>{userAlbums[idx]}</div>

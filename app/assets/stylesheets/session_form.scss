@@ -52,6 +52,12 @@ body, main {
   text-decoration: none;
 }
 
+.message2:hover {
+  font-weight: 600;
+  color: blue;
+  opacity: 0.5;
+}
+
 .session-form button {
   font-family: 'Quicksand', sans-serif;
   background: #b8bec4;
@@ -71,4 +77,8 @@ body, main {
 .top_message {
   margin-top: 10px;
   font-size: 18px;
+}
+
+.errors {
+  color: red;
 }

@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
       <ul>
         {
           this.props.errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
+            <li className="errors" key={idx}>{error}</li>
           )
         )}
       </ul>
@@ -40,25 +40,6 @@ class SessionForm extends React.Component {
     const demoUser = {username: 'demo', password: 'password'};
     this.props.login(demoUser)
     .then( () => this.props.history.push('/home'));
-
-    // const Username = 'demo'.split('');
-    // const Email = 'hello@world.com'.split('');
-    // const Password = 'password'.split('');
-
-    // setInterval( () => {
-    //   if (Username.length > 0) {
-    //     this.setState({ username: this.state.username + Username.shift() });
-    //   } else if (Email.length > 0){
-    //     this.setState({ email: this.state.email + Email.shift() });
-    //   } else if (Password.length > 0) {
-    //     this.setState({ password: this.state.password + Password.shift() });
-    //   } else {
-    //     clearInterval();
-    //     this.props.login(this.state)
-    //     .then( () => this.props.history.push('/home'));
-    //   }
-    //   }
-    //   , 50 );
 
   }
 
@@ -92,7 +73,7 @@ class SessionForm extends React.Component {
             <button className="normal" type="submit">Login</button>
             <button className="normal" onClick={this.handleDemo}>Demo</button>
             <p className="message">Need an Account?</p>
-            <a href="#/signup" onClick={this.props.clearErrors.bind(this)}>Sign Up</a>
+            <a className="message2" href="#/signup" onClick={this.props.clearErrors.bind(this)}>Sign Up</a>
           </form>
         </div>
       </div>
@@ -125,7 +106,7 @@ class SessionForm extends React.Component {
               <button className="normal" type="submit">Sign Up</button>
               <button className="normal" onClick={this.handleDemo}>Demo</button>
             <p className="message">Already registered?</p>
-            <a href="#/login" onClick={this.props.clearErrors.bind(this)}>Login</a>
+            <a className="message2" href="#/login" onClick={this.props.clearErrors.bind(this)}>Login</a>
           </form>
         </div>
       </div>

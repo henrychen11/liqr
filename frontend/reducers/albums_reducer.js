@@ -11,7 +11,6 @@ const AlbumReducer = (state={}, action) => {
       return merge({}, state, action.albums);
 
     case RECEIVE_ALBUM:
-      // debugger
       let oldState = Object.assign({}, state);
 
       oldState.photos = action.payload.photos;
