@@ -16,8 +16,8 @@ import Footer from './bottom';
 const App = () => (
   <div>
 
+    <NavBarContainer />
     <main>
-      <NavBarContainer />
       <Switch>
         <AuthRoute exact path="/" component={WelcomeContainer} />
         <AuthRoute exact path="/login" component={SessionFormContainer} />

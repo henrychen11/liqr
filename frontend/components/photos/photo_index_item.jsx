@@ -13,8 +13,8 @@ export default ({photo}) => {
         </Link>
 
           <div className="photo-caption-text">
-            <p>{photo.title}</p>
-            <p>{photo.description}</p>
+            <p className="photo=title">{photo.title}</p>
+            <p className="photo-description">{photo.description}</p>
           </div>
       </div>
     );
