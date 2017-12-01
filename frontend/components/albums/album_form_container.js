@@ -1,13 +1,11 @@
 import { connect } from 'react-redux';
 import AlbumForm from './album_form';
-import { requestAlbum, createAlbum, updateAlbum, destroyAlbum } from '../../actions/album_actions';
+import { requestAlbum, createAlbum, updateAlbum} from '../../actions/album_actions';
 import { clearErrors } from '../../actions/album_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let album = { title: '',
-                description: '',
-                author_id: '',
-                author_username: ''};
+                description: ''};
   let formType = 'new';
 
   if (ownProps.location.pathname.includes('edit')) {

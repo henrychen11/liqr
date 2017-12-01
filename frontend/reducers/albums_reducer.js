@@ -22,7 +22,8 @@ const AlbumReducer = (state={}, action) => {
 
     case REMOVE_ALBUM:
       newState = merge({}, state);
-      delete newState[action.album.id];
+      delete newState[action.album.album.id];
+      console.log(newState);
       return newState;
     default:
       return state;

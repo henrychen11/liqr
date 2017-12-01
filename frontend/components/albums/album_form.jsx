@@ -12,12 +12,6 @@ class AlbumForm extends React.Component {
     this.cancelForm = this.cancelForm.bind(this);
   }
 
-  componentWillReceiveProps(newProps) {
-    this.setState({
-      album: newProps.album
-    });
-  }
-
   cancelForm(event) {
     event.preventDefault();
     this.props.history.goBack();
@@ -79,8 +73,8 @@ class AlbumForm extends React.Component {
               <div>{this.renderErrors()}</div>
 
           <div className="album-form-button-container">
-            <button onClick={this.props.clearErrors.bind(this)} className="album-form-button" type="submit">Create New Album</button>
-            <button onClick={this.props.clearErrors.bind(this)} className="album-form-button" onClick={this.cancelForm}>Cancel</button>
+            <button onClick={this.props.clearErrors} className="album-form-button" type="submit">Create New Album</button>
+            <button onClick={this.props.clearErrors} className="album-form-button" onClick={this.cancelForm}>Cancel</button>
           </div>
             </form>
         </div>

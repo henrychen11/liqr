@@ -9,7 +9,7 @@ export default ({photo}) => {
       (!photo) ? <div className="loader"></div> :
       <div className="image-element-class">
         <Link key={photo.id} to={`/photos/${photo.id}`}>
-          <Image key={photo.id} className="" publicId={photo.img_url} cloudName="liquidpineapple">
+          <Image key={photo.id} className="single-photo" publicId={photo.img_url} cloudName="liquidpineapple">
           </Image>
 
           <div className="photo-caption-text">
