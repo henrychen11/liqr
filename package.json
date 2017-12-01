@@ -22,9 +22,7 @@
     "superagent": "^3.8.1",
     "webpack": "^3.8.1"
   },
-  "devDependencies": {
-  "redux-logger": "^3.0.6"
-  },
+
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
   "main": "index.js",
@@ -52,6 +50,7 @@
   },
   "homepage": "https://github.com/henrychen11/liqr#readme",
   "devDependencies": {
-    "redux-devtools-extension": "^2.13.2"
+    "redux-devtools-extension": "^2.13.2",
+    "redux-logger": "^3.0.6"
   }
 }

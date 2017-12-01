@@ -7,10 +7,10 @@ PhotoAlbum.destroy_all
 Comment.destroy_all
 
 user1 = User.create!(username: "demo_user", email: 'hello@world.com', password: 'password')
-user2 = User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
-user3 = User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
-user4 = User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
-user5 = User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: 'password')
+user2 = User.create!(username: "Jane Doe", email: 'hello@world.com', password: 'password')
+user3 = User.create!(username: "Jakie Cora", email: 'hello@world.com', password: 'password')
+user4 = User.create!(username: "Josh Boolean", email: 'hello@world.com', password: 'password')
+user5 = User.create!(username: "Chris Figaro", email: 'hello@world.com', password: 'password')
 
 
 photo1 = Photo.create!(img_url: "SEED DATA/01.jpg", title: "Ocean Beach", description: "Beautiful coral view of the ocean", author_id: user1.id)

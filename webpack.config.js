@@ -22,6 +22,7 @@ plugins = plugins.concat(
 );
 
 module.exports = {
+  context: __dirname,
   entry: './frontend/liqr.jsx',
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),

@@ -25,22 +25,21 @@
 #### Explore
 
 Users can view all photos available and comment across other user's pictures
-```js
-<Masonry
-  className={'my-gallery-class'}
-  options={masonryOptions}
-  >
-  {
-    photos.map( (photo, idx) =>
-    <PhotoIndexItem  key={idx} photo={photo} />
-  )}
-</Masonry>
-```
 The photos will be calculated automatically to ensure that both sides of the container will be filled. The number of columns will adjust according to the webpage width and re-render for the best complete fit.
 ![explore](readme_images/explore.png)
 
-This dynamic render is process by using the Masonry package like so:
-
+The Masonry only handles the image distribution, all CSS styles are handled in the stylesheets folder. This dynamic render is process by using the Masonry package like so:
+```js
+<Masonry
+className={'my-gallery-class'}
+options={masonryOptions}
+>
+{
+  photos.map( (photo, idx) =>
+  <PhotoIndexItem  key={idx} photo={photo} />
+)}
+</Masonry>
+```
 
 #### Uploading Photos
 
@@ -69,3 +68,14 @@ Users can create / delete albums and add photos to albums.
 Users can add, update, delete comments on photos.
 
 ![comments](readme_images/create_comment.gif)
+
+#### Additional Resources
+
++ [Proposal Wireframes](https://github.com/henrychen11/liqr/wiki/wireframes)
++ [Database Schema](https://github.com/henrychen11/liqr/wiki/schema)
+
+####Possible future features
+
++ Photo tags
++ User profile pages
++ Search
