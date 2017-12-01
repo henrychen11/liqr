@@ -31,7 +31,8 @@ export const clearErrors = (errros) => ({
 });
 
 export const requestPhotoComments = (photoId) => dispatch => (
-  CommentAPIUtil.getPhotoComments(photoId).then(comments => dispatch(receiveComments(comments)))
+  CommentAPIUtil.getPhotoComments(photoId).then(comments => dispatch(receiveComments(comments)),
+  errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const requestComment = commentId => dispatch => (

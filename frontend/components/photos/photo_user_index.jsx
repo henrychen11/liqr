@@ -18,7 +18,7 @@ class PhotoUserIndex extends React.Component {
   }
 
 
-  componentWillMount(){
+  componentDidMount(){
     this.props.requestUserPhotos(this.props.currentUser.id).then( () => this.setState({ loading: false }));
   }
 

@@ -126,12 +126,12 @@ Comment.create(body: "Can't wait for the holiday season to come so I can travel!
 Comment.create(body: "Definitly something I want to go see someday!", photo_id: photo1.id, author_id: user4.id )
 
 Comment.create(body: "By far the best place I have ever visited!", photo_id: photo2.id, author_id: user1.id )
-Comment.create(body: "Wish I could have been there with you!", photo_id: photo1.id, author_id: user2.id )
+Comment.create(body: "Wish I could have been there with you!", photo_id: photo2.id, author_id: user2.id )
 Comment.create(body: "Can't wait for the holiday season to come so I can travel!", photo_id: photo2.id, author_id: user3.id )
 Comment.create(body: "Definitly something I want to go see someday!", photo_id: photo2.id, author_id: user4.id )
 
 Comment.create(body: "By far the best place I have ever visited!", photo_id: photo3.id, author_id: user1.id )
-Comment.create(body: "Wish I could have been there with you!", photo_id: photo1.id, author_id: user2.id )
+Comment.create(body: "Wish I could have been there with you!", photo_id: photo3.id, author_id: user2.id )
 Comment.create(body: "Can't wait for the holiday season to come so I can travel!", photo_id: photo3.id, author_id: user3.id )
 Comment.create(body: "Definitly something I want to go see someday!", photo_id: photo3.id, author_id: user4.id )
 

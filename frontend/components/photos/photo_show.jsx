@@ -30,7 +30,7 @@ class PhotoShow extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   //
-  componentWillMount(){
+  componentDidMount(){
     this.props.requestPhoto(this.props.photoId);
     this.props.requestAlbums(this.props.currentUser.id);
     // debugger

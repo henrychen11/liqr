@@ -25,7 +25,11 @@ class CommentForm extends React.Component {
   }
 
   componentDidMount(){
-    this.props.requestPhotoComments(this.props.match.params.photoId);
+    // debugger
+    console.log('here', this.props.match.params);
+    this.props.requestPhotoComments(26)
+      .then( () => console.log(this.props));
+    // this.props.requestPhotoComments(this.props.match.params.photoId);
   }
 
   componentWillReceiveProps(newProps) {

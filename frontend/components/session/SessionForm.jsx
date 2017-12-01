@@ -19,7 +19,7 @@ class SessionForm extends React.Component {
     });
   }
 
-  componentWillMount(){
+  componentDidMount(){
     document.title = 'liqr';
   }
 

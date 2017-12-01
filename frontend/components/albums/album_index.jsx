@@ -9,7 +9,7 @@ const masonryOptions = {
 };
 
 class AlbumIndex extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.requestAlbums(this.props.currentUser.id);
   }
 
