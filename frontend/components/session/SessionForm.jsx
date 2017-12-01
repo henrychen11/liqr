@@ -20,7 +20,7 @@ class SessionForm extends React.Component {
   }
 
   componentWillMount(){
-    document.title = 'liqr - login';
+    document.title = 'liqr';
   }
 
   renderErrors() {

@@ -124,6 +124,7 @@ class Upload extends React.Component {
                   type="text"
                   onChange={this.update("title")}
                   placeholder="Title"
+                  required
                 />
                 <br />
                 <textarea
