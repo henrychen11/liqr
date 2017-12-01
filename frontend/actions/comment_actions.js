@@ -35,7 +35,7 @@ export const createComment = (comment, photoId) => dispatch => (
 );
 
 export const editComment = comment => dispatch => (
-  CommentAPIUtil.patchComment(comment).then(newComment => dispatch(receiveComment(newComment)))
+  CommentAPIUtil.updateComment(comment).then(newComment => dispatch(receiveComment(newComment)))
 );
 
 export const deleteComment = commentId => dispatch => (
