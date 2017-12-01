@@ -8,6 +8,7 @@ const AlbumReducer = (state={}, action) => {
   let newState;
   switch (action.type) {
     case RECEIVE_ALBUMS:
+
       return merge({}, state, action.albums);
     case RECEIVE_ALBUM:
       let oldState = Object.assign({}, state);

@@ -101,6 +101,8 @@
 .album-thumb {
   height: 50px;
   width: 50px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .album-cover-preview {
@@ -116,8 +118,9 @@
 }
 
 .album-cover-text {
-  min-width: 80%;
-  padding: 10px 0 0 20px;
+  // min-width: 60%;
+  margin: auto;
+  padding: 0 0 0 20px;
   font-size: 18px;
 }
 
@@ -131,7 +134,8 @@
 }
 
 .album-trash-icon {
-  padding-top: 15px;
+  padding-left: 20px;
+  margin: auto;
 }
 
 .album-trash-icon:hover {

@@ -72,7 +72,8 @@ class PhotoShow extends React.Component {
 
   render() {
     const { photo, albums, currentUser, userAlbums } = this.props;
-
+    console.log(userAlbums);
+    // debugger
     return (
       (!photo || !albums || !userAlbums) ? <div></div> :
       <div className="overall-wrap">
@@ -96,6 +97,7 @@ class PhotoShow extends React.Component {
                   <h1 className="album-title">Currently in the following albums:</h1>
                       { albums.map( (album, idx) => (
                         <div key={ album.id } className="album-cover-box">
+                          <Image className="album-thumb" publicId={userAlbums[album.id-1].album_cover_url} cloudName="liquidpineapple"></Image>
                           <h1 className="album-cover-text">{album.title}</h1>
                           <i onClick={() => this.props.deletePhotoAlbums(album.id, this.props.photoId)} className="album-trash-icon fa fa-trash-o" aria-hidden="true"></i>
 

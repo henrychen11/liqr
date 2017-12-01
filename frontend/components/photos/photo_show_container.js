@@ -14,8 +14,7 @@ const mapStateToProps = (state, ownProps) => {
     userAlbums: values(state.entities.albums),
     albums: values(state.entities.photos.albums),
     currentUser: state.session.currentUser,
-    photoId: ownProps.match.params.photoId,
-
+    photoId: ownProps.match.params.photoId
   };
 };
 

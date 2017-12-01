@@ -74,7 +74,7 @@ Users can add, update, delete comments on photos.
 + [Proposal Wireframes](https://github.com/henrychen11/liqr/wiki/wireframes)
 + [Database Schema](https://github.com/henrychen11/liqr/wiki/schema)
 
-####Possible future features
+#### Possible future features
 
 + Photo tags
 + User profile pages

@@ -77,6 +77,7 @@ PhotoAlbum.create!(album_id: album1.id, photo_id: photo15.id)
 
 
 # Album 2
+PhotoAlbum.create!(album_id: album2.id, photo_id: photo1.id)
 PhotoAlbum.create!(album_id: album2.id, photo_id: photo16.id)
 PhotoAlbum.create!(album_id: album2.id, photo_id: photo17.id)
 PhotoAlbum.create!(album_id: album2.id, photo_id: photo18.id)

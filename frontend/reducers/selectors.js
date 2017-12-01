@@ -12,3 +12,8 @@ export const selectAllAlbums = (state, userId) => {
 
   return userAlbums;
 };
+
+// export const selectAlbumCovers = (state) => {
+//   let links;
+//   values(state.entities.albums).map( (album) => links.push(album[album_cover_url]);
+// };
