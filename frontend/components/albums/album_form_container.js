@@ -12,7 +12,6 @@ const mapStateToProps = (state, ownProps) => {
     album = Object.assign({}, album, state.entities.albums[ownProps.match.params.albumId]);
     formType = 'edit';
   }
-  // debugger
     return {
       album,
       formType,

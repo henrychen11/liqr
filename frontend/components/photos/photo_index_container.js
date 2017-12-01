@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import PhotoIndex from './photo_index';
 
 const mapStateToProps = (state) => {
-  // debugger;
   return {
     photos: selectAllPhotos(state)
   };

@@ -1,7 +1,6 @@
 import {values} from 'lodash';
 
 export const selectAllPhotos = (state) => {
-  // debugger
   return values(state.entities.photos);
 };
 

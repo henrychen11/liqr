@@ -6,7 +6,6 @@ import { createPhotoAlbums, deletePhotoAlbums } from '../../actions/album_action
 import {  clearErrors } from '../../actions/album_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return {
     currentUser: state.session.currentUser,
     photoId: ownProps.match.params.photoId,

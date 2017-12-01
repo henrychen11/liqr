@@ -18,7 +18,6 @@ class Api::PhotoAlbumsController < ApplicationController
 
   def destroy
     @photo_album = PhotoAlbum.find_by(album_id: params[:albumId], photo_id: params[:photoId])
-    # debugger
     @album = Album.find(@photo_album.album_id)
     @photo_album.destroy
     render :show

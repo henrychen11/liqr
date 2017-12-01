@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import PhotoUserIndex from './photo_user_index';
 
 const mapStateToProps = (state) => {
-  // debugger;
   return {
     photos: selectAllPhotos(state),
     currentUser: state.session.currentUser

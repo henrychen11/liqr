@@ -10,7 +10,6 @@ const CommentReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_COMMENTS:
-      // debugger
       return Object.assign({}, action.comments);
     case RECEIVE_COMMENT:
       return Object.assign({}, state, { [action.comment.id]: action.comment });

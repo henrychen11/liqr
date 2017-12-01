@@ -24,7 +24,6 @@ class PhotoShow extends React.Component {
     };
 
     this.openModal = this.openModal.bind(this);
-    // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,7 +32,6 @@ class PhotoShow extends React.Component {
   componentDidMount(){
     this.props.requestPhoto(this.props.photoId);
     this.props.requestAlbums(this.props.currentUser.id);
-    // debugger
   }
 
   componentWillReceiveProps(newProps) {

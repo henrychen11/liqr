@@ -2,7 +2,7 @@ class Api::TagsController < ApplicationController
 
 
   def index
-    @tags = Tag.where(photo_id: params[:photo_id])
+    @tags = Tag.where(photo_id: params[:photo_id]).includes(:photo)
   end
 
   def show

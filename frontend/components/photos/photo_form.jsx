@@ -96,7 +96,7 @@ class Upload extends React.Component {
     return (
       (!this.state.photo) ? <div></div> :
       <div>
-        <h1 className="page-header">Uplad a picture below:</h1>
+        <h1 className="page-header">Upload a picture below:</h1>
         <div className="upload-container">
           <Dropzone
             multiple={false}

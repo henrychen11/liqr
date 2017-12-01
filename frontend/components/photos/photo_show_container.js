@@ -9,7 +9,6 @@ import {  deletePhotoAlbums } from '../../actions/album_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return {
     photo: state.entities.photos,
     userAlbums: values(state.entities.albums),

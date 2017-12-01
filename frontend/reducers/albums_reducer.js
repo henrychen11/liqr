@@ -9,21 +9,16 @@ const AlbumReducer = (state={}, action) => {
   switch (action.type) {
     case RECEIVE_ALBUMS:
       return merge({}, state, action.albums);
-
     case RECEIVE_ALBUM:
       let oldState = Object.assign({}, state);
-
       oldState.photos = action.payload.photos;
-
       newState = {[action.payload.album.id]: action.payload.album,
         album: action.payload.album.id
       };
       return merge({}, oldState, newState);
-
     case REMOVE_ALBUM:
       newState = merge({}, state);
       delete newState[action.album.album.id];
-      console.log(newState);
       return newState;
     default:
       return state;
