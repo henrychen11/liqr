@@ -9,7 +9,8 @@ class CommentForm extends React.Component {
     this.state = {
       modalIsOpen: false,
       body: "",
-      editComment: ""
+      editComment: "",
+      shouldUpdate: true
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -25,17 +26,24 @@ class CommentForm extends React.Component {
   }
 
   componentDidMount(){
-    // debugger
-    console.log('here', this.props.match.params);
-    this.props.requestPhotoComments(26)
-      .then( () => console.log(this.props));
-    // this.props.requestPhotoComments(this.props.match.params.photoId);
+    // console.log('here', this.props.match.params);
+    this.props.requestPhotoComments(this.props.match.params.photoId);
+  }
+
+  shouldComponentUpdate() {
+    this.shouldUpdate;
   }
 
   componentWillReceiveProps(newProps) {
+
     if (newProps.comment){
       this.setState({comment: newProps.comment, body: newProps.comment.body});
     }
+
+    console.log('here', this.props, newProps );
+
+      this.props.requestPhotoComments(this.props.match.params.photoId)
+        .then( () => this.setState({shouldUpdate: false}));
   }
 
   handleUpdate(event){
