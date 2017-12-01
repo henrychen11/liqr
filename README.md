@@ -26,6 +26,7 @@
 
 Users can view all photos available and comment across other user's pictures
 The photos will be calculated automatically to ensure that both sides of the container will be filled. The number of columns will adjust according to the webpage width and re-render for the best complete fit.
+
 ![explore](readme_images/explore.png)
 
 The Masonry only handles the image distribution, all CSS styles are handled in the stylesheets folder. This dynamic render is process by using the Masonry package like so:
@@ -68,6 +69,14 @@ Users can create / delete albums and add photos to albums.
 Users can add, update, delete comments on photos.
 
 ![comments](readme_images/create_comment.gif)
+
+#### Project Design
+
+liqr was designed with simplicity and an modern elegance as its primary objective. This was a project that span across two-weeks with gathering resources from documentation.
+
+#### Technologies
+
+I used Rails for the back-end database as its out-of-the-box support for relational databases and RESTful architecture. For the front-end, I used React / Redux.
 
 #### Additional Resources
 
