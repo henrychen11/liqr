@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import AlbumForm from './album_form';
 import { requestAlbum, createAlbum, updateAlbum, destroyAlbum } from '../../actions/album_actions';
+import { clearErrors } from '../../actions/album_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let album = { title: '',
@@ -14,7 +15,11 @@ const mapStateToProps = (state, ownProps) => {
     formType = 'edit';
   }
   // debugger
-    return { album, formType };
+    return {
+      album,
+      formType,
+      errors: state.errors.albums
+    };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -22,7 +27,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
     action: (album) => dispatch(action(album)),
-    requestAlbum: (albumId) => dispatch(requestAlbum(albumId))
+    requestAlbum: (albumId) => dispatch(requestAlbum(albumId)),
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 

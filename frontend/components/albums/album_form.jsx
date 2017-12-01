@@ -34,13 +34,23 @@ class AlbumForm extends React.Component {
     this.props.action(this.state.album)
       .then( (response) => this.props.history.push(`/albums/${response.payload.album.id}`));
   }
+
+  renderErrors() {
+    return (
+      <ul>
+        {
+          this.props.errors.map((error, idx) => (
+            <li className="errors" key={idx}>{error}</li>
+          )
+        )}
+      </ul>
+    );
+  }
+
   render(){
-
-
     return (
       <div className="album-form-container">
         <div className="album-form">
-
           <h1 className="album-form-header">
             { this.props.formType === "new" ? "Create new Album" : "Edit Album"}
           </h1>
@@ -49,7 +59,7 @@ class AlbumForm extends React.Component {
               <label>Title
                 <br />
                 <input
-                  className="album-input"
+
                   type="text"
                   placeholder="Enter Title"
                   onChange={this.update('title')}>
@@ -59,17 +69,19 @@ class AlbumForm extends React.Component {
               <label>Description
                 <br />
                 <textarea
+                  className="album-input"
                   type="text"
                   placeholder="Enter Description: (optional)"
                   onChange={this.update('description')}>
                 </textarea>
               </label>
               <br/>
+              <div>{this.renderErrors()}</div>
 
-            <button className="album-form-button" type="submit">Create New Album</button>
-
-              <button onClick={this.cancelForm} className="album-form-button" >Cancel</button>
-
+          <div className="album-form-button-container">
+            <button onClick={this.props.clearErrors.bind(this)} className="album-form-button" type="submit">Create New Album</button>
+            <button onClick={this.props.clearErrors.bind(this)} className="album-form-button" onClick={this.cancelForm}>Cancel</button>
+          </div>
             </form>
         </div>
       </div>
@@ -79,8 +91,3 @@ class AlbumForm extends React.Component {
 }
 
 export default AlbumForm;
-// if (formType === 'new'){
-//   <button onClick={} className="album-form-button" type="submit">Create New Album</button>
-// } else {
-//   <button onClick={} className="album-form-button" type="submit">Edit Album</button>
-// }

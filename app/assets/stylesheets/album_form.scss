@@ -11,9 +11,13 @@
   font-size: 20px;
 }
 
+.album-input {
+  padding: 20px 0; 
+}
+
 .album-form {
   width: 50%;
-  border: 1px solid black;
+  // border: 1px solid black;
   text-align: center;
   height: 60%;
 }
@@ -26,19 +30,19 @@
   padding: 5px 0;
 }
 
-.album-form-button {
+.album-form-button-container {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  width: 100%;
   justify-content: center;
+}
+
+.album-form-button {
+  align-items: center;
   height: 30px;
-  // width: 25%;
   padding: 5px;
   margin: 10px;
   background-color: lightgray;
-}
-.album-form-button a {
-  align-items: center;
-  text-align: center;
 }
 
 .album-form-button:hover {

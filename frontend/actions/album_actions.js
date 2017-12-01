@@ -56,7 +56,8 @@ export const requestAlbum = (albumId) => (dispatch) => (
 
 export const createAlbum = (album) => (dispatch) => (
   AlbumAPIUtil.createAlbum(album)
-  .then(response => dispatch(receiveAlbum(response)))
+  .then(response => dispatch(receiveAlbum(response)),
+    errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const updateAlbum = (album) => (dispatch) => (
@@ -66,7 +67,8 @@ export const updateAlbum = (album) => (dispatch) => (
 
 export const destroyAlbum = (albumId) => (dispatch) => (
   AlbumAPIUtil.deleteAlbum(albumId)
-  .then(album => dispatch(removeAlbum(album)))
+  .then(album => dispatch(removeAlbum(album)),
+    errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const createPhotoAlbums = (photoAlbum) => dispatch => (

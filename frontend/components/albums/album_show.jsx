@@ -44,6 +44,10 @@ class AlbumShow extends React.Component {
               </div>
             ))}
           </Masonry>
+          <div className="album-form-button-container">
+            <button href="#/home" className="album-form-button">Add Photos</button>
+            <button className="album-form-button">Delete Album</button>
+          </div>
         </div>
       );
     }
