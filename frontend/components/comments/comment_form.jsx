@@ -73,10 +73,13 @@ class CommentForm extends React.Component {
         }
 
       <form>
-        <textarea className="photo-comment-new"
+        <input className="photo-comment-new"
           onChange={this.update('body')}
           value={this.state.body}
-          placeholder="Enter Comment" />
+          placeholder="Enter Comment"
+          type="text"
+          autofocus
+          />
         <button onClick={this.handleSubmit} className="modal-button">Add Comment</button>
       </form>
 

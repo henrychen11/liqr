@@ -119,6 +119,7 @@ class Upload extends React.Component {
 
               <form className="modal-form" onSubmit={this.handleSubmit}>
                 <input
+                  require="true"
                   className="modal-input"
                   type="text"
                   onChange={this.update("title")}

@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
 # This to update seeds table. WARNING: does NOT reset id for each table
 User.destroy_all
@@ -49,27 +42,27 @@ photo27 = Photo.create(img_url: "SEED DATA/27.jpg", title: (Faker::Hipster.words
 photo28 = Photo.create(img_url: "SEED DATA/28.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
 photo29 = Photo.create(img_url: "SEED DATA/29.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
 photo30 = Photo.create(img_url: "SEED DATA/30.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo31 = Photo.create(img_url: "SEED DATA/31.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo32 = Photo.create(img_url: "SEED DATA/32.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo33 = Photo.create(img_url: "SEED DATA/33.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo34 = Photo.create(img_url: "SEED DATA/34.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo35 = Photo.create(img_url: "SEED DATA/35.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo36 = Photo.create(img_url: "SEED DATA/36.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo37 = Photo.create(img_url: "SEED DATA/37.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo38 = Photo.create(img_url: "SEED DATA/38.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo39 = Photo.create(img_url: "SEED DATA/39.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo40 = Photo.create(img_url: "SEED DATA/40.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo41 = Photo.create(img_url: "SEED DATA/41.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo42 = Photo.create(img_url: "SEED DATA/42.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo43 = Photo.create(img_url: "SEED DATA/43.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo44 = Photo.create(img_url: "SEED DATA/44.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo45 = Photo.create(img_url: "SEED DATA/45.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo46 = Photo.create(img_url: "SEED DATA/46.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo47 = Photo.create(img_url: "SEED DATA/47.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo48 = Photo.create(img_url: "SEED DATA/48.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo49 = Photo.create(img_url: "SEED DATA/49.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-photo50 = Photo.create(img_url: "SEED DATA/50.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
-
+# photo31 = Photo.create(img_url: "SEED DATA/31.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo32 = Photo.create(img_url: "SEED DATA/32.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo33 = Photo.create(img_url: "SEED DATA/33.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo34 = Photo.create(img_url: "SEED DATA/34.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo35 = Photo.create(img_url: "SEED DATA/35.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo36 = Photo.create(img_url: "SEED DATA/36.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo37 = Photo.create(img_url: "SEED DATA/37.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo38 = Photo.create(img_url: "SEED DATA/38.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo39 = Photo.create(img_url: "SEED DATA/39.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo40 = Photo.create(img_url: "SEED DATA/40.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo41 = Photo.create(img_url: "SEED DATA/41.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo42 = Photo.create(img_url: "SEED DATA/42.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo43 = Photo.create(img_url: "SEED DATA/43.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo44 = Photo.create(img_url: "SEED DATA/44.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo45 = Photo.create(img_url: "SEED DATA/45.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo46 = Photo.create(img_url: "SEED DATA/46.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo47 = Photo.create(img_url: "SEED DATA/47.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo48 = Photo.create(img_url: "SEED DATA/48.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo49 = Photo.create(img_url: "SEED DATA/49.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+# photo50 = Photo.create(img_url: "SEED DATA/50.jpg", title: (Faker::Hipster.words(1)).first, description: Faker::Hipster.sentences(1).first, author_id: user1.id)
+#
 
 
 album1 = Album.create(title: "Landscape", description: "This is some of my favorite travel photos", author_id: user1.id)

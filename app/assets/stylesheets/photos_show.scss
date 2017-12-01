@@ -94,6 +94,10 @@
   margin: 10px auto;
 }
 
+.photo-comment-new:focus {
+  border: 2px solid lightblue;
+}
+
 .album-thumb {
   height: 50px;
   width: 50px;
