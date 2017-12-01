@@ -72,8 +72,6 @@ class PhotoShow extends React.Component {
 
   render() {
     const { photo, albums, currentUser, userAlbums } = this.props;
-    console.log(userAlbums);
-    // debugger
     return (
       (!photo || !albums || !userAlbums) ? <div></div> :
       <div className="overall-wrap">
