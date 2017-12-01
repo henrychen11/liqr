@@ -1,16 +1,16 @@
-import { RECEIVE_ALBUM_ERRORS, CLEAR_ALBUM_ERRORS } from '../actions/album_actions';
+import { RECEIVE_COMMENT_ERRORS, CLEAR_COMMENT_ERRORS } from '../actions/comment_actions';
 
-const albumErrorReducer = (state = [], action) => {
+const CommentErrorReducer = (state = [], action) => {
   Object.freeze(state);
 
   switch (action.type) {
-    case RECEIVE_ALBUM_ERRORS:
+    case RECEIVE_COMMENT_ERRORS:
       return action.errors;
-    case CLEAR_ALBUM_ERRORS:
+    case CLEAR_COMMENT_ERRORS:
       return [];
     default:
       return state;
   }
 };
 
-export default albumErrorReducer;
+export default CommentErrorReducer;

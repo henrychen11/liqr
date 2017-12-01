@@ -93,7 +93,6 @@ class PhotoShow extends React.Component {
             <h1 className="comment-author">Posted by: {photo.author}</h1>
           </div>
 
-          {console.log(albums)}
               { (currentUser === undefined || currentUser.id !== photo.author_id || albums === undefined || userAlbums[0] === undefined) ? <div></div> :
                 <div className="album-cover-preview">
                   <h1 className="album-title">Currently in the following albums:</h1>

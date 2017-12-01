@@ -7,27 +7,21 @@ class AlbumShow extends React.Component {
 
   constructor(props){
     super(props);
-
   }
 
   componentWillMount(){
     this.props.requestAlbum(this.props.albumId);
-    // debugger
   }
 
   componentWillReceiveProps(newProps){
     if (this.props.albumId !== newProps.match.params.albumId) {
       this.props.requestAlbum(this.props.albumId);
     }
-    // this.setState({comment: newProps.comment});
-    console.log(newProps);
     this.setState({album: newProps.album});
   }
 
   render(){
     const { photos } = this.props;
-
-    // console.log(this.state.albums);
     return (
         (!photos) ? "" :
         <div>

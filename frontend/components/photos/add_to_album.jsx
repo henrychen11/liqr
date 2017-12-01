@@ -12,7 +12,6 @@ class AddToAlbum extends React.Component {
   }
 
   handleChange(event) {
-    console.log(event.target.value);
     this.setState({currentAlbumId: parseInt(event.target.value)});
   }
 
@@ -60,4 +59,3 @@ class AddToAlbum extends React.Component {
 }
 
 export default AddToAlbum;
-// {console.log('testatea', userAlbums, this.props. albums, userAlbums.filter( (f) => !this.props.albums.includes(f)))}

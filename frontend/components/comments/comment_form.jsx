@@ -18,7 +18,6 @@ class CommentForm extends React.Component {
 
   openModal(comment) {
     this.setState({modalIsOpen: true, body: comment.body});
-    console.log(this.state.comment);
   }
 
   closeModal() {
@@ -55,7 +54,7 @@ class CommentForm extends React.Component {
 
 
   render(){
-    const { comments, currentUser } = this.props;
+    const { comments, currentUser, errors } = this.props;
     return (
       <div className="comment-container">
         {
@@ -67,6 +66,8 @@ class CommentForm extends React.Component {
               currentUser={currentUser}
               editComment={this.props.editComment}
               deleteComment={this.props.deleteComment}
+              errors={errors}
+              clearErrors={this.props.clearErrors}
                />
           ))
         }

@@ -49,6 +49,18 @@ export default class CommentItem extends React.Component {
       }).then( () => this.closeModal(), () => this.setState({comment: this.props.comment.body}));
     }
 
+    renderErrors() {
+      return (
+        <ul>
+          {
+            this.props.errors.map((error, idx) => (
+              <li className="errors" key={idx}>{error}</li>
+            )
+          )}
+        </ul>
+      );
+    }
+
     render(){
       const { comment, currentUser } = this.props;
 
@@ -89,11 +101,12 @@ export default class CommentItem extends React.Component {
                 <div className="modal-button-container">
                   <input
                     className="modal-button"
-
+                    onClick={this.props.clearErrors}
                     type="submit"
                     value="Save" />
                   <button className="modal-button" onClick={this.closeModal}>Cancel</button>
                 </div>
+                <div>{this.renderErrors()}</div>
               </form>
             </Modal>
 
