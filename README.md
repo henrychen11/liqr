@@ -9,6 +9,9 @@
 + React / Redux
 + Ruby on Rails
 + jQuery
+cloudinary
+
+
 
 ## Features
 
@@ -27,3 +30,4 @@ Users can upload a photo then users have the ability to add title and descriptio
 ## Future Improvements
 
 More to come.....
+m
