@@ -3,6 +3,11 @@ import PhotoIndexItem from './photo_index_item';
 import Masonry from 'react-masonry-component';
 import { RingLoader } from 'react-spinners';
 
+const masonryOptions = {
+    transitionDuration: 0,
+    fitWidth: true
+};
+
 class PhotoIndex extends React.Component {
 
   constructor(props){
@@ -30,6 +35,7 @@ class PhotoIndex extends React.Component {
           <h2 className="page-header">Explore</h2>
           <Masonry
             className={'my-gallery-class'}
+            options={masonryOptions}
             >
             {
               photos.map( (photo, idx) =>
