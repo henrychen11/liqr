@@ -174,3 +174,16 @@ Comment.create(body: "At Christmas, all roads lead home.", photo_id: photo11.id,
 Comment.create(body: "Christmas waves a magic wand over this world, and behold, everything is softer and more beautiful", photo_id: photo11.id, author_id: user2.id )
 Comment.create(body: "Christmas is a season for kindling the fire for hospitality in the hall, the genial flame of charity in the heart.", photo_id: photo11.id, author_id: user3.id )
 Comment.create(body: "Lovely!", photo_id: photo11.id, author_id: user4.id )
+
+# Tags
+Tag.create(name: "WOW", photo_id: photo1.id)
+Tag.create(name: "Great!", photo_id: photo1.id)
+Tag.create(name: "Awesome", photo_id: photo1.id)
+Tag.create(name: "Interesting", photo_id: photo1.id)
+Tag.create(name: "Fascinating", photo_id: photo1.id)
+Tag.create(name: "Winter is here!", photo_id: photo2.id)
+Tag.create(name: "Holiday is here", photo_id: photo2.id)
+Tag.create(name: "Gifts!", photo_id: photo2.id)
+Tag.create(name: "Time after time!", photo_id: photo2.id)
+Tag.create(name: "Love that place!", photo_id: photo3.id)
+Tag.create(name: "Yay!", photo_id: photo3.id)

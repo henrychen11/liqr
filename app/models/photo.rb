@@ -22,9 +22,11 @@ class Photo < ApplicationRecord
          class_name: 'Comment',
          dependent: :destroy
 
+  has_many :tags
+
   # def self.top_five_results(query_params)
   #   params = '%' + query_params + '%'
-  #   Photo.where('lower(title)' LIKE ? , params).limit(5)  
+  #   Photo.where('lower(title)' LIKE ? , params).limit(5)
   # end
 
 end
