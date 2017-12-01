@@ -1,7 +1,7 @@
 var path = require('path');
 var webpack = require("webpack");
 
-var plugins = ["emotion"]; // if using any plugins for both dev and production
+var plugins = []; // if using any plugins for both dev and production
 var devPlugins = []; // if using any plugins for development
 
 var prodPlugins = [
