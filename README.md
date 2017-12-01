@@ -25,7 +25,7 @@
 #### Explore
 
 Users can view all photos available and comment across other user's pictures
-```
+```js
 <Masonry
   className={'my-gallery-class'}
   options={masonryOptions}
@@ -45,7 +45,7 @@ This dynamic render is process by using the Masonry package like so:
 #### Uploading Photos
 
 Users can upload a photo to Cloudinary and add title and description to their photo. Users also have the ability to edit / delete the photo. The drag and drop ability is done through this:
-```
+```js
 <Dropzone
   multiple={false}
   accept="image/*"
