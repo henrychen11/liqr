@@ -78,7 +78,6 @@ class CommentForm extends React.Component {
           value={this.state.body}
           placeholder="Enter Comment"
           type="text"
-          autofocus
           />
         <button onClick={this.handleSubmit} className="modal-button">Add Comment</button>
       </form>
