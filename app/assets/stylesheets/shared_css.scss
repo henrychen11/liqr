@@ -3,10 +3,14 @@
 }
 
 .photo-description {
+  display: flex;
+  justify-content: center;
   font-size: 10px;
 }
 
 
 .single-image {
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
 }
