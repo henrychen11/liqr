@@ -101,7 +101,7 @@ export default class CommentItem extends React.Component {
                 <div className="modal-button-container">
                   <input
                     className="modal-button"
-                    onClick={this.props.clearErrors}
+                    onClick={this.props.clearErrors.bind(this)}
                     type="submit"
                     value="Save" />
                   <button className="modal-button" onClick={this.closeModal}>Cancel</button>

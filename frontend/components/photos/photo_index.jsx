@@ -22,7 +22,7 @@ class PhotoIndex extends React.Component {
         <div>
           <div className='loading'>
             <RingLoader
-              size={200}
+              size={150}
               color={'#19B5FE'}
               loading={this.state.loading}
               />

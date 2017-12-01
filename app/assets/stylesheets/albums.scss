@@ -62,18 +62,27 @@ opacity: 1;
 }
 
 // MASONRY OPTIONS
+// .my-gallery-class {
+//   display: flex;
+//   justify-content: center;
+//   padding-left: 100px;
+//   height: 100%;
+//   max-width: 100%;
+//   margin-bottom: 20px;
+// }
+
 .my-gallery-class {
   display: flex;
-  justify-content: center;
-  padding-left: 100px;
+  // justify-content: center;
+  text-align: center;
   height: 100%;
-  max-width: 100%;
-  margin-bottom: 20px;
+  max-width: 90%;
+  margin: auto;
 }
 
 .image-element-class {
   display: flex;
-  width: 300px;
+  width: 250px;
   padding: 2px;
 }
 

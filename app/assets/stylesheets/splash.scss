@@ -2,19 +2,16 @@
 
 .overlay{
   // position:fixed;
-   background:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/footer_lodyas.png);
+   background:url(https://images.unsplash.com/photo-1475586036352-6a29507e6683?auto=format&fit=crop&w=1524&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
   -webkit-animation:100s scroll infinite linear;
   -moz-animation:100s scroll infinite linear;
   -o-animation:100s scroll infinite linear;
   -ms-animation:100s scroll infinite linear;
   animation:100s scroll infinite linear;
-  // top:30;
-  // left:0;
-  // // margin-top: 60px;
-  // padding-top: 57px;
-  // // z-index: 0;
+  background-size: cover;:
   width:100%;
   height:100vh;
+
 }
 
 .welcome-title {
@@ -65,32 +62,3 @@
     background-position:0px -3000px;
   }
 }
-
-// .btn-wrap{
-//   margin:0 auto;
-//   width:200px;
-//   padding-top:50px;
-// }
-
-// .demo-button {
-//   background:#e74c3c;
-//   color:#FFF;
-//   position:relative;
-//   padding:15px;
-//   font-weight:900 !important;
-//   text-transform:uppercase;
-//   border-radius:5px;
-//   font:14px lato;
-//   opacity:0.8;
-//   letter-spacing:1px;
-//   text-decoration:none;
-//   box-shadow:#c0392b 0px 7px 2px,#000 0px 8px 5px;
-// }
-//
-// .demo-button:hover{
-//   opacitY:1;
-// }
-// .demo-button:active{
-//   top:4px;
-//   box-shadow:#c0392b 0px 3px 2px,#000 0px 3px 5px;
-// }
