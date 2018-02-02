@@ -1,5 +1,4 @@
 import React from 'react';
-import WelcomeContainer from './welcome/welcome_container';
 import NavBarContainer from './navbar/NavBarContainer';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import SessionFormContainer from './session/SessionFormContainer';
@@ -13,12 +12,11 @@ import PhotoFormContainer from './photos/photo_form_container';
 import AlbumFormContainer from './albums/album_form_container';
 
 const App = () => (
-  <div>
-
-    <NavBarContainer />
     <main>
+      <NavBarContainer path="/" />
+      
       <Switch>
-        <AuthRoute exact path="/" component={WelcomeContainer} />
+        
         <AuthRoute exact path="/login" component={SessionFormContainer} />
         <AuthRoute exact path="/signup" component={SessionFormContainer} />
         <ProtectedRoute exact path="/photos/new" component={PhotoFormContainer} />
@@ -33,8 +31,6 @@ const App = () => (
         <Route path="/" render={ () => <Redirect to="/login" />} />
       </Switch>
     </main>
-
-  </div>
 );
 
 export default App;
