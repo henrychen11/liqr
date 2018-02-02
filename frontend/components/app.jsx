@@ -11,7 +11,6 @@ import PhotoUserContainer from './photos/photo_user_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import PhotoFormContainer from './photos/photo_form_container';
 import AlbumFormContainer from './albums/album_form_container';
-import Footer from './bottom';
 
 const App = () => (
   <div>
@@ -31,12 +30,9 @@ const App = () => (
         <ProtectedRoute exact path="/explore" component={PhotoIndexContainer} />
         <ProtectedRoute exact path="/home" component={PhotoUserContainer} />
         <ProtectedRoute exact path="/albums" component={AlbumIndexContainer} />
-
         <Route path="/" render={ () => <Redirect to="/login" />} />
-
       </Switch>
     </main>
-      <Footer className="footer"/>
 
   </div>
 );

@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
 
   render(){
     return ( (this.props.formType === 'login') ? (
-      <div className="background">
+      <div className="overlay">
         <div className="session-box">
           <form className="session-form" onSubmit={this.handleSubmit}>
             <Link to="/" className="logo-box">liqr</Link>
@@ -78,7 +78,7 @@ class SessionForm extends React.Component {
         </div>
       </div>
     ) : (
-      <div className="background">
+      <div className="overlay">
         <div className="session-box">
           <form className="session-form" onSubmit={this.handleSubmit}>
             <Link to="/" className="logo-box">liqr</Link>
